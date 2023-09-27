@@ -27,7 +27,7 @@ export function addContactSubmit(req, res) {
                 return;
             }
             // On redirige vers la page d'accueil
-            res.redirect('/');
+            res.redirect("/contact/submitted");
         }
     );
 }

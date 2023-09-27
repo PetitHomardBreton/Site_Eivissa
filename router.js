@@ -12,6 +12,7 @@ const router = express.Router();
 import HomeController from "./controllers/home.js";
 import {showcontactform} from "./controllers/contact.js";
 import {addContactSubmit} from "./controllers/contact.js";
+import contactSubmittedController from "./controllers/contactSubmitted.js";
 
 
 /*********************************************
@@ -20,6 +21,7 @@ import {addContactSubmit} from "./controllers/contact.js";
 router.get("/", HomeController);
 router.get("/contact", showcontactform);
 router.post("/contact", addContactSubmit);
+router.get("/contact/submitted", contactSubmittedController);
 
 
 export default router;
