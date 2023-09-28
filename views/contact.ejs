@@ -1,6 +1,10 @@
-<%- include('header') -%>
-<main class="main-content" role="main">
+  <% if (fullPage){ %>
+    <%- include('header.ejs') %>
+  <% } %>
+  <section class = contact>
   <h1>Vous avez un projet en tête?<br />Discutons-en !</h1>
+  <p>Contactez-moi dès aujourd'hui pour discuter de vos besoins spécifiques et commençons à façonner ensemble vos idées en images et vidéos exceptionnelles.</p>
+
   <form action="/contact" method="post">
     <label for="lastname">Nom :</label>
     <input type="text" id="lastname" name="lastname" required />
@@ -13,9 +17,12 @@
 
     <label for="message">Message :</label>
     <textarea id="message" name="message" rows="4" required></textarea>
-    
-      <button type="submit">Envoyer</button>
- 
+
+    <button type="submit">Envoyer</button>
   </form>
-</main>
-<%- include('footer') -%>
+  <% if(fullPage){ %>
+    <%- include('footer.ejs') %>
+  <% } %>
+
+</section>
+
