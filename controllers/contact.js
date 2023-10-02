@@ -4,8 +4,8 @@ import formidable from 'formidable';
 import { DateTime} from 'luxon';
 
 // AFFICHAGE DU FORMULAIRE
-export function showcontactform (req, res) {
-    res.render('contact', { pageTitle: 'Contact' });
+export function showContactForm (req, res) {
+    res.render('contact', { pageTitle: 'Contact', fullPage: true });
 }
 
 // AJOUT D'UN CONTACT ET ACTUALISATION DE L'AFFICHAGE
@@ -27,7 +27,7 @@ export function addContactSubmit(req, res) {
                 return;
             }
             // On redirige vers la page d'accueil
-            res.redirect("/contact/submitted");
+            res.redirect("/submitted");
         }
     );
 }
