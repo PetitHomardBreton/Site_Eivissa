@@ -174,18 +174,31 @@ ul {
 /**************************************************************************
 Footer
 ***************************************************************************/
+footer {
+	background-color: #050819;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 0;
+}
+
 footer .reseauxSociaux {
 	display: flex;
 	justify-content: center;
-	/*align-items: center;*/
-	/*margin: 0 auto;*/
+	align-items: center;
+	margin:auto;
 	background-color: #050819;
 }
 
-footer img {
+footer .reseauxSociaux img {
 	width: clamp(31px, 5vw, 80px);
+	margin: 0 clamp(15px, 2vw, 20px) ;
+	padding:0;
 	height: auto;
-	margin: auto;}
+}
+
+
 .logoFooter {
 	width: clamp(56px, 5vw, 98px);
 	height: auto;
