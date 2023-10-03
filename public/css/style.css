@@ -83,8 +83,8 @@ label{
 	letter-spacing: 0.2em;
 	color: #D59C3C;
 	margin-top: 0rem;
-	margin-bottom: 2rem;
-	padding: 0;
+	margin-bottom: 0rem;
+	padding-bottom: 2rem;
 	line-height: 1.35;
 }
 
@@ -129,7 +129,7 @@ header nav.no-border {
 * {
 	box-sizing: border-box;
 	outline: none;
-	margin: 0;
+	/*margin: 0;*/
 	padding: 0;
 }
 
@@ -176,6 +176,7 @@ Footer
 ***************************************************************************/
 footer {
 	background-color: #050819;
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -199,11 +200,15 @@ footer .reseauxSociaux img {
 }
 
 
-.logoFooter {
+footer .logoFooter {
 	width: clamp(56px, 5vw, 98px);
 	height: auto;
-	margin: auto;
+	margin-top: clamp(12px, 2vw, 21px);
+	margin-right: auto;
+	margin-bottom: clamp(12px, 2vw, 21px);
+	margin-left: auto;
 }
+
 
 
 /**************************************************************************
@@ -404,7 +409,9 @@ footer .reseauxSociaux img {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/respirateur-1.png');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/respirateur-1.png');  background-size: cover; /* ou 'contain' selon votre besoin */
+	background-position: center center; /* centre l'image d'arrière-plan */
+	background-repeat: no-repeat; /* assure que l'image ne se répète pas */
 }
 
 .aPropos {
