@@ -13,6 +13,7 @@ import HomeController from "./controllers/home.js";
 import {showContactForm} from "./controllers/contact.js";
 import {addContactSubmit} from "./controllers/contact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
+import portfolio from "./controllers/portfolio.js";
 
 
 
@@ -20,6 +21,7 @@ import contactSubmittedController from "./controllers/contactSubmitted.js";
   *Routes
  *********************************************/
 router.get("/", HomeController);
+router.get("/portfolio", portfolio);
 router.get("/contact", showContactForm);
 router.post("/contact", addContactSubmit);
 router.get("/submitted", contactSubmittedController);
