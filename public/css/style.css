@@ -74,8 +74,9 @@ h3 {
 
 p,
 label {
+  display: block; /* Make sure they are all on their own line */
   font-size: clamp(12px, 2vw, 20px);
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0.2em;
   color: #d59c3c;
   margin-top: 0rem;
@@ -87,7 +88,7 @@ label {
 input,
 textarea {
   font-size: clamp(12px, 2vw, 20px);
-  background-color: #050819;
+  background-color: transparent;
   border: 1px solid #d59c3c;
   color: #d59c3c;
 }
@@ -241,6 +242,53 @@ Portfolio
   padding: 0.5rem 1rem;
   margin: 1rem 17px;
 }
+
+/**************************************************************************
+Contact
+***************************************************************************/
+.formContact {
+  display: flex;
+  max-width: 952px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: transparent;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+.Name {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formName label{
+  display: block;
+}
+
+ #firstname, #lastname {
+  width: clamp(240px, 30vw, 460px);
+  height: clamp(24px, 3vw, 48px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.space {
+  width: 3rem;
+}
+
+#email {
+  width: 100%;
+  height: clamp(24px, 3vw, 48px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
 
 /**************************************************************************
   Small device 
