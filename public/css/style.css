@@ -246,6 +246,16 @@ Portfolio
 /**************************************************************************
 Contact
 ***************************************************************************/
+.contact p {
+max-width: 952px;
+text-align: center;
+font-family: Raleway;
+font-size: clamp(10px, 2vw, 17px);
+font-style: normal;
+font-weight: 400;
+line-height: clamp( 15px, 3vw, 31px); /* 182.353% */
+letter-spacing: clamp(2px, 0.3vw, 3.4px); 
+}
 .formContact {
   display: flex;
   max-width: 952px;
@@ -490,7 +500,7 @@ Contact
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-575x323.png"); /* Image par défaut pour mobile */
+  background-image: url("../img/respirateur-575x323.png"); /* Image par défaut pour mobile */
   background-position: center center; /* Centre l'image */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-size: cover; /* Agrandit l'image pour couvrir l'élément */
@@ -498,6 +508,7 @@ Contact
 
 .contact h1, .contact p, .contact form {
   margin: 2rem clamp(10rem, 5vw, 20rem);
+  text-align: center;
 }
 
 /*************************************************************
@@ -506,35 +517,35 @@ Media queries
 /* Pour les écrans à partir de 576px */
 @media (min-width: 576px) {
   .contact {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-767x431.png");
+      background-image: url("../img/respirateur-767x431.png");// Image par défaut pour mobile
   }
 }
 
 /* Pour les écrans à partir de 768px */
 @media (min-width: 768px) {
   .contact {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-991x557.png");
+      background-image: url("../img/respirateur-991x557.png");
   }
 }
 
 /* Pour les écrans à partir de 992px */
 @media (min-width: 992px) {
   .contact {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-1199x674.png");
+      background-image: url("../img/respirateur-1199x674.png");
   }
 }
 
 /* Pour les écrans à partir de 1200px */
 @media (min-width: 1200px) {
   .contact {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-1399x787.png");
+      background-image: url("../img/respirateur-1399x787.png");
   }
 }
 
 /* Pour les écrans à partir de 1400px */
 @media (min-width: 1400px) {
   .contact {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/respirateur-1920x1080.png");
+      background-image: url("../img/respirateur-1920x1080.png");
   }
 }
 
