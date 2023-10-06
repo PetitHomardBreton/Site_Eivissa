@@ -65,6 +65,16 @@ h2 {
   color: #d59c3c;
 }
 
+.admin__title {
+  font-size: clamp(12px, 2vw, 35px);
+  margin: 1rem auto;
+  text-align: center;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: red;
+}
+
 h3 {
   margin-top: 0rem;
   margin-bottom: 2.5rem;
@@ -596,13 +606,13 @@ Media queries
   .navbar__link.third {
     display: none;
   }
-  .navbar__links {
+  .navbar__links, .navbar__admins{
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .navbar__link a {
+  .navbar__link a , .navbar__admin a {
     font-family: Raleway;
     font-style: normal;
     font-weight: 500;
@@ -613,7 +623,7 @@ Media queries
     color: var(--Dore, #d59c3c);
   }
 
-  .navbar__link > a::after {
+  .navbar__link > a::after , .navbar__admin > a::after{
     display: block;
     content: "";
     width: 0;

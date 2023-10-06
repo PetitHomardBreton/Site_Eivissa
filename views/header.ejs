@@ -28,5 +28,17 @@
           <span class="bar"></span>
         </button>
       </nav>
+      <% if (locals.isLogged) { %> 
+        <h2 class="admin__title">Espace Admin</h2>
+        <nav role="navigation">
+            <ul class="navbar__admins">
+            <li class="navbar__admin first"><a href="#">Func Admin 1</a></li>
+            <li class="navbar__admin second"><a href="#">Func Admin 2</a></li>
+            <li class="navbar__admin third"><a href="#">Func Admin 3</a></li>
+            <li class="navbar__admin four"><a href="#">Func Admin 4</a></li>
+            <li class="navbar__admin five"><a href="#">Func Admin 5</a></li>
+          </ul>
+        </nav>
+    <% }  %>
     </header>
     <main class="main-content" role="main">
