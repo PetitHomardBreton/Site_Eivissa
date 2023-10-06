@@ -1,0 +1,22 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class = Login>
+    <h1>Login</h1>
+    <form method="post">
+        <% if (locals.message) { %>
+          <p><%= message %></p>
+        <% } %>
+        <p>
+            <label for="pseudo">Pseudo</label>
+            <input type="text" name="pseudo" id="pseudo" />     
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />   
+        </p>
+        <p>
+            <button type="submit">Login</button>
+        </p>
+    </form>
+</section>
+<%- include('footer') -%>
