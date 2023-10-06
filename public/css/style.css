@@ -107,6 +107,21 @@ button {
   word-wrap: break-word;
 }
 
+.logout {
+  color: #d59c3c;
+  border: #d59c3c solid 1px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: transparent;
+  font-size: clamp(20px, 5vw, 60px);
+  font-family: Raleway;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 50px;
+  letter-spacing: 2px;
+  word-wrap: break-word;
+}
+
 /******************************************************************
 HEADER
 ******************************************************************/
