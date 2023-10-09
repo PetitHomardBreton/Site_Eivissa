@@ -7,7 +7,7 @@
   <p>Contactez-moi dès aujourd'hui pour discuter de vos besoins spécifiques et commençons à façonner ensemble vos idées en images et vidéos exceptionnelles.</p>
 
   <form class= "formContact" action="/contact" method="post">
-<div class="Name">
+    <div class="Name">
   <div class="firstname">
     <label for="firstname">Prénom :</label>
     <input type="text" id="firstname" name="firstname" required />
@@ -18,12 +18,11 @@
     <input type="text" id="lastname" name="lastname" required />
 </div>  
 </div>
-    <label class="email" for="email">Email :</label>
+    <label class="email" for="email">E-mail :</label>
     <input type="email" id="email" name="email" required />
 
-    <label class="message" for="message">Message :</label>
+    <label class="message" for="message">Rédigez un message :</label>
     <textarea id="message" name="message" rows="4" required></textarea>
-
     <button type="submit">Envoyer</button>
   </form>
   <% if(fullPage){ %>
