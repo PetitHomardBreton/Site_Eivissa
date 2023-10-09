@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt';
 
-bcrypt.hash('islaBlanca', 10, (error, hash) => {
+bcrypt.hash('o5KYt$DKFiDq!oF4', 10, (error, hash) => {
     console.log(hash);
 });

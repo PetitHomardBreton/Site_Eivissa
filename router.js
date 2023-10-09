@@ -38,6 +38,7 @@ router.get("/", HomeController);
 router.get('/login', loginForm);
 router.post('/login', login);
 router.get('/logged', logged);
+router.get('/logout', logout);
 router.get("/portfolio", portfolio);
 router.get("/contact", showContactForm);
 router.post("/contact", addContactSubmit);
