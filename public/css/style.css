@@ -84,7 +84,11 @@ label {
   padding: 0;
   line-height: 1.35;
 }
-
+.Logout {
+  font-size: clamp(20px, 5vw, 60px);
+  color: #d59c3c;
+  margin: 2rem auto;
+}
 input,
 textarea {
   font-size: clamp(12px, 2vw, 20px);

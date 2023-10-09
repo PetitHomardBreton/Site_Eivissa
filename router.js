@@ -42,6 +42,7 @@ router.get("/portfolio", portfolio);
 router.get("/contact", showContactForm);
 router.post("/contact", addContactSubmit);
 router.get("/submitted", contactSubmittedController);
+router.get('/logout', checkAuthentication, logout);
 
 
 export default router;
