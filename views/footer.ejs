@@ -1,22 +1,35 @@
 </main>
 <footer>
-<section class="reseauxSociaux">
-    <img src="img/instagram-1.png" alt="instagram">
-    <img src="img/linkedin-1.png" alt="linkedin">
-    <img src="img/tik-tok-21.png" alt="tik-tok">
-    <img src="img/artstation-1.png" alt="artstation">
-    <img src="img/yt-1.png" alt="youtube">
-</section>
+    <section class="reseauxSociaux">
+        <a href="https://www.instagram.com/eivissa_barbe_3d_artist/" target="_blank" rel="noopener noreferrer">
+            <img src="img/instagram-1.png" alt="instagram">
+        </a>
+        <a href="https://www.linkedin.com/in/eivissa-barbe-89a0a9173" target="_blank" rel="noopener noreferrer">
+            <img src="img/linkedin-1.png" alt="linkedin">
+        </a>
+        <a href="https://www.tiktok.com/@eivissa_barbe_3d_artist" target="_blank" rel="noopener noreferrer">
+            <img src="img/tik-tok-21.png" alt="tik-tok">
+        </a>
+        <a href="https://eivissabarbe6.artstation.com" target="_blank" rel="noopener noreferrer">
+            <img src="img/artstation-1.png" alt="artstation">
+        </a>
+        <a href="https://www.youtube.com/channel/UCrfhbc4EczUKJ1ws1ma0Ehg" target="_blank" rel="noopener noreferrer">
+            <img src="img/yt-1.png" alt="youtube">
+        </a>
+    </section>
 
-<% if (locals.isLogged) { %> 
-    <a class = "Logout" href="/logout">Logout</a>
-<% } else { %>
-    <a href="/login"><img class="logoFooter" src="img/logo-eivissa-2.png" alt="logo d'Eivissa BARBE / Lien vers page Admin"></a>
-<% } %>
+    <% if (locals.isLogged) { %>
+        <a class="Logout" href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login"><img class="logoFooter" src="img/logo-eivissa-2.png"
+                    alt="logo d'Eivissa BARBE / Lien vers page Admin"></a>
+            <% } %>
 
 
-<p class="mentionsLegales">mentions légales mentions légales mentions légales mentions légales mentions légales</p>
-    
+                <p class="mentionsLegales">mentions légales mentions légales mentions légales mentions légales mentions
+                    légales</p>
+
 </footer>
 </body>
+
 </html>
