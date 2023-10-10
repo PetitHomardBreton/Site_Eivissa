@@ -692,7 +692,7 @@ Media queries images
   }
 
   .navbar__link a,
-  .navbar__admin a {
+  .navbar__admins a {
     font-family: Raleway;
     font-style: normal;
     font-weight: 500;
@@ -704,7 +704,7 @@ Media queries images
   }
 
   .navbar__link > a::after,
-  .navbar__admin > a::after {
+  .navbar__admins > a::after {
     display: block;
     content: "";
     width: 0;

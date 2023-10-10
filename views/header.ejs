@@ -1,44 +1,48 @@
 <body>
-    <header>
-      <nav class="navbar dark-mode" role="navigation">
+  <header>
+    <nav class="navbar dark-mode" role="navigation">
+      <a href="/">
         <img
           id="logoLeft"
           src="img/logoEivissa1.png"
-          alt="Logo de Eivissa Barbe"
+          alt="Logo de Eivissa Barbe / Retour à la page d'accueil"
         />
-        <ul class="navbar__links">
-          <li class="navbar__link first"><a href="/">Accueil</a></li>
-          <li class="navbar__link second"><a href="#">à propos</a></li>
-          <li class="navbar__logo">
-            <a href="/">
-              <img
-                id="logoCenter"
-                src="img/logoEivissa1.png"
-                alt="Logo de Eivissa Barbe / Retour à la page d'accueil"
-              />
-            </a>
-          </li>
-          <li class="navbar__link third">
-            <a href="#">Domaines d'Expertises</a>
-          </li>
-          <li class="navbar__link four"><a href="/portfolio">Portfolio</a></li>
-          <li class="navbar__link five"><a href="/contact">Contact</a></li>
-        </ul>
-        <button class="burger">
-          <span class="bar"></span>
-        </button>
-      </nav>
-      <% if (locals.isLogged) { %> 
-        <h2 class="admin__title">Espace Admin</h2>
-        <nav role="navigation">
-            <ul class="navbar__admins">
-            <li class="navbar__admin first"><a href="#">Func Admin 1</a></li>
-            <li class="navbar__admin second"><a href="#">Func Admin 2</a></li>
-            <li class="navbar__admin third"><a href="#">Func Admin 3</a></li>
-            <li class="navbar__admin four"><a href="#">Func Admin 4</a></li>
-            <li class="navbar__admin five"><a href="#">Func Admin 5</a></li>
-          </ul>
-        </nav>
-    <% }  %>
-    </header>
-    <main class="main-content" role="main">
+      </a>
+      <ul class="navbar__links">
+        <li class="navbar__link first"><a href="/">Accueil</a></li>
+        <li class="navbar__link second"><a href="#">à propos</a></li>
+        <li class="navbar__logo">
+          <a href="/">
+            <img
+              id="logoCenter"
+              src="img/logoEivissa1.png"
+              alt="Logo de Eivissa Barbe / Retour à la page d'accueil"
+            />
+          </a>
+        </li>
+        <li class="navbar__link third">
+          <a href="#">Domaines d'Expertises</a>
+        </li>
+        <li class="navbar__link four"><a href="/portfolio">Portfolio</a></li>
+        <li class="navbar__link five"><a href="/contact">Contact</a></li>
+      </ul>
+      <button class="burger">
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <% if (locals.isLogged) { %>
+    <h2 class="admin__title">Espace Admin</h2>
+    <nav role="navigation">
+      <ul class="navbar__admins">
+        <li class="themes"><a href="/themes">les Themes</a></li>
+        <li class="visuels"><a href="/visuels">les visuels</a></li>
+        <li class="realisations"><a href="/realisations">Les réalisations</a></li>
+        <li class="contacts"><a href="/contacts">Les contacts</a></li>
+        <li class="reseaux"><a href="/reseaux">Les reseaux</a></li>
+        <li class="newsLetter"><a href="/newsletter">Les newsLetter</a></li>
+      </ul>
+    </nav>
+    <% } %>
+  </header>
+  <main class="main-content" role="main"></main>
+</body>
