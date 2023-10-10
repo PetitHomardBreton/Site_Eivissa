@@ -1,66 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <script src="main.js" defer></script>
-
-    <title><%= pageTitle %> | Eivissa-Barbe</title>
-  </head>
-
-  <body>
-    <video class="videoIntroPortfolio" autoplay muted>
-      <source src="movies/Showrill.mp4" type="video/mp4" />
-      Votre navigateur ne supporte pas la balise vidéo.
-    </video>
-    <section class="portfolio">
-      <header>
-        <nav class="navbar dark-mode" role="navigation">
-          <img
-            id="logoLeft"
-            src="img/logoEivissa1.png"
-            alt="Logo de Eivissa Barbe"
-          />
-          <ul class="navbar__links">
-            <li class="navbar__link first"><a href="/">Accueil</a></li>
-            <li class="navbar__link second"><a href="#">à propos</a></li>
-            <li class="navbar__logo">
-              <a href="#">
-                <img
-                  id="logoCenter"
-                  src="img/logoEivissa1.png"
-                  alt="Logo de Eivissa Barbe"
-                />
-              </a>
-            </li>
-            <li class="navbar__link third">
-              <a href="#">Domaines d'Expertises</a>
-            </li>
-            <li class="navbar__link four">
-              <a href="/portfolio">Portfolio</a>
-            </li>
-            <li class="navbar__link five"><a href="/contact">Contact</a></li>
-          </ul>
-          <button class="burger">
-            <span class="bar"></span>
-          </button>
-        </nav>
-      </header>
+<%- include('head') -%>
+<%- include('header') -%>
       <main class="main-content" role="main">
         <h1>portfolio</h1>
         <p>Avant liste</p>
@@ -75,24 +14,4 @@
         </ul>
         <p>Après liste</p>
       </main>
-      <footer>
-        <section class="reseauxSociaux">
-          <img src="img/instagram-1.png" alt="instagram" />
-          <img src="img/linkedin-1.png" alt="linkedin" />
-          <img src="img/tik-tok-21.png" alt="tik-tok" />
-          <img src="img/artstation-1.png" alt="artstation" />
-          <img src="img/yt-1.png" alt="youtube" />
-        </section>
-        <img
-          class="logoFooter"
-          src="img/logo-eivissa-2.png"
-          alt="logo d'Eivissa BARBE"
-        />
-        <p class="mentionsLegales">
-          mentions légales mentions légales mentions légales mentions légales
-          mentions légales
-        </p>
-      </footer>
-    </section>
-  </body>
-</html>
+    <%- include('footer') -%>
