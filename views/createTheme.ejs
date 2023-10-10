@@ -1,0 +1,20 @@
+<%- include('head') -%>
+<%- include('header') -%>
+
+    <h2><%= title %></h2>
+    <form action='<%= action %>' method="post" enctype="multipart/form-data">
+        <p>
+            <label for="Theme">Nom du thème</label>
+            <input type="text" name="Theme" id="Theme" value="<%= locals.theme ? theme.Theme : '' %>">     
+        </p>
+        <p>
+            <label for="ranking">Numéro d'ordre d'apparition</label>
+            <input type="text" name="ranking" id="ranking" value="<%= locals.theme ? theme.ranking : '' %>">   
+        </p>
+        <p>
+            <button type="submit">Enregistrer</button>
+            <button type="reset">Annuler</button>
+        </p>
+    </form>
+    <%- include('footer') -%>
+
