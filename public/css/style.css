@@ -609,6 +609,32 @@ padding: 0.5rem;
   margin-left: 9vw;
   margin-right: 9vw;
 }
+/*************************************************************
+Liste des Themes
+**************************************************************/
+.listeThemes {
+  background-color: #050819;
+}
+
+
+
+
+.theme {
+  color: #D59C3C;
+  font-size: clamp(15px, 2vw, 20px);
+  margin: 1rem;
+}
+
+.listeThemes form {
+  margin-left: 9vw;
+}
+i.fa.fa-pencil-square{
+  color: #D59C3C;
+  font-size: clamp(15px, 2vw, 20px);
+  margin: 1rem;
+
+}
+
 
 /*************************************************************
 Media queries images

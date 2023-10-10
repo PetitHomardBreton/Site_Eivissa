@@ -17,6 +17,8 @@ import portfolio from "./controllers/portfolio.js";
 import {loginForm, login} from './controllers/login.js';
 import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
+import ThemeController from "./controllers/Themes.js";
+
 
 const checkAuthentication = (req, res, next) => {
   if(!req.session.isLogged) {
@@ -44,6 +46,7 @@ router.get("/contact", showContactForm);
 router.post("/contact", addContactSubmit);
 router.get("/submitted", contactSubmittedController);
 router.get('/logout', checkAuthentication, logout);
+router.get('/themes', ThemeController);
 
 
 export default router;

@@ -1,0 +1,19 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="listeThemes">
+    <h1>Liste des Thèmes</h1>
+    <form action="/themes" method="post">
+        <ul>
+            <% for(let i = 0; i<themes.length; i++) { %>
+                <li>
+                    <input type="radio" name="ThemesSelected[]" value="<%= themes[i].id %>">
+                    <span class="theme"><%= themes[i].Theme.toUpperCase() %> </span>
+                    <a href="//<%= themes[i].id %>">
+                        <i class="fa fa-pencil-square"></i>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <button>Supprimer</button>
+    </form>
+<%- include('footer') -%>

@@ -16,8 +16,8 @@ app.use(session({ // configuration de la session
 }));
 
 //pour récupérer les informations du formulaire
-app.use(express.json()) // pour analyser les requêtes avec un corps en JSON
-app.use(express.urlencoded({ extended: true })) // pour analyser les requêtes avec un corps en urlencoded
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) 
 
 //fichiers statiques
 app.use(express.static('public'));
@@ -35,24 +35,3 @@ app.use('/', router);
 app.listen(process.env.PORT, () => {
     console.log(`Server listening on port ${process.env.PORT}. http://localhost:${process.env.PORT}`);
 });
-
-// gestion des erreurs
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
-
-// gestion des erreurs 404
-app.use((req, res) => {
-    res.status(404).send('Page Not Found');
-});
-
-// importation du module helmet pour sécuriser les en-têtes HTTP
-import helmet from 'helmet';
-app.use(helmet());
-
-// importation du module compression pour compresser les réponses HTTP
-import compression from 'compression';
-app.use(compression());
-
-
