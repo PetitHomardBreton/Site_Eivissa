@@ -1,12 +1,14 @@
 <%- include('head') -%>
 <%- include('header') -%>
 <section class="listeThemes">
-    <h1>Liste des Thèmes</h1>
+    <h1>Les Thèmes</h1>
+    <h2> La liste des thèmes existants :</h2>
     <form action="/themes" method="post">
         <ul>
             <% for(let i = 0; i<themes.length; i++) { %>
                 <li>
                     <input type="radio" name="ThemesSelected[]" value="<%= themes[i].id %>">
+                    <span class="ranking"><%= themes[i].ranking %></span>
                     <span class="theme"><%= themes[i].Theme.toUpperCase() %> </span>
                     <a href="//<%= themes[i].id %>">
                         <i class="fa fa-pencil-square"></i>
