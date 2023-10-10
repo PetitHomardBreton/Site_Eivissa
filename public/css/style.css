@@ -15,6 +15,7 @@ GENERAL
   --navbar-color: #d59c3c;
   --navbar-bg-color: #050819;
 }
+
 html {
   font-size: 62.5%;
   background-color: #030510;
@@ -32,6 +33,7 @@ body {
 header {
   font-family: "Raleway", sans-serif;
 }
+
 h1,
 h2,
 h3,
@@ -54,6 +56,7 @@ h1 {
   text-align: left;
   line-height: 1.3;
 }
+
 /*
 h2 {
   font-size: clamp(12px, 5vw, 35px);
@@ -81,7 +84,8 @@ h2 {
 
 p,
 label {
-  display: block; /* Make sure they are all on their own line */
+  display: block;
+  /* Make sure they are all on their own line */
   font-size: clamp(12px, 2vw, 20px);
   font-weight: 300;
   letter-spacing: 0.2em;
@@ -91,11 +95,13 @@ label {
   padding: 0;
   line-height: 1.35;
 }
+
 .Logout {
   font-size: clamp(20px, 5vw, 60px);
   color: #d59c3c;
   margin: 2rem auto;
 }
+
 input,
 textarea {
   font-size: clamp(12px, 2vw, 20px);
@@ -139,6 +145,7 @@ HEADER
 header nav {
   border-bottom: #d59c3c solid 1.5px;
 }
+
 /*
 header nav.no-border {
 	border-bottom: none;
@@ -180,7 +187,7 @@ ul {
   padding: 0 10px;
 }
 
-.navbar__link > a {
+.navbar__link>a {
   color: var(--navbar-color);
   text-decoration: none;
 }
@@ -192,6 +199,7 @@ ul {
 .burger {
   display: none;
 }
+
 /**************************************************************************
 Footer
 ***************************************************************************/
@@ -224,24 +232,30 @@ footer .reseauxSociaux img {
   height: auto;
   margin: auto;
 }
+
 /**************************************************************************
 Portfolio
 ***************************************************************************/
 .portfolio {
   opacity: 0;
-  transition: opacity 1s; /* Animation douce lors de l'affichage */
+  transition: opacity 1s;
+  /* Animation douce lors de l'affichage */
 }
 
 .videoIntroPortfolio {
   max-width: 1920px;
-  width: 100%; /* Fait en sorte que la vidéo prenne toute la largeur disponible */
-  height: auto; /* Maintient le ratio de la vidéo */
+  width: 100%;
+  /* Fait en sorte que la vidéo prenne toute la largeur disponible */
+  height: auto;
+  /* Maintient le ratio de la vidéo */
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1; /* Assurez-vous que la vidéo est en arrière-plan */
+  z-index: -1;
+  /* Assurez-vous que la vidéo est en arrière-plan */
   /*opacity: 1;*/
-  transition: opacity 2s; /* Animation douce pour l'estompage */
+  transition: opacity 2s;
+  /* Animation douce pour l'estompage */
 }
 
 .portfolioMenu {
@@ -279,9 +293,11 @@ Contact
   font-size: clamp(10px, 2vw, 17px);
   font-style: normal;
   font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px); /* 182.353% */
+  line-height: clamp(15px, 3vw, 31px);
+  /* 182.353% */
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
 }
+
 .formContact {
   display: flex;
   max-width: 952px;
@@ -291,11 +307,13 @@ Contact
   margin-left: 9vw;
   margin-right: 9vw;
   background-color: transparent;
-    padding: 1rem 0;
+  padding: 1rem 0;
 }
-.formContact label{
+
+.formContact label {
   text-transform: uppercase;
 }
+
 .Name {
   display: flex;
   flex-wrap: wrap;
@@ -312,6 +330,7 @@ Contact
   margin: 8px 0;
   box-sizing: border-box;
 }
+
 .space {
   width: 3rem;
 }
@@ -323,6 +342,7 @@ Contact
   margin: 8px 0;
   box-sizing: border-box;
 }
+
 #message {
   width: 100%;
   height: clamp(116px, 15vw, 217px);
@@ -344,6 +364,7 @@ Contact
   #logoCenter {
     display: none;
   }
+
   header nav.no-border {
     border-bottom: none;
   }
@@ -379,7 +400,7 @@ Contact
     transform: translateX(0);
   }
 
-  .navbar__link > a {
+  .navbar__link>a {
     display: block;
     padding: 1rem;
     font-size: 15px;
@@ -388,7 +409,7 @@ Contact
     transition: all 0.4s ease-in-out;
   }
 
-  .navbar__link > a:hover {
+  .navbar__link>a:hover {
     padding-left: 2rem;
     letter-spacing: 5px;
   }
@@ -486,13 +507,16 @@ Home
     url("../img/Bannière_Intro-1199x543.png");
   background-size: cover;
   background-position: center;
+  border-bottom: #D59C3C solid 1.5px;
 }
+
 .intro h1 {
   margin: 0 auto 3rem 10%;
   padding-top: 3.5rem;
   margin-bottom: 2.5rem;
   max-width: 80%;
 }
+
 .intro p {
   max-width: max-content;
   margin: 0 auto 0 10%;
@@ -508,14 +532,14 @@ Home
 }
 
 .intro button {
-  font-size: 10px;
-  font-weight: 200;
-  letter-spacing: 0.1em;
-  border: #d59c3c solid 1px;
-  background-color: transparent;
+  font-size: clamps(10px, 2vw, 20px);
+  font-weight: 500;
+  letter-spacing: 1.5px;
   color: #d59c3c;
+  background-color: transparent;
+  border: #d59c3c solid 1.5px;
   text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   margin-top: 1.5rem;
   margin-left: 10%;
 }
@@ -523,9 +547,12 @@ Home
 .aPropos {
   background-image: url("../img/Photo_Profil-575x372.png");
   background-color: #050819;
-  background-size: 100% auto; /* Largeur à 100% et hauteur ajustée proportionnellement */
-  background-position: center top; /* centré verticalement */
-  background-repeat: no-repeat; /* éviter la répétition de l'image si elle est trop petite en hauteur */
+  background-size: 100% auto;
+  /* Largeur à 100% et hauteur ajustée proportionnellement */
+  background-position: center top;
+  /* centré verticalement */
+  background-repeat: no-repeat;
+  /* éviter la répétition de l'image si elle est trop petite en hauteur */
   /*display: flex;*/
   flex-direction: column;
   align-content: end;
@@ -536,6 +563,7 @@ Home
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  margin-top: 0;
   margin-left: 9vw;
   margin-right: 9vw;
   margin-bottom: 2rem;
@@ -547,7 +575,7 @@ Home
 }
 
 .aPropos h3 {
-  font-family: Raleway; 
+  font-family: Raleway;
   font-size: clamp(11px, 2vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -567,21 +595,23 @@ Home
   margin-bottom: 0;
 }
 
-.aPropos button{
-color: var(--Dore, #D59C3C);
-/*text-align: center;*/
-font-family: Raleway;
-font-size: clamp(15px, 2vw, 20px);
-font-style: normal;
-font-weight: 500;
-line-height: 30px; /* 200% */
-letter-spacing: 1.5px;
-text-transform: uppercase;
-display: inline-block;
-margin-left: 9vw;
-margin-top: 2.5rem;
-padding: 0.5rem;
+.aPropos button {
+  color: var(--Dore, #D59C3C);
+  /*text-align: center;*/
+  font-family: Raleway;
+  font-size: clamp(15px, 2vw, 20px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  /* 200% */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-left: 9vw;
+  margin-top: 2.5rem;
+  padding: 0.5rem;
 }
+
 .contact {
   background-color: #050819;
   height: auto;
@@ -590,10 +620,14 @@ padding: 0.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/respirateur-575x323.png"); /* Image par défaut pour mobile */
-  background-position: center center; /* Centre l'image */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-size: cover; /* Agrandit l'image pour couvrir l'élément */
+  background-image: url("../img/respirateur-575x323.png");
+  /* Image par défaut pour mobile */
+  background-position: center center;
+  /* Centre l'image */
+  background-repeat: no-repeat;
+  /* Empêche la répétition de l'image */
+  background-size: cover;
+  /* Agrandit l'image pour couvrir l'élément */
 }
 
 .contact h1 {
@@ -602,6 +636,7 @@ padding: 0.5rem;
   margin-left: 9vw;
   margin-right: 9vw;
 }
+
 .contact p,
 .contact form {
   margin-top: 1rem;
@@ -609,6 +644,7 @@ padding: 0.5rem;
   margin-left: 9vw;
   margin-right: 9vw;
 }
+
 /*************************************************************
 Liste des Themes
 **************************************************************/
@@ -628,10 +664,11 @@ Liste des Themes
   color: #d59c3c;
   text-align: left;
   line-height: 1.3;
-  }
+}
 
 
-.ranking, .theme {
+.ranking,
+.theme {
   color: #D59C3C;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
@@ -640,7 +677,8 @@ Liste des Themes
 .listeThemes form {
   margin-left: 9vw;
 }
-i.fa.fa-pencil-square{
+
+i.fa.fa-pencil-square {
   color: #D59C3C;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
@@ -656,6 +694,7 @@ Media queries images
   .aPropos {
     background-image: url("../img/Photo_Profil-767x496.png");
   }
+
   .contact {
     background-image: url("../img/respirateur-767x431.png"); // Image par défaut pour mobile
   }
@@ -667,6 +706,7 @@ Media queries images
   .aPropos {
     background-image: url("../img/Photo_Profil-991x641.png");
   }
+
   .contact {
     background-image: url("../img/respirateur-991x557.png");
   }
@@ -674,9 +714,10 @@ Media queries images
 
 /* Pour les écrans à partir de 992px */
 @media (min-width: 992px) {
-    .aPropos {
+  .aPropos {
     background-image: url("../img/Photo_Profil-1199x776.png");
   }
+
   .contact {
     background-image: url("../img/respirateur-1199x674.png");
   }
@@ -687,10 +728,12 @@ Media queries images
   .intro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/Bannière_Intro-1399x633.png");
-    }
+  }
+
   .aPropos {
     background-image: url("../img/Photo_Profil-1399x905.png");
   }
+
   .contact {
     background-image: url("../img/respirateur-1399x787.png");
   }
@@ -702,10 +745,12 @@ Media queries images
   .intro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/Bannière_Intro-1920x869.png");
-    }
+  }
+
   .aPropos {
     background-image: url("../img/Photo_Profil-1920x1242.png");
   }
+
   .contact {
     background-image: url("../img/respirateur-1920x1080.png");
   }
@@ -722,6 +767,7 @@ Media queries images
   .navbar__link.third {
     display: none;
   }
+
   .navbar__links,
   .navbar__admins {
     display: flex;
@@ -741,8 +787,8 @@ Media queries images
     color: var(--Dore, #d59c3c);
   }
 
-  .navbar__link > a::after,
-  .navbar__admins > a::after {
+  .navbar__link>a::after,
+  .navbar__admins>a::after {
     display: block;
     content: "";
     width: 0;
@@ -751,18 +797,22 @@ Media queries images
     transition: width 0.4s;
   }
 
-  .navbar__link:hover > a::after {
+  .navbar__link:hover>a::after {
     width: 100%;
   }
+
   .intro {
     display: flex;
     flex-direction: column;
     align-content: center;
+
   }
+
   .intro h1 {
     margin: 24rem auto 11rem auto;
     text-align: center;
   }
+
   .intro p {
     display: none;
   }
@@ -772,17 +822,16 @@ Media queries images
   }
 
   .intro button {
-    font-size: 20px;
-    font-weight: 500;
-    max-width: max-content;
+
+
     margin: 0 auto auto auto;
-    padding: 1.1rem;
-    border: #d59c3c solid 2px;
+
   }
-.contact h1,
-.contact p,
-.contact form {
-  text-align: center;
-  margin:auto;
-}
+
+  .contact h1,
+  .contact p,
+  .contact form {
+    text-align: center;
+    margin: auto;
+  }
 }
