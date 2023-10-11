@@ -19,6 +19,7 @@ import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
 import ThemeController from "./controllers/Themes.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
+import DeleteThemeController from "./controllers/deleteTheme.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -61,6 +62,8 @@ router.get('/themes', checkAuthentication, ThemeController);
 /* ajout d'un thème */
 router.get('/themes/add', checkAuthentication, addTheme);
 router.post('/themes/add', checkAuthentication, addThemeSubmit);
+/* suppression d'un thème */
+router.post("/themes", checkAuthentication, DeleteThemeController);
 
 
 export default router;
