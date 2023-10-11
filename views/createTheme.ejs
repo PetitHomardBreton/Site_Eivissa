@@ -2,7 +2,7 @@
 <%- include('header') -%>
 
     <h2><%= title %></h2>
-    <form action='<%= action %>' method="post" enctype="multipart/form-data">
+    <form action='<%= action %>' method="post">
         <p>
             <label for="Theme">Nom du thème</label>
             <input type="text" name="Theme" id="Theme" value="<%= locals.theme ? theme.Theme : '' %>">     
