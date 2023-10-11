@@ -1,16 +1,9 @@
 import { v4 } from 'uuid';
 import query from '../database.js';
 
-// Affichage du formulaire
-export function addTheme(req, res) {
-    res.render('createTheme', { title: 'Ajout d\'un thème', action: '/themes/add', pageTitle: 'createTheme' });
-};
-
-// Ajout d'un thème et actualisation de l'affichage
-
-export function addThemeSubmit(req, res) {
-
-// récupération des champs
+// Export du contrôleur
+export default (req, res) => {
+    // Création du theme
     const newtheme = {
         id: v4(),
         Theme: req.body.Theme,
@@ -27,9 +20,7 @@ export function addThemeSubmit(req, res) {
                 res.status(500).send('Erreur serveur');
                 return;
             }
-            // Redirection vers la liste des thèmes
-            res.redirect('/themes');
+            res.send('theme créé');
         }
     );
-}
-
+};

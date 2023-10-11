@@ -18,8 +18,12 @@ import {loginForm, login} from './controllers/login.js';
 import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
 import ThemeController from "./controllers/Themes.js";
+import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
 
-
+/*********************************************
+ * Middleware pour vérifier si l'utilisateur
+ * est connecté
+ ********************************************/
 const checkAuthentication = (req, res, next) => {
   if(!req.session.isLogged) {
       res.redirect('/login');
@@ -37,16 +41,26 @@ router.use((req, res, next) => {
   *Routes
  *********************************************/
 router.get("/", HomeController);
-router.get('/login', loginForm);
-router.post('/login', login);
-router.get('/logged', logged);
-router.get('/logout', logout);
 router.get("/portfolio", portfolio);
+router.get("/submitted", contactSubmittedController);
 router.get("/contact", showContactForm);
 router.post("/contact", addContactSubmit);
-router.get("/submitted", contactSubmittedController);
+
+/*********************************************
+ * Routes Admin
+*********************************************/
+  
+/* login */
+router.get('/login', loginForm);
+router.post('/login', login);
+router.get('/logged', checkAuthentication, logged);
 router.get('/logout', checkAuthentication, logout);
-router.get('/themes', ThemeController);
+
+/* affichage des thèmes */
+router.get('/themes', checkAuthentication, ThemeController);
+/* ajout d'un thème */
+router.get('/themes/add', checkAuthentication, addTheme);
+router.post('/themes/add', checkAuthentication, addThemeSubmit);
 
 
 export default router;
