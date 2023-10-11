@@ -1,0 +1,12 @@
+<%- include('head') -%>
+    <%- include('header') -%>
+        <section class="themeId">
+            <h1>Thème :</h1>
+            <h2>Thème n°<%= theme.rankingTheme %></h2>
+
+            <h2><%= theme.nameTheme %></h2>
+
+            <a href="/themes/<%= theme.id %>/update">Modifier le thème</a>
+        </section>
+
+        <%- include('footer') -%>

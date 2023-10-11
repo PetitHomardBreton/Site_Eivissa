@@ -647,11 +647,11 @@ Home
 /*************************************************************
 Liste des Themes
 **************************************************************/
-.listeThemes {
+.listeThemes , .themeId {
   background-color: #050819;
 }
 
-.listeThemes h2 {
+.listeThemes h2 , .themeId h2 {
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -676,7 +676,7 @@ Liste des Themes
   margin: 1rem;
 }
 
-.newTheme{
+.newTheme, .themeId a{
   font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);

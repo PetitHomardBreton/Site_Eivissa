@@ -4,14 +4,14 @@
     <h1>Les Thèmes</h1>
     <h2> La liste des thèmes existants :</h2>
     <p>Sélectionnez à gauche pour supprimer, ou selectionnez à droite pour modifier</p>
-    <form action="/themes" method="post">
+    <form action="/themes/delete" method="post">
         <ul>
             <% for(let i = 0; i<themes.length; i++) { %>
                 <li>
                     <input type="radio" name="themeToDelete[]" value="<%= themes[i].id %>">
                     <span class="rankingTheme"><%= themes[i].rankingTheme %></span>
                     <span class="nameTheme"><%= themes[i].nameTheme.toUpperCase() %> </span>
-                    <a href="//<%= themes[i].id %>">
+                    <a href="/themes/<%= themes[i].id %>">
                         <i class="fa fa-pencil-square"></i>
                     </a>
                 </li>

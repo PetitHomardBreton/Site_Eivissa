@@ -10,6 +10,7 @@ const router = express.Router();
  ***************************************/
 
 import HomeController from "./controllers/home.js";
+import ThemeDetailController from "./controllers/readTheme.js";
 import {showContactForm} from "./controllers/contact.js";
 import {addContactSubmit} from "./controllers/contact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
@@ -19,6 +20,7 @@ import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
 import ThemeController from "./controllers/Themes.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
+import {updateTheme, updateThemeSubmit} from "./controllers/updateTheme.js";
 import DeleteThemeController from "./controllers/deleteTheme.js";
 
 /*********************************************
@@ -59,11 +61,20 @@ router.get('/logout', checkAuthentication, logout);
 
 /* affichage des thèmes */
 router.get('/themes', checkAuthentication, ThemeController);
+
+/* affichage d'un thème */
+router.get('/themes/:id', checkAuthentication, ThemeDetailController);
+
 /* ajout d'un thème */
 router.get('/themes/add', checkAuthentication, addTheme);
 router.post('/themes/add', checkAuthentication, addThemeSubmit);
+
 /* suppression d'un thème */
-router.post("/themes", checkAuthentication, DeleteThemeController);
+router.post("/themes/delete", checkAuthentication, DeleteThemeController);
+
+/* modification d'un thème */
+router.get('/themes/:id/update', checkAuthentication, updateTheme);
+router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
 
 
 export default router;
