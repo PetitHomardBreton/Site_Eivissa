@@ -7,7 +7,7 @@ import query from '../database.js';
 
 export default (req, res) => {
        query(
-        'SELECT * FROM themes ORDER BY ranking ASC',
+        'SELECT * FROM themes ORDER BY rankingTheme ASC',
         [],
         (error, results) => {
             if(error) {

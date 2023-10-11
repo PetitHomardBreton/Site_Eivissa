@@ -8,8 +8,8 @@
             <% for(let i = 0; i<themes.length; i++) { %>
                 <li>
                     <input type="radio" name="ThemesSelected[]" value="<%= themes[i].id %>">
-                    <span class="ranking"><%= themes[i].ranking %></span>
-                    <span class="theme"><%= themes[i].Theme.toUpperCase() %> </span>
+                    <span class="rankingTheme"><%= themes[i].rankingTheme %></span>
+                    <span class="nameTheme"><%= themes[i].nameTheme.toUpperCase() %> </span>
                     <a href="//<%= themes[i].id %>">
                         <i class="fa fa-pencil-square"></i>
                     </a>

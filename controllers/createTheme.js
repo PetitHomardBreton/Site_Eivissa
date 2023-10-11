@@ -13,14 +13,14 @@ export function addThemeSubmit(req, res) {
 // récupération des champs
     const newtheme = {
         id: v4(),
-        Theme: req.body.Theme,
-        ranking: req.body.ranking,
+        nameTheme: req.body.nameTheme,
+        rankingTheme: req.body.rankingTheme,
     };
 
     // Insertion du thème dans la BDD
     query(
-        `INSERT INTO themes (id, Theme, ranking) VALUES (?, ?, ?)`,
-        [newtheme.id, newtheme.Theme, newtheme.ranking],
+        `INSERT INTO themes (id, nameTheme, rankingTheme) VALUES (?, ?, ?)`,
+        [newtheme.id, newtheme.nameTheme, newtheme.rankingTheme],
         (error, results) => {
             if (error) {
                 console.error(`Erreur lors de l'exécution de la requête ${error}`);

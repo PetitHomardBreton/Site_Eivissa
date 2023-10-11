@@ -667,8 +667,8 @@ Liste des Themes
 }
 
 
-.ranking,
-.theme {
+.rankingTheme,
+.nameTheme {
   color: #D59C3C;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;

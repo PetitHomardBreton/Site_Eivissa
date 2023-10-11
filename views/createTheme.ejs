@@ -4,12 +4,12 @@
     <h2><%= title %></h2>
     <form action='<%= action %>' method="post">
         <p>
-            <label for="Theme">Nom du thème</label>
-            <input type="text" name="Theme" id="Theme" value="<%= locals.theme ? theme.Theme : '' %>">     
+            <label for="nameTheme">Nom du thème</label>
+            <input type="text" name="nameTheme" id="nameTheme" value="<%= locals.theme ? theme.nameTheme : '' %>">     
         </p>
         <p>
-            <label for="ranking">Numéro d'ordre d'apparition</label>
-            <input type="text" name="ranking" id="ranking" value="<%= locals.theme ? theme.ranking : '' %>">   
+            <label for="rankingTheme">Numéro d'ordre d'apparition</label>
+            <input type="text" name="rankingTheme" id="rankingTheme" value="<%= locals.theme ? theme.rankingTheme : '' %>">   
         </p>
         <p>
             <button type="submit">Enregistrer</button>
