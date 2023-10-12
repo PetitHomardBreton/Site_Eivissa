@@ -1,10 +1,22 @@
 import { v4 } from 'uuid';
 import query from '../database.js';
+import nodemailer from 'nodemailer';
+import { DateTime } from 'luxon';
 import formidable from 'formidable';
-import { DateTime} from 'luxon';
+
+// Configuration de Nodemailer
+const transporter = nodemailer.createTransport({
+    host: 'smtp.hostinger.com',  // Remplacez par l'hôte SMTP de votre fournisseur
+    port: 465,                      // Port habituellement utilisé pour SMTP sécurisé. Cela pourrait aussi être 587.
+    secure: true,                   // true pour le port 465, false pour les autres ports
+    auth: {
+        user: process.env.EMAIL_USER,    // Votre adresse e-mail
+        pass: process.env.EMAIL_PWD,      // Votre mot de passe
+    }
+});
 
 // AFFICHAGE DU FORMULAIRE
-export function showContactForm (req, res) {
+export function showContactForm(req, res) {
     res.render('contact', { pageTitle: 'Contact', fullPage: true });
 }
 
@@ -16,20 +28,38 @@ export function addContactSubmit(req, res) {
 
     const id = v4();
 
-    // Faire la requête INSERT
+    // Insertion du contact dans la BDD
     query(
         'INSERT INTO contacts (id, lastName, firstname, email, message, creationDate) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, req.body.lastname, req.body.firstname, req.body.email, req.body.message , creationDate],
-        (error, result) => {
+        [id, req.body.lastname, req.body.firstname, req.body.email, req.body.message, creationDate],
+        (error, results) => {
             if (error) {
                 console.error(error);
                 res.status(500).send('Erreur lors de la requête');
                 return;
             }
-            // On redirige vers la page d'accueil
+
+            // Envoi d'un email avec les informations du contact
+            const mailOptions = {
+                from: process.env.EMAIL_USER, // Expéditeur, // Expéditeur
+                to: process.env.EMAIL_TO, // Destinataire
+                subject: 'Nouveau message de contact reçu',
+                text: `Nom: ${req.body.lastname}\nPrénom: ${req.body.firstname}\nEmail: ${req.body.email}\nMessage: ${req.body.message}`
+            };
+
+            transporter.sendMail(mailOptions, (mailError, info) => {
+                if (mailError) {
+                    console.error('Erreur lors de l\'envoi de l\'email:', mailError);
+                } else {
+                    console.log('Email envoyé: ' + info.response);
+                }
+            });
+
+            // Redirection vers la page d'accueil
             res.redirect("/submitted");
         }
     );
 }
+
 
 
