@@ -45,9 +45,9 @@ router.use((req, res, next) => {
  *********************************************/
 router.get("/", HomeController);
 router.get("/portfolio", portfolio);
-router.get("/submitted", contactSubmittedController);
-router.get("/contact", showContactForm);
-router.post("/contact", addContactSubmit);
+router.get("/contactSubmitted", contactSubmittedController);
+router.get("/formContact", showContactForm);
+router.post("/formContact", addContactSubmit);
 
 /*********************************************
  * Routes Admin

@@ -554,6 +554,7 @@ Home
   /*display: flex;*/
   flex-direction: column;
   align-content: end;
+  padding-bottom: 4rem;
 }
 
 .aPropos h2 {
@@ -593,25 +594,20 @@ Home
   margin-bottom: 0;
 }
 
-.aPropos button {
-  color: var(--Dore, #d59c3c);
-  /*text-align: center;*/
+.aPropos a {
   font-family: Raleway;
-  font-size: clamp(15px, 2vw, 20px);
-  font-style: normal;
   font-weight: 500;
-  line-height: 30px;
-  /* 200% */
-  letter-spacing: 1.5px;
+  font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  display: inline-block;
-  margin-left: 9vw;
-  margin-top: 2.5rem;
-  padding: 0.5rem;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin: 2rem 0 2rem 9vw;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
 
-.contact {
-  background-color: #050819;
+.formContact , .contactSubmitted {
   height: auto;
   max-width: 1920px;
   display: flex;
@@ -628,19 +624,32 @@ Home
   /* Agrandit l'image pour couvrir l'élément */
 }
 
-.contact h1 {
+.formContact h1 , .contactSubmitted h1 {
   margin-top: 2rem;
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
 }
 
-.contact p,
-.contact form {
+.formContact p,
+.formContact form {
   margin-top: 1rem;
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
+}
+
+.contactSubmitted a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-bottom: 9vw;
 }
 
 /*************************************************************

@@ -55,8 +55,8 @@ export function addContactSubmit(req, res) {
                 }
             });
 
-            // Redirection vers la page d'accueil
-            res.redirect("/submitted");
+            // Redirection vers la page de confirmation d'envoi
+            res.redirect("/contactSubmitted");
         }
     );
 }
