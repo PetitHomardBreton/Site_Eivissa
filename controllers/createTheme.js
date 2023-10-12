@@ -3,7 +3,7 @@ import query from '../database.js';
 
 // Affichage du formulaire
 export function addTheme(req, res) {
-    res.render('createTheme', { title: 'Ajout d\'un thème', action: '/themes/add', pageTitle: 'createTheme' });
+    res.render('createTheme', { title: 'Ajout d\'un thème :', action: '/themes/add', pageTitle: 'createTheme' });
 };
 
 // Ajout d'un thème et actualisation de l'affichage

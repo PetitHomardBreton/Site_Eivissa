@@ -81,7 +81,6 @@ h2 {
   color: red;
 }
 
-
 p,
 label {
   display: block;
@@ -186,7 +185,7 @@ ul {
   padding: 0 10px;
 }
 
-.navbar__link>a {
+.navbar__link > a {
   color: var(--navbar-color);
   text-decoration: none;
 }
@@ -399,7 +398,7 @@ Contact
     transform: translateX(0);
   }
 
-  .navbar__link>a {
+  .navbar__link > a {
     display: block;
     padding: 1rem;
     font-size: 15px;
@@ -408,7 +407,7 @@ Contact
     transition: all 0.4s ease-in-out;
   }
 
-  .navbar__link>a:hover {
+  .navbar__link > a:hover {
     padding-left: 2rem;
     letter-spacing: 5px;
   }
@@ -506,7 +505,7 @@ Home
     url("../img/Bannière_Intro-1199x543.png");
   background-size: cover;
   background-position: center;
-  border-bottom: #D59C3C solid 1.5px;
+  border-bottom: #d59c3c solid 1.5px;
 }
 
 .intro h1 {
@@ -595,7 +594,7 @@ Home
 }
 
 .aPropos button {
-  color: var(--Dore, #D59C3C);
+  color: var(--Dore, #d59c3c);
   /*text-align: center;*/
   font-family: Raleway;
   font-size: clamp(15px, 2vw, 20px);
@@ -647,36 +646,60 @@ Home
 /*************************************************************
 Liste des Themes
 **************************************************************/
-.listeThemes , .themeId {
+.listeThemes,
+.themeId,
+.themeForm,
+.createTheme {
   background-color: #050819;
+  margin-left: 9vw;
 }
 
-.listeThemes h2 , .themeId h2 {
-  font-size: clamp(19px, 5vw, 35px);
+.themeId h1,
+.themeForm h1,
+.createTheme h1 {
+  background-color: var(--navbar-bg-color);
+  font-size: clamp(17px, 5vw, 60px);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-bottom: 2rem;
-  max-width: 65%;
+  margin: 3.5rem auto 3rem;
+  max-width: max-content;
   color: #d59c3c;
   text-align: left;
   line-height: 1.3;
 }
 
-.listeThemes p {
+.listeThemes h2,
+.themeId h2,
+.themeForm h2,
+.createTheme h2 {
+  font-size: clamp(19px, 5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   margin-left: 9vw;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
 
+.listeThemes p,
+.themeId p,
+.themeForm p,
+.createTheme p {
+  margin-left: 9vw;
 }
 .rankingTheme,
 .nameTheme {
-  color: #D59C3C;
+  color: #d59c3c;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
 
-.newTheme, .themeId a{
+.newTheme,
+.themeId a {
   font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
@@ -694,12 +717,10 @@ Liste des Themes
 }
 
 i.fa.fa-pencil-square {
-  color: #D59C3C;
+  color: #d59c3c;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
-
 }
-
 
 /*************************************************************
 Media queries images
@@ -717,7 +738,6 @@ Media queries images
 
 /* Pour les écrans à partir de 768px */
 @media (min-width: 768px) {
-
   .aPropos {
     background-image: url("../img/Photo_Profil-991x641.png");
   }
@@ -802,8 +822,8 @@ Media queries images
     color: var(--Dore, #d59c3c);
   }
 
-  .navbar__link>a::after,
-  .navbar__admins>a::after {
+  .navbar__link > a::after,
+  .navbar__admins > a::after {
     display: block;
     content: "";
     width: 0;
@@ -812,7 +832,7 @@ Media queries images
     transition: width 0.4s;
   }
 
-  .navbar__link:hover>a::after {
+  .navbar__link:hover > a::after {
     width: 100%;
   }
 
@@ -820,7 +840,6 @@ Media queries images
     display: flex;
     flex-direction: column;
     align-content: center;
-
   }
 
   .intro h1 {
@@ -837,10 +856,7 @@ Media queries images
   }
 
   .intro button {
-
-
     margin: 0 auto auto auto;
-
   }
 
   .contact h1,

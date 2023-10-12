@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import query from '../database.js';
-import formidable from 'formidable';
 
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
 export function updateTheme(req, res) {
@@ -13,7 +12,7 @@ export function updateTheme(req, res) {
         (error, results) => {
             if (error) {
                 console.error(error);
-                res.status(500).send('Erreur lors de la requete');
+                res.status(500).send('Erreur lors de la requête');
                 return;
             }
 
@@ -23,7 +22,7 @@ export function updateTheme(req, res) {
                 return res.status(404).send(`le thème avec l'id ${id} n'a pas été trouvé`);
             }
 
-            //on appelle le template themeForm en lui passant les informations concernant le thème
+            // Appeler le template themeForm en lui passant les informations concernant le thème
             res.render('themeForm', {title: 'Modification d\'un thème', action: `/themes/${id}/update`, theme, pageTitle: 'Modification d\'un thème'});
         }
     );
@@ -31,38 +30,28 @@ export function updateTheme(req, res) {
 
 export function updateThemeSubmit(req, res) {
     let id = req.params.id;
-    const formData = formidable({ 
-        allowEmptyFiles: true,
-        minFileSize: 0
-    });
-
-    const updateThemetIntoDb = (data) => //
+    
+    const updateThemeIntoDb = (data) => {
         query(`UPDATE themes SET nameTheme = ?,
                                rankingTheme = ?
-
             WHERE id = ?`, data,
             (error, result) => {
                 if (error) {
                     console.error(error);
-                    res.status(500).send('Erreur lors de la requete');
+                    res.status(500).send('Erreur lors de la requête');
                     return;
                 }
-                //on redirige vers la page des thèmes
+                // Rediriger vers la page des thèmes
                 res.redirect('/themes');
             }
         );
+    };
+    
+    // Utiliser directement req.body pour récupérer les données du formulaire
+    const { nameTheme, rankingTheme } = req.body;
 
-    // Récupération des champs et des fichiers
-    formData.parse(req, (error, fields, files) => {
-
-
-        // Vérification des champs
-        updateThemeIntoDb([
-            fields.nameTheme,
-            fields.rankingTheme,
-
-            id
-        ]);
-    });
+    // Vérification des champs
+    updateThemeIntoDb([nameTheme, rankingTheme, id]);
 }
+
 
