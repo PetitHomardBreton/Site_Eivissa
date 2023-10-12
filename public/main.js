@@ -21,15 +21,5 @@ function toggleMenu() {
 }
 toggleMenu();
 
-const videoIntro = document.querySelector(".videoIntroPortfolio");
-const portfolioSection = document.querySelector(".portfolio");
 
-function fadeOutVideoShowContent() {
-  console.log("plop")
-  videoIntro.style.opacity = "0";
-  portfolioSection.style.opacity = "1";
-}
-
-videoIntro.addEventListener("ended", fadeOutVideoShowContent);
-document.addEventListener("click", fadeOutVideoShowContent);
 

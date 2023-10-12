@@ -62,19 +62,22 @@ router.get('/logout', checkAuthentication, logout);
 /* affichage des thèmes */
 router.get('/themes', checkAuthentication, ThemeController);
 
-/* affichage d'un thème */
-router.get('/themes/:id', checkAuthentication, ThemeDetailController);
 
 /* ajout d'un thème */
 router.get('/themes/add', checkAuthentication, addTheme);
 router.post('/themes/add', checkAuthentication, addThemeSubmit);
 
-/* suppression d'un thème */
-router.post("/themes/delete", checkAuthentication, DeleteThemeController);
-
 /* modification d'un thème */
 router.get('/themes/:id/update', checkAuthentication, updateTheme);
 router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
+
+/* affichage d'un thème */
+router.get('/themes/:id', checkAuthentication, ThemeDetailController);
+
+/* suppression d'un thème */
+router.post("/themes/delete", checkAuthentication, DeleteThemeController);
+
+
 
 
 export default router;
