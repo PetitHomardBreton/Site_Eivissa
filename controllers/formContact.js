@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 
 // AFFICHAGE DU FORMULAIRE
 export function showContactForm(req, res) {
-    res.render('contact', { pageTitle: 'Contact', fullPage: true });
+    res.render('formContact', { pageTitle: 'Contact', fullPage: true });
 }
 
 // AJOUT D'UN CONTACT ET ACTUALISATION DE L'AFFICHAGE

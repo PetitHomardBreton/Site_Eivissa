@@ -11,8 +11,8 @@ const router = express.Router();
 
 import HomeController from "./controllers/home.js";
 import ThemeDetailController from "./controllers/readTheme.js";
-import {showContactForm} from "./controllers/contact.js";
-import {addContactSubmit} from "./controllers/contact.js";
+import {showContactForm} from "./controllers/formContact.js";
+import {addContactSubmit} from "./controllers/formContact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
 import portfolio from "./controllers/portfolio.js";
 import {loginForm, login} from './controllers/login.js';
