@@ -302,8 +302,7 @@ Contact
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
+
   background-color: transparent;
   padding: 1rem 0;
 }
