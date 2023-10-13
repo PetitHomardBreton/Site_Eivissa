@@ -24,6 +24,7 @@ html {
 body {
   max-width: 1920px;
   box-sizing: border-box;
+  background-color: #050819;
   margin: 0 auto;
   padding: 0;
   background-color: var(--navbar-bg-color);
@@ -234,26 +235,65 @@ footer .reseauxSociaux img {
 /**************************************************************************
 Portfolio
 ***************************************************************************/
-.portfolio {
-  opacity: 0;
-  transition: opacity 1s;
-  /* Animation douce lors de l'affichage */
+.portfolioContent{
+  border: red solid 1px;
+}
+.portfolioRealisations {
+  margin:1rem;
+  border: green solid 1px;
+
 }
 
-.videoIntroPortfolio {
-  max-width: 1920px;
+.portfolioRealisationList{
+  margin: 1rem;
+  border: blue solid 1px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.portfolioRealisationList li{
+  margin: 1rem;
+  max-width: 500px;
+  border: yellow solid 1px;
+  padding: 1rem;
+}
+
+
+
+.portfolioRealisations img {
   width: 100%;
-  /* Fait en sorte que la vidéo prenne toute la largeur disponible */
   height: auto;
-  /* Maintient le ratio de la vidéo */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* Assurez-vous que la vidéo est en arrière-plan */
-  /*opacity: 1;*/
-  transition: opacity 2s;
-  /* Animation douce pour l'estompage */
+  margin: auto
+  padding: 0;
+}
+
+.portfolioRealisations h2 {
+  font-size: clamp(17px, 4.5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: clamp(5px, 0.01vw, 10px);
+   color: #d59c3c;
+}
+
+.portfolioRealisations p{
+  font-size: clamp(11px, 2vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  /* 182.353% */
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+}
+
+.portfolioRealisations a{
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+
+  text-decoration: none;
 }
 
 .portfolioMenu {
