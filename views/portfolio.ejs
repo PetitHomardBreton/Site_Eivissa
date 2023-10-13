@@ -7,5 +7,20 @@
         <li><%= theme %></li>
     <% }); %>
   </ul>
+
+  <div class="portfolioContent">
+      <div class="portfolioRealisations">
+        <ul class="portfolioRealisationList">
+          <% for(let i = 0; i<realisations.length; i++) { %>
+            <li>
+             
+              <h2 class="nomRealisation"><%= realisations[i].nomRealisation.toUpperCase() %></h2>
+              <p class="descriptionRealisation"><%= realisations[i].descriptionRealisation %></p>
+              <a href="/portfolio/<%= realisations[i].id %>">"En savoir +"</a>
+            </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
 </section>
 <%- include('footer') -%>
