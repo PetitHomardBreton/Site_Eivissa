@@ -7,6 +7,6 @@ export default (req, res) => {
             res.status(500).send('Erreur lors de la requete');
             return;
         }
-        res.render('themes', { themes: results, pageTitle: 'Themes' });
+        res.render('readAllThemes', { themes: results, pageTitle: 'Themes' });
     });
 };
