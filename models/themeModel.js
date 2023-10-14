@@ -1,5 +1,5 @@
 import query from '../database.js';
-import { v4 } from 'uuid'; // Assurez-vous d'avoir ce package installé
+import { v4 } from 'uuid';
 
 /***CREATE***/
 

@@ -1,0 +1,23 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="listecontacts">
+    <h1>Liste des Contacts reçus</h1>
+    <p>Sélectionnez le contact à supprimer</p>
+    <ul>
+        <% for(let i = 0; i < contacts.length; i++) { %>
+            <li>
+                <p class="dateContact"><%= contacts[i].creationDate %></p>
+                <p class="nameContact"><%= contacts[i].lastname %> </p>
+                <p class="nameContact"><%= contacts[i].firstname %> </p>
+                <p class="nameContact"><%= contacts[i].email %> </p>
+                <p class="nameContact"><%= contacts[i].message %> </p>
+                
+                <form action="/contacts/delete" method="post">
+                    <input type="hidden" name="contactToDelete" value="<%= contacts[i].id %>">
+                    <button type="submit">Supprimer</button>
+                </form>
+            </li>
+        <% } %>
+    </ul>
+</section>
+<%- include('footer') -%>

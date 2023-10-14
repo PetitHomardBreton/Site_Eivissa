@@ -1,8 +1,8 @@
-import { v4 } from 'uuid';
-import query from '../database.js';
-import nodemailer from 'nodemailer';
 import { DateTime } from 'luxon';
 import formidable from 'formidable';
+import nodemailer from 'nodemailer';
+
+import { addContact } from '../models/contactModel.js';
 
 // Configuration de Nodemailer
 const transporter = nodemailer.createTransport({
@@ -24,14 +24,9 @@ export function showContactForm(req, res) {
 export function addContactSubmit(req, res) {
     const form = formidable({ multiples: true });
     const creationDate = DateTime.now().toISODate();
-    console.log(creationDate);
 
-    const id = v4();
-
-    // Insertion du contact dans la BDD
-    query(
-        'INSERT INTO contacts (id, lastName, firstname, email, message, creationDate) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, req.body.lastname, req.body.firstname, req.body.email, req.body.message, creationDate],
+    addContact(
+        [req.body.lastname, req.body.firstname, req.body.email, req.body.message, creationDate],
         (error, results) => {
             if (error) {
                 console.error(error);

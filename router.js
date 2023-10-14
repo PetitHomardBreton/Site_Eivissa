@@ -22,6 +22,9 @@ import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
+import deleteContact from "./controllers/deleteContactController.js";
+import readAllContacts from "./controllers/readAllContactsController.js";
+
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -59,6 +62,12 @@ router.post('/login', login);
 router.get('/logged', checkAuthentication, logged);
 router.get('/logout', checkAuthentication, logout);
 
+/* affichage des contacts */
+router.get('/contacts', checkAuthentication, readAllContacts)
+
+/* suppression d'un contact */
+router.post("/contacts/delete", checkAuthentication, deleteContact);
+
 /* affichage des thèmes */
 router.get('/themes', checkAuthentication, ThemeController);
 
@@ -70,9 +79,6 @@ router.post('/themes/add', checkAuthentication, addThemeSubmit);
 /* modification d'un thème */
 router.get('/themes/:id/update', checkAuthentication, updateTheme);
 router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
-
-/* affichage d'un thème */
-/*router.get('/themes/:id', checkAuthentication, ThemeDetailController);*/
 
 /* suppression d'un thème */
 router.post("/themes/delete", checkAuthentication, deleteTheme);
