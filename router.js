@@ -14,7 +14,7 @@ import ThemeDetailController from "./controllers/readTheme.js";
 import {showContactForm} from "./controllers/formContact.js";
 import {addContactSubmit} from "./controllers/formContact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
-import portfolio from "./controllers/portfolio.js";
+import portfolio from "./controllers/portfolioController.js";
 import {loginForm, login} from './controllers/login.js';
 import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
