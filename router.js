@@ -10,7 +10,7 @@ const router = express.Router();
  ***************************************/
 
 import HomeController from "./controllers/home.js";
-import ThemeDetailController from "./controllers/readTheme.js";
+/*import ThemeDetailController from "./controllers/readThemeByIdController.js";*/
 import {showContactForm} from "./controllers/formContact.js";
 import {addContactSubmit} from "./controllers/formContact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
@@ -18,10 +18,10 @@ import portfolio from "./controllers/portfolioController.js";
 import {loginForm, login} from './controllers/login.js';
 import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
-import ThemeController from "./controllers/Themes.js";
+import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
-import {updateTheme, updateThemeSubmit} from "./controllers/updateTheme.js";
-import DeleteThemeController from "./controllers/deleteTheme.js";
+import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
+import deleteTheme from "./controllers/deleteThemeController.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -72,10 +72,10 @@ router.get('/themes/:id/update', checkAuthentication, updateTheme);
 router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
 
 /* affichage d'un thème */
-router.get('/themes/:id', checkAuthentication, ThemeDetailController);
+/*router.get('/themes/:id', checkAuthentication, ThemeDetailController);*/
 
 /* suppression d'un thème */
-router.post("/themes/delete", checkAuthentication, DeleteThemeController);
+router.post("/themes/delete", checkAuthentication, deleteTheme);
 
 
 

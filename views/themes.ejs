@@ -8,10 +8,10 @@
         <ul>
             <% for(let i = 0; i<themes.length; i++) { %>
                 <li>
-                    <input type="radio" name="themeToDelete[]" value="<%= themes[i].id %>">
+                    <input type="radio" name="themeToDelete" value="<%= themes[i].id %>">
                     <span class="rankingTheme"><%= themes[i].rankingTheme %></span>
                     <span class="nameTheme"><%= themes[i].nameTheme.toUpperCase() %> </span>
-                    <a href="/themes/<%= themes[i].id %>">
+                    <a href="/themes/<%= themes[i].id %>/update">
                         <i class="fa fa-pencil-square"></i>
                     </a>
                 </li>

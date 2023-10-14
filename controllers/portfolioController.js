@@ -1,8 +1,8 @@
-import { getThemes } from '../models/themeModel.js';
+import { getAllThemes } from '../models/themeModel.js';
 import { getRealisations } from '../models/realisationModel.js';
 
 export default (req, res) => {
-    getThemes((errorThemes, themes) => {
+    getAllThemes((errorThemes, themes) => {
         if (errorThemes) {
             console.error(errorThemes);
             res.status(500).send('Erreur lors de la requête des thèmes');
