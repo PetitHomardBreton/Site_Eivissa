@@ -24,7 +24,7 @@ import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeControlle
 import deleteTheme from "./controllers/deleteThemeController.js";
 import deleteContact from "./controllers/deleteContactController.js";
 import readAllContacts from "./controllers/readAllContactsController.js";
-
+import getAllVisuels from "./controllers/readAllVisuelsController.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -82,6 +82,9 @@ router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
 
 /* suppression d'un thème */
 router.post("/themes/delete", checkAuthentication, deleteTheme);
+
+/* affichage des visuels */
+router.get('/visuels', checkAuthentication, getAllVisuels);
 
 
 
