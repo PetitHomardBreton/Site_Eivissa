@@ -1,0 +1,25 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="listeRealisations">
+    <h1>Les Réalisations</h1>
+    <h2> La liste des réalisations existantes :</h2>
+    <p>Sélectionnez à gauche pour supprimer, ou selectionnez à droite pour modifier</p>
+    <form action="/realisations/delete" method="post">
+        <ul>
+            <% for(let i = 0; i<realisations.length; i++) { %>
+                <li>
+                    <input type="radio" name="realisationToDelete" value="<%= realisations[i].id %>">
+                    <img src="/img/<%= realisations[i].visuelWidth575 %>" alt="Visuel">
+                    <p class="rankingRealisation"><%= realisations[i].rankingRealisation %></p>
+                    <p class="nomRealisation"><%= realisations[i].nomRealisation %> </p>
+                    <a href="/realisations/<%= realisations[i].id %>/update">
+                        <i class="fa fa-pencil-square"></i>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <button>Supprimer</button>
+        </form>
+        <h2> Pour ajouter une nouvelle réalisation :</h2>
+        <a class="newRealisation" href="/realisations/add">Formulaire d'ajout d'une réalisation</a>
+<%- include('footer') -%>

@@ -15,7 +15,7 @@ export const createVisuel = (visuelData, callback) => {
 /***READs***/
 
 export const getAllVisuels = (callback) => {
-    query('SELECT visuels.*, realisations.nomRealisation FROM visuels JOIN realisations ON visuels.idRealisation = realisations.id ORDER BY realisations.rankingRealisation ASC, visuels.rankingVisuel ASC ', [], callback);
+    query('SELECT visuels.*, realisations.nomRealisation, realisations.rankingRealisation FROM visuels JOIN realisations ON visuels.idRealisation = realisations.id ORDER BY realisations.rankingRealisation ASC, visuels.rankingVisuel ASC', [], callback);
 };
 
 export const getVisuelById = (id, callback) => {

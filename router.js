@@ -20,11 +20,13 @@ import logged from "./controllers/logged.js";
 import logout from './controllers/logout.js';
 import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
+import {addVisuel, addVisuelSubmit} from "./controllers/createVisuel.js";
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
 import deleteContact from "./controllers/deleteContactController.js";
 import readAllContacts from "./controllers/readAllContactsController.js";
 import getAllVisuels from "./controllers/readAllVisuelsController.js";
+import getAllRealisations from "./controllers/readAllRealisationsController.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -83,8 +85,15 @@ router.post('/themes/:id/update', checkAuthentication, updateThemeSubmit);
 /* suppression d'un thème */
 router.post("/themes/delete", checkAuthentication, deleteTheme);
 
+/* affichage des réalisations */
+router.get('/realisations', checkAuthentication, getAllRealisations);
+
 /* affichage des visuels */
 router.get('/visuels', checkAuthentication, getAllVisuels);
+
+/* ajout d'un visuel */
+router.get('/visuels/add', checkAuthentication, addVisuel);
+router.post('/visuels/add', checkAuthentication, addVisuelSubmit);
 
 
 

@@ -1,5 +1,5 @@
 import { getAllThemes } from '../models/themeModel.js';
-import { getRealisations } from '../models/realisationModel.js';
+import { getAllRealisations } from '../models/realisationModel.js';
 
 export default (req, res) => {
     getAllThemes((errorThemes, themes) => {
@@ -9,7 +9,7 @@ export default (req, res) => {
             return;
         }
 
-        getRealisations((errorRealisations, realisations) => {
+        getAllRealisations((errorRealisations, realisations) => {
             if (errorRealisations) {
                 console.error(errorRealisations);
                 res.status(500).send('Erreur lors de la requête des réalisations');

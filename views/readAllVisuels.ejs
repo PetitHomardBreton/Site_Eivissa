@@ -9,6 +9,7 @@
             <% for(let i = 0; i<visuels.length; i++) { %>
                 <li>
                     <input type="radio" name="visuelToDelete" value="<%= visuels[i].id %>">
+                    <h3>Réalisation : <%= visuels[i].nomRealisation %></h3>
                     <img src="/img/<%= visuels[i].visuelWidth575 %>" alt="Visuel">
                     <p class="rankingVisuel"><%= visuels[i].rankingVisuel %></p>
                     <p class="nameVisuel"><%= visuels[i].nameVisuel %> </p>

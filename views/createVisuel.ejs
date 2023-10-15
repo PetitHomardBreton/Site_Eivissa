@@ -1,0 +1,57 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="createVisuel">
+    <h2><%= title %></h2>
+    <form action='<%= action %>' method="post">
+        <p>
+            <label for="nameVisuel">Nom du visuel</label>
+            <input type="text" name="nameVisuel" id="nameVisuel" value="<%= locals.visuel ? visuel.nameVisuel : '' %>">     
+        </p>
+        <p>
+            <label for="typeVisuel">Type de visuel</label>
+            <input type="text" name="typeVisuel" id="typeVisuel" value="<%= locals.visuel ? visuel.typeVisuel : '' %>">            
+        </p>
+        <p>
+            <label for="rankingVisuel">Numéro d'ordre d'apparition</label>
+            <input type="text" name="rankingVisuel" id="rankingVisuel" value="<%= locals.visuel ? visuel.rankingVisuel : '' %>">   
+        </p>
+        <p>
+            <label for=""commentaireVisuel>Commentaire</label>
+            <input type="text" name="commentaireVisuel" id="commentaireVisuel" value="<%= locals.visuel ? visuel.commentaireVisuel : '' %>">
+        </p>
+        <p>
+            <label for="idRealisation">id de la réalisation</label>
+            <input type="text" name="idRealisation" id="idRealisation" value="<%= locals.visuel ? visuel.idRealisation : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth575"> visuel en 575px de large</label>
+            <input type="text" name="visuelWidth575" id="visuelWidth575" value="<%= locals.visuel ? visuel.visuelWidth575 : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth767"> visuel en 767px de large</label>
+            <input type="text" name="visuelWidth767" id="visuelWidth767" value="<%= locals.visuel ? visuel.visuelWidth767 : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth991"> visuel en 991px de large</label>
+            <input type="text" name="visuelWidth991" id="visuelWidth991" value="<%= locals.visuel ? visuel.visuelWidth991 : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth1199"> visuel en 1199px de large</label>
+            <input type="text" name="visuelWidth1199" id="visuelWidth1199" value="<%= locals.visuel ? visuel.visuelWidth1199 : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth1399"> visuel en 1399px de large</label>
+            <input type="text" name="visuelWidth1399" id="visuelWidth1399" value="<%= locals.visuel ? visuel.visuelWidth1399 : '' %>">
+        </p>
+        <p>
+            <label for="visuelWidth1920"> visuel en 1920px de large</label>
+            <input type="text" name="visuelWidth1920" id="visuelWidth1920" value="<%= locals.visuel ? visuel.visuelWidth1920 : '' %>">
+        </p>
+        <p>
+            <button type="submit">Enregistrer</button>
+            <button type="reset">Annuler</button>
+        </p>
+    </form>
+</section>
+    <%- include('footer') -%>
+
