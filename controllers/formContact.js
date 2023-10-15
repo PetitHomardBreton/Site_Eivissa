@@ -23,7 +23,9 @@ export function showContactForm(req, res) {
 // AJOUT D'UN CONTACT ET ACTUALISATION DE L'AFFICHAGE
 export function addContactSubmit(req, res) {
     const form = formidable({ multiples: true });
-    const creationDate = DateTime.now().toISODate();
+    const creationDate = DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss');
+
+
 
     addContact(
         [req.body.lastname, req.body.firstname, req.body.email, req.body.message, creationDate],
