@@ -6,13 +6,19 @@
     <p>Sélectionnez à gauche pour supprimer, ou selectionnez à droite pour modifier</p>
     <form action="/Visuels/delete" method="post">
         <ul>
+            <% let currentRealisation = ''; %>
             <% for(let i = 0; i<visuels.length; i++) { %>
+                <% if (currentRealisation !== visuels[i].nomRealisation) { %>
+                    <% currentRealisation = visuels[i].nomRealisation; %>
+                    <li class="realisationTitle">
+                        <span class="nomRealisation"><%= currentRealisation %></span>
+                    </li>
+                <% } %>
                 <li>
                     <input type="radio" name="visuelToDelete" value="<%= visuels[i].id %>">
-                    <h3>Réalisation : <%= visuels[i].nomRealisation %></h3>
                     <img src="/img/<%= visuels[i].visuelWidth575 %>" alt="Visuel">
-                    <p class="rankingVisuel"><%= visuels[i].rankingVisuel %></p>
-                    <p class="nameVisuel"><%= visuels[i].nameVisuel %> </p>
+                    <span class="rankingVisuel">Ranking du visuel: <%= visuels[i].rankingVisuel %></span>
+                    <span class="nameVisuel">Nom du visuel: <%= visuels[i].nameVisuel %> </span>
                     <a href="/visuels/<%= visuels[i].id %>/update">
                         <i class="fa fa-pencil-square"></i>
                     </a>
@@ -20,7 +26,8 @@
             <% } %>
         </ul>
         <button>Supprimer</button>
-        </form>
-        <h2> Pour ajouter un nouveau visuel :</h2>
-        <a class="newVisuel" href="/visuels/add">Formulaire d'ajout</a>
+    </form>
+    <h2> Pour ajouter un nouveau visuel :</h2>
+    <a class="newVisuel" href="/visuels/add">Formulaire d'ajout</a>
+</section>
 <%- include('footer') -%>

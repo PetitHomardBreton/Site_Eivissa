@@ -844,14 +844,18 @@ Liste des Visuels
 }
 
 .listeVisuels img {
-  width: 200px;
-  height: auto;
+  height: 110px;
+  width: auto;
   margin: auto;
   padding: 0;
 }
 
-.listeVisuels p {
-  margin-left: 9vw;
+.nomRealisation,
+.rankingVisuel,
+.nameVisuel {
+  color: #d59c3c;
+  font-size: clamp(15px, 2vw, 20px);
+  margin: 1rem;
 }
 
 
