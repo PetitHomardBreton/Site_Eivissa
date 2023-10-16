@@ -696,7 +696,8 @@ Liste des Themes
 .listeThemes,
 .themeId,
 .themeForm,
-.createTheme {
+.createTheme,
+.createVisuel {
   background-color: #050819;
   margin-left: 9vw;
 }
@@ -719,7 +720,9 @@ Liste des Themes
 .listeThemes h2,
 .themeId h2,
 .themeForm h2,
-.createTheme h2 {
+.createTheme h2,
+.createRealisation h2,
+.createVisuel h2 {
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;

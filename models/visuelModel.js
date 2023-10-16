@@ -3,14 +3,24 @@ import { v4 } from 'uuid';
 
 /***CREATE***/
 
-export const createVisuel = (visuelData, callback) => {
+export const createVisuel = (visuelData, visuelWidth767ImageName, visuelWidth1920ImageName, callback) => {
     const id = v4();
     query(
-        `INSERT INTO visuels (id, nameVisuel, typeVisuel, rankingVisuel, commentaireVisuel, idRealisation, visuelWidth575, visuelWidth767, visuelWidth991, visuelWidth1199, visuelWidth1399, visuelWidth1920) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [id, visuelData.nameVisuel, visuelData.typeVisuel, visuelData.rankingVisuel, visuelData.commentaireVisuel, visuelData.idRealisation, visuelData.visuelWidth575, visuelData.visuelWidth767, visuelData.visuelWidth991, visuelData.visuelWidth1199, visuelData.visuelWidth1399, visuelData.visuelWidth1920],
+        `INSERT INTO visuels (id, nameVisuel, typeVisuel, rankingVisuel, commentaireVisuel, idRealisation, visuelWidth767, visuelWidth1920) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+            id,
+            visuelData.nameVisuel,
+            visuelData.typeVisuel,
+            visuelData.rankingVisuel,
+            visuelData.commentaireVisuel,
+            visuelData.idRealisation,
+            visuelWidth767ImageName,
+            visuelWidth1920ImageName,
+        ],
         callback
     );
 }
+
 
 /***READs***/
 

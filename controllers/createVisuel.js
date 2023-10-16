@@ -1,3 +1,7 @@
+import formidable from 'formidable';
+
+import fs from 'fs';
+
 import { createVisuel } from '../models/visuelModel.js';
 
 // Affichage du formulaire
@@ -8,30 +12,43 @@ export function addVisuel(req, res) {
 
 // Soumission du formulaire
 export function addVisuelSubmit(req, res) {
-    // récupération des champs
-    const newvisuel = {
-        nameVisuel: req.body.nameVisuel,
-        typeVisuel: req.body.typeVisuel,
-        rankingVisuel: req.body.rankingVisuel,
-        commentaireVisuel: req.body.commentaireVisuel,
-        idRealisation: req.body.idRealisation,
-        visuelWidth575: req.body.visuelWidth575,
-        visuelWidth767: req.body.visuelWidth767,
-        visuelWidth991: req.body.visuelWidth991,
-        visuelWidth1199: req.body.visuelWidth1199,
-        visuelWidth1399: req.body.visuelWidth1399,
-        visuelWidth1920: req.body.visuelWidth1920,        
-    };
+    const form = formidable({ multiples: true, uploadDir: './public/img' });
 
-    // Ajout dans la base
-    createVisuel(newVisuel, (error, results) => {
+    form.parse(req, (error, fields, files) => {
         if (error) {
-            console.error(`Erreur lors de l'exécution de la requête ${error}`);
+            console.error(`Erreur lors de la récupération des images`);
             res.status(500).send('Erreur serveur');
             return;
         }
-        // Redirection vers la liste des visuels
-        res.redirect('/visuels');
+
+        // Récupération des noms de fichiers
+        const visuelWidth767ImageName = files.visuelWidth767[0].originalFilename;
+        const visuelWidth1920ImageName = files.visuelWidth1920[0].originalFilename;
+
+        // Copie des images vers le dossier de destination
+        const visuelWidth767ImagePath = './public/img/' + visuelWidth767ImageName;
+        const visuelWidth1920ImagePath = './public/img/' + visuelWidth1920ImageName;
+
+        fs.renameSync(files.visuelWidth767[0].filepath, visuelWidth767ImagePath);
+        fs.renameSync(files.visuelWidth1920[0].filepath, visuelWidth1920ImagePath);
+
+        // Appel à la fonction createVisuel du modèle
+        createVisuel(
+            fields,
+            visuelWidth767ImageName,
+            visuelWidth1920ImageName,
+            (error, result) => {
+                if (error) {
+                    console.error(error);
+                    res.status(500).send('Erreur lors de la requête');
+                    return;
+                }
+                // Rediriger vers la liste des visuels
+                res.redirect('/visuels');
+            }
+        );
     });
 }
+
+
 

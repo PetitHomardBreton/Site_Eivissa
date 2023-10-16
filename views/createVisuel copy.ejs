@@ -1,8 +1,7 @@
-<%- include('head') -%>
-<%- include('header') -%>
+<%- include('head') -%> <%- include('header') -%>
 <section class="createVisuel">
   <h2><%= title %></h2>
-  <form action="<%= action %>" method="post" enctype="multipart/form-data"> 
+  <form action="<%= action %>" method="post">
     <p>
       <label for="nameVisuel">Nom du visuel</label>
       <input
@@ -31,7 +30,7 @@
       />
     </p>
     <p>
-      <label for="commentaireVisuel">Commentaire</label> <!-- Correction de l'attribut "for" -->
+      <label for="" commentaireVisuel>Commentaire</label>
       <input
         type="text"
         name="commentaireVisuel"
@@ -49,19 +48,21 @@
       />
     </p>
     <p>
-      <label for="visuelWidth767">Visuel en 767px de large</label>
+      <label for="visuelWidth767"> visuel en 767px de large</label>
       <input
-        type="file"
+        type="text"
         name="visuelWidth767"
         id="visuelWidth767"
+        value="<%= locals.visuel ? visuel.visuelWidth767 : '' %>"
       />
     </p>
     <p>
-      <label for="visuelWidth1920">Visuel en 1920px de large</label>
+      <label for="visuelWidth1920"> visuel en 1920px de large</label>
       <input
-        type="file"
+        type="text"
         name="visuelWidth1920"
         id="visuelWidth1920"
+        value="<%= locals.visuel ? visuel.visuelWidth1920 : '' %>"
       />
     </p>
     <p>
@@ -71,4 +72,3 @@
   </form>
 </section>
 <%- include('footer') -%>
-

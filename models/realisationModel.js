@@ -15,7 +15,7 @@ export const createRealisation = (realisationData, callback) => {
 /***READs***/
 
 export const getAllRealisations = (callback) => {
-    query('SELECT realisations.*, visuels.visuelWidth575 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id ORDER BY realisations.rankingRealisation ASC', [], callback);
+    query('SELECT realisations.*, visuels.visuelWidth767 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id ORDER BY realisations.rankingRealisation ASC', [], callback);
 };
 
 export const getRealisationById = (id, callback) => {
