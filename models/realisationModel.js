@@ -19,13 +19,13 @@ export const getAllRealisations = (callback) => {
 };
 
 export const getRealisationById = (id, callback) => {
-    query('SELECT * FROM realisations WHERE id = ?', [id], callback);
+    query('SELECT realisations.*, visuels.visuelWidth767 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id WHERE realisations.id = ?', [id], callback);
 };
 
 /***UPDATE***/
 
 export const updateRealisationModel = (data, callback) => {
-    query(`UPDATE realisations SET nameRealisation = ?, descriptionRealisation = ?, idVisuelPrincipal = ?, rankingRealisation = ? WHERE id = ?`, data, callback);
+    query(`UPDATE realisations SET rankingRealisation = ?, nomRealisation = ?, descriptionRealisation = ?, descriptionRealisation = ?, commentaireRealisation = ? WHERE realisations.id = ?`, data, callback);
 };
 
 /***DELETE***/

@@ -697,7 +697,8 @@ Liste des Themes
 .themeId,
 .themeForm,
 .createTheme,
-.createVisuel {
+.createVisuel,
+.realisationForm {
   background-color: #050819;
   margin-left: 9vw;
 }
@@ -722,7 +723,8 @@ Liste des Themes
 .themeForm h2,
 .createTheme h2,
 .createRealisation h2,
-.createVisuel h2 {
+.createVisuel h2,
+.realisationForm h2{
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -902,7 +904,8 @@ Liste des Visuels
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
-.newVisuel {
+.newVisuel,
+.versVisuelsRealisation {
   font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
