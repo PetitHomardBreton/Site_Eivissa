@@ -7,7 +7,7 @@ export const createRealisation = (realisationData, callback) => {
     const id = v4();
     query(
         `INSERT INTO realisations (id, nomRealisation, descriptionRealisation, idVisuelPrincipal, rankingRealisation) VALUES (?, ?, ?, ?, ?)`,
-        [id, realisationData.nomRealisation, realisationData.descriptionRealisation, realisationData.idVisuelPrincipal, realisationData.rankingRealisation],
+        [id, realisationData.rankingRealisation, realisationData.nomRealisation, realisationData.descriptionRealisation, realisationData.commentaireRealisation, realisationData.idVisuelPrincipal],
         callback
     );
 }

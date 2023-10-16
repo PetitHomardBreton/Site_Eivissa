@@ -390,7 +390,7 @@ Contact
 /**************************************************************************
   Small device 
 ***************************************************************************/
-@media screen and (max-width: 779.98px) {
+/*@media screen and (max-width: 779.98px) {*/
   #logoLeft {
     width: 56px;
     height: auto;
@@ -530,7 +530,7 @@ Contact
   .show-nav .five {
     transition: all 1.4s ease-out;
   }
-}
+/*}*/
 
 /****************************************
 Home
