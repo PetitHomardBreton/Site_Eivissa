@@ -2,10 +2,9 @@
 <%- include('header') -%>
 <section class="listecontacts">
     <h1>Liste des Contacts reçus</h1>
-    <p>Sélectionnez le contact à supprimer</p>
     <ul>
         <% for(let i = 0; i < contacts.length; i++) { %>
-            <li>
+            <li class = contactRecu>
                 <p class="dateContact"><%= contacts[i].creationDate %></p>
                 <p class="nameContact"><%= contacts[i].lastname %> </p>
                 <p class="nameContact"><%= contacts[i].firstname %> </p>
