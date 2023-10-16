@@ -6,8 +6,8 @@ import { v4 } from 'uuid';
 export const createRealisation = (realisationData, callback) => {
     const id = v4();
     query(
-        `INSERT INTO realisations (id, nomRealisation, descriptionRealisation, idVisuelPrincipal, rankingRealisation) VALUES (?, ?, ?, ?, ?)`,
-        [id, realisationData.rankingRealisation, realisationData.nomRealisation, realisationData.descriptionRealisation, realisationData.commentaireRealisation, realisationData.idVisuelPrincipal],
+        `INSERT INTO realisations (id, rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation) VALUES (?, ?, ?, ?, ?)`,
+        [id, realisationData.rankingRealisation, realisationData.nomRealisation, realisationData.descriptionRealisation, realisationData.commentaireRealisation],
         callback
     );
 }
@@ -15,7 +15,7 @@ export const createRealisation = (realisationData, callback) => {
 /***READs***/
 
 export const getAllRealisations = (callback) => {
-    query('SELECT realisations.*, visuels.visuelWidth575 FROM realisations JOIN visuels ON realisations.idVisuelPrincipal = visuels.id ORDER BY rankingRealisation ASC', [], callback);
+    query('SELECT realisations.*, visuels.visuelWidth575 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id ORDER BY realisations.rankingRealisation ASC', [], callback);
 };
 
 export const getRealisationById = (id, callback) => {

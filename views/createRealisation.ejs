@@ -1,0 +1,30 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="createRealisation">
+    <h2><%= title %></h2>
+    <form action='<%= action %>' method="post">
+        <p>
+            <label for="nomRealisation">Nom de la realisation</label>
+            <input type="text" name="nomRealisation" id="nomRealisation" value="<%= locals.realisation ? realisation.nomRealisation : '' %>">     
+        </p>
+        <p>
+            <label for="rankingRealisation">Numéro d'ordre d'apparition</label>
+            <input type="number" name="rankingRealisation" id="rankingRealisation" value="<%= locals.realisation ? realisation.rankingRealisation : '' %>">   
+        </p>
+        <p>
+            <label for="descriptionRealisation">Decription</label>
+            <input type="text" name="descriptionRealisation" id="descriptionRealisation" value="<%= locals.realisation ? realisation.descriptionRealisation : '' %>">
+        </p>
+        <p>
+            <label for="commentaireRealisation">Commentaire</label>
+            <input type="text" name="commentaireRealisation" id="commentaireRealisation" value="<%= locals.realisation ? realisation.commentaireRealisation : '' %>">
+        </p>
+
+        <p>
+            <button type="submit">Enregistrer</button>
+            <button type="reset">Annuler</button>
+        </p>
+    </form>
+</section>
+    <%- include('footer') -%>
+

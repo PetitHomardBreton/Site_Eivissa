@@ -21,6 +21,7 @@ import logout from './controllers/logout.js';
 import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
 import {addVisuel, addVisuelSubmit} from "./controllers/createVisuel.js";
+import { addRealisation, addRealisationSubmit } from "./controllers/createRealisation.js";  
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
 import deleteContact from "./controllers/deleteContactController.js";
@@ -87,6 +88,10 @@ router.post("/themes/delete", checkAuthentication, deleteTheme);
 
 /* affichage des réalisations */
 router.get('/realisations', checkAuthentication, getAllRealisations);
+
+/* ajout d'une réalisation */
+router.get('/realisations/add', checkAuthentication, addRealisation);
+router.post('/realisations/add', checkAuthentication, addRealisationSubmit);
 
 /* affichage des visuels */
 router.get('/visuels', checkAuthentication, getAllVisuels);

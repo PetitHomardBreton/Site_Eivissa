@@ -390,7 +390,7 @@ Contact
 /**************************************************************************
   Small device 
 ***************************************************************************/
-/*@media screen and (max-width: 779.98px) {*/
+@media screen and (max-width: 779.98px) {
   #logoLeft {
     width: 56px;
     height: auto;
@@ -530,7 +530,7 @@ Contact
   .show-nav .five {
     transition: all 1.4s ease-out;
   }
-/*}*/
+}
 
 /****************************************
 Home
@@ -772,7 +772,7 @@ i.fa.fa-pencil-square {
 Liste des Réalisations
 **************************************************************/
 
-.listeRealisations {
+.listeRealisations, .createRealisation {
   margin-left: 9vw;
   background-color: #050819;
 }
@@ -783,7 +783,7 @@ Liste des Réalisations
   padding: 0;
 }
 
-.listeRealisations h2 {
+.listeRealisations h2, .createRealisation h2{
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -890,8 +890,11 @@ Liste des Visuels
 }
 
 .nomRealisation,
+.rankingRealisation,
 .rankingVisuel,
-.nameVisuel {
+.nameVisuel,
+.listeRealisations img
+ {
   color: #d59c3c;
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;

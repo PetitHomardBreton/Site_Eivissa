@@ -13,8 +13,7 @@ export function addRealisationSubmit(req, res) {
         rankingRealisation : req.body.rankingRealisation ,
         nomRealisation : req.body.nomRealisation ,
         descriptionRealisation : req.body.descriptionRealisation ,
-        commentaireRealisation: commentaireRealisation,
-        idVisuelPrincipal: req.body.idVisuelPrincipal,
+        commentaireRealisation: req.body.commentaireRealisation,
 
     };
 
