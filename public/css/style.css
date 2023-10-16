@@ -582,7 +582,7 @@ Home
 }
 
 .aPropos {
-  background-image: url("../img/Photo_Profil-575x372.png");
+  background-image: url("../img/Photo_Profil-767x496.png");
   background-color: #050819;
   background-size: 100% auto;
   /* Largeur à 100% et hauteur ajustée proportionnellement */
@@ -653,7 +653,7 @@ Home
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/respirateur-575x323.png");
+  background-image: url("../img/respirateur-767x431.png");
   /* Image par défaut pour mobile */
   background-position: center center;
   /* Centre l'image */
@@ -855,61 +855,11 @@ Liste des Visuels
 }
 
 
-/*************************************************************
-Media queries images
-**************************************************************/
-/* Pour les écrans à partir de 576px */
-@media (min-width: 576px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-767x496.png");
-  }
 
-  .contact {
-    background-image: url("../img/respirateur-767x431.png"); // Image par défaut pour mobile
-  }
-}
-
-/* Pour les écrans à partir de 768px */
-@media (min-width: 768px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-991x641.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-991x557.png");
-  }
-}
-
-/* Pour les écrans à partir de 992px */
-@media (min-width: 992px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-1199x776.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-1199x674.png");
-  }
-}
-
-/* Pour les écrans à partir de 1200px */
-@media (min-width: 1200px) {
-  .intro {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../img/Bannière_Intro-1399x633.png");
-  }
-
-  .aPropos {
-    background-image: url("../img/Photo_Profil-1399x905.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-1399x787.png");
-  }
-}
-
-/* Pour les écrans à partir de 1400px */
-
-@media (min-width: 1400px) {
+/*******************************************************************************
+******* Medium device *******
+********************************************************************************/
+@media screen and (min-width: 780px) {
   .intro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/Bannière_Intro-1920x869.png");
@@ -922,12 +872,6 @@ Media queries images
   .contact {
     background-image: url("../img/respirateur-1920x1080.png");
   }
-}
-
-/*******************************************************************************
-******* Medium device *******
-********************************************************************************/
-@media screen and (min-width: 780px) {
   #logoLeft {
     display: none;
   }
