@@ -1,0 +1,33 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="listeVisuelsByRealisation">
+    <h1>Les Visuels</h1>
+    <h2> La liste des visuels existants :</h2>
+    <p>Sélectionnez à gauche pour supprimer, ou selectionnez à droite pour modifier</p>
+    <form action="<%= action %>" method="post">
+        <ul>
+            <% let currentRealisation = ''; %>
+            <% for(let i = 0; i<visuels.length; i++) { %>
+                <% if (currentRealisation !== visuels[i].nomRealisation) { %>
+                    <% currentRealisation = visuels[i].nomRealisation; %>
+                    <li class="realisationTitle">
+                        <span class="nomRealisation"><%= currentRealisation %></span>
+                    </li>
+                <% } %>
+                <li>
+                    <input type="radio" name="visuelToDelete" value="<%= visuels[i].id %>">
+                    <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="Visuel de <%= visuels[i].nameVisuel %>">
+                    <span class="rankingVisuel">Ranking du visuel: <%= visuels[i].rankingVisuel %></span>
+                    <span class="nameVisuel">Nom du visuel: <%= visuels[i].nameVisuel %> </span>
+                    <a href="/visuels/<%= visuels[i].id %>/update">
+                        <i class="fa fa-pencil-square"></i>
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <button>Supprimer</button>
+    </form>
+    <h2> Pour ajouter un nouveau visuel :</h2>
+    <a class="newVisuel" href="<%= action %>/add">Formulaire d'ajout d'un visuel à la réalisation</a>
+</section>
+<%- include('footer') -%>

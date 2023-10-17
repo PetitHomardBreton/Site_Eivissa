@@ -1,7 +1,8 @@
-<%- include('head') -%> <%- include('header') -%>
-<section class="createVisuel">
-  <h2><%= title %></h2>
-  <form action="<%= action %>" method="post">
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="createVisuelByRealisation">
+  <h2>Ajout d'un visuel à la réalisation <%= nomRealisation %></h2>
+  <form action="<%= action %>" method="post" enctype="multipart/form-data"> 
     <p>
       <label for="nameVisuel">Nom du visuel</label>
       <input
@@ -30,7 +31,7 @@
       />
     </p>
     <p>
-      <label for="" commentaireVisuel>Commentaire</label>
+      <label for="commentaireVisuel">Commentaire</label> <!-- Correction de l'attribut "for" -->
       <input
         type="text"
         name="commentaireVisuel"
@@ -44,25 +45,23 @@
         type="text"
         name="idRealisation"
         id="idRealisation"
-        value="<%= locals.visuel ? visuel.idRealisation : '' %>"
+        value="<%= realisationId %>"
       />
     </p>
     <p>
-      <label for="visuelWidth767"> visuel en 767px de large</label>
+      <label for="visuelWidth767">Visuel en 767px de large</label>
       <input
-        type="text"
+        type="file"
         name="visuelWidth767"
         id="visuelWidth767"
-        value="<%= locals.visuel ? visuel.visuelWidth767 : '' %>"
       />
     </p>
     <p>
-      <label for="visuelWidth1920"> visuel en 1920px de large</label>
+      <label for="visuelWidth1920">Visuel en 1920px de large</label>
       <input
-        type="text"
+        type="file"
         name="visuelWidth1920"
         id="visuelWidth1920"
-        value="<%= locals.visuel ? visuel.visuelWidth1920 : '' %>"
       />
     </p>
     <p>
@@ -70,5 +69,9 @@
       <button type="reset">Annuler</button>
     </p>
   </form>
+  <a href="/realisations/<%= realisationId %>/visuels">Retour à la liste des visuels</a>
+  <a href="/realisations/<%= realisationId %>/update">Retour à la réalisation</a>
+  <a href="/realisations">Retour à la liste des réalisations</a>
 </section>
 <%- include('footer') -%>
+

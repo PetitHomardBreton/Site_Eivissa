@@ -21,6 +21,7 @@ import logout from './controllers/logout.js';
 import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
 import {addVisuel, addVisuelSubmit} from "./controllers/createVisuel.js";
+import {addVisuelByRealisation, addVisuelByRealisationSubmit} from "./controllers/createVisuelByrealisation.js";
 import { addRealisation, addRealisationSubmit } from "./controllers/createRealisation.js";  
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import {updateRealisation, updateRealisationSubmit} from "./controllers/updateRealisationController.js";
@@ -30,6 +31,7 @@ import deleteContact from "./controllers/deleteContactController.js";
 import readAllContacts from "./controllers/readAllContactsController.js";
 import getAllVisuels from "./controllers/readAllVisuelsController.js";
 import getAllRealisations from "./controllers/readAllRealisationsController.js";
+import getAllVisuelsByRealisationId from "./controllers/readAllVisuelsByRealisationController.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -90,6 +92,13 @@ router.post("/themes/delete", checkAuthentication, deleteTheme);
 
 /* affichage des réalisations */
 router.get('/realisations', checkAuthentication, getAllRealisations);
+
+/* affichage des visuels par réalisation */
+router.get('/realisations/:realisationId/visuels', checkAuthentication, getAllVisuelsByRealisationId);
+
+/* ajout d'un visuel à une réalisation */
+router.get('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisation);
+router.post('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisationSubmit);
 
 /* ajout d'une réalisation */
 router.get('/realisations/add', checkAuthentication, addRealisation);
