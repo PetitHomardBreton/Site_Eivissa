@@ -69,9 +69,11 @@
       <button type="reset">Annuler</button>
     </p>
   </form>
-  <a href="/realisations/<%= realisationId %>/visuels">Retour à la liste des visuels</a>
-  <a href="/realisations/<%= realisationId %>/update">Retour à la réalisation</a>
-  <a href="/realisations">Retour à la liste des réalisations</a>
+  <div class="redirections">
+    <a href="/realisations/<%= realisationId %>/visuels">Retour à la liste des visuels de la realisation</a>
+    <a href="/realisations/<%= realisationId %>/update">Retour à la réalisation</a>
+    <a href="/realisations">Retour à la liste des réalisations</a>
+  </div>
 </section>
 <%- include('footer') -%>
 
