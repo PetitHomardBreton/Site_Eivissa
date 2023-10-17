@@ -22,7 +22,8 @@ export function addVisuelByRealisation(req, res) {
             res.render('createVisuelByRealisation', {
                 nomRealisation: nomRealisation,
                 realisationId: realisationId,
-                action: "/realisations/" + realisationId + "/visuels/add",
+                actionAdd: "/realisations/" + realisationId + "/visuels/add",
+                actionDelete: "/realisations/" + realisationId + "/visuels/delete",
                 pageTitle: 'createVisuelByRealisation'
             });
         } else {
@@ -35,6 +36,7 @@ export function addVisuelByRealisation(req, res) {
 
 // Soumission du formulaire
 export function addVisuelByRealisationSubmit(req, res) {
+    const realisationId = req.params.realisationId;
     const form = formidable({ multiples: true, uploadDir: './public/img' });
 
     form.parse(req, (error, fields, files) => {

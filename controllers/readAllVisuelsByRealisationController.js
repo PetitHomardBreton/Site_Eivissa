@@ -12,7 +12,8 @@ export default (req, res) => {
         res.render('readAllVisuelsByRealisation', {
             pageTitle: 'VisuelsByRealisation', 
             visuels: visuels, 
-            action: "/realisations/" + realisationId + "/visuels"
+            actionDelete: "/realisations/" + realisationId + "/visuels/delete",
+            actionAdd: "/realisations/" + realisationId + "/visuels/add"
         });
     });
 };
