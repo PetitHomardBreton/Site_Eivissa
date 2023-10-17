@@ -25,6 +25,7 @@ import { addRealisation, addRealisationSubmit } from "./controllers/createRealis
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import {updateRealisation, updateRealisationSubmit} from "./controllers/updateRealisationController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
+import deleteRealisation from "./controllers/deleteRealisationController.js";
 import deleteContact from "./controllers/deleteContactController.js";
 import readAllContacts from "./controllers/readAllContactsController.js";
 import getAllVisuels from "./controllers/readAllVisuelsController.js";
@@ -97,6 +98,9 @@ router.post('/realisations/add', checkAuthentication, addRealisationSubmit);
 /* modification d'une réalisation */
 router.get('/realisations/:id/update', checkAuthentication, updateRealisation);
 router.post('/realisations/:id/update', checkAuthentication, updateRealisationSubmit);
+
+/* suppression d'une réalisation */
+router.post("/realisations/delete", checkAuthentication, deleteRealisation);
 
 /* affichage des visuels */
 router.get('/visuels', checkAuthentication, getAllVisuels);

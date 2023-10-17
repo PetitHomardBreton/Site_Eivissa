@@ -25,7 +25,7 @@ export const getRealisationById = (id, callback) => {
 /***UPDATE***/
 
 export const updateRealisationModel = (data, callback) => {
-    query(`UPDATE realisations SET rankingRealisation = ?, nomRealisation = ?, descriptionRealisation = ?, descriptionRealisation = ?, commentaireRealisation = ? WHERE realisations.id = ?`, data, callback);
+    query(`UPDATE realisations SET rankingRealisation = ?, nomRealisation = ?, descriptionRealisation = ?, commentaireRealisation = ? WHERE realisations.id = ?`, data, callback);
 };
 
 /***DELETE***/

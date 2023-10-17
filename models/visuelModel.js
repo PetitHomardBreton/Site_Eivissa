@@ -32,6 +32,10 @@ export const getVisuelById = (id, callback) => {
     query('SELECT * FROM visuels WHERE id = ?', [id], callback);
 };
 
+export const getAllVisuelsByRealisationId = (id, callback) => {
+    query('SELECT visuels.*, realisations.nomRealisation FROM visuels LEFT JOIN realisations ON visuels.idRealisation = realisations.id WHERE visuels.idRealisation = ? ORDER BY visuels.rankingVisuel ASC;', [id], callback);
+};
+
 /***UPDATE***/
 
 export const updateVisuelModel = (data, callback) => {
