@@ -25,6 +25,7 @@ import {addVisuelByRealisation, addVisuelByRealisationSubmit} from "./controller
 import { addRealisation, addRealisationSubmit } from "./controllers/createRealisation.js";  
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import {updateRealisation, updateRealisationSubmit} from "./controllers/updateRealisationController.js";
+import {updateVisuelByRealisationId, updateVisuelSubmit} from "./controllers/updateVisuelByRealisationController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
 import deleteRealisation from "./controllers/deleteRealisationController.js";
 import deleteVisuelByRealisation  from "./controllers/deleteVisuelByRealisationController.js";
@@ -100,6 +101,10 @@ router.get('/realisations/:realisationId/visuels', checkAuthentication, getAllVi
 /* ajout d'un visuel à une réalisation */
 router.get('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisation);
 router.post('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisationSubmit);
+
+/* modification d'un visuel */
+router.get('/realisations/:realisationId/visuels/:id/update', checkAuthentication, updateVisuelByRealisationId);
+router.post('/realisations/:realisationId/visuels/:id/update', checkAuthentication, updateVisuelSubmit);
 
 /* suppression d'un visuel */
 router.get('/realisations/:realisationId/visuels/delete', checkAuthentication, deleteVisuelByRealisation);

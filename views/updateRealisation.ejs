@@ -4,7 +4,7 @@
 <section class="realisationForm">
     <h2>Modifier <%= nomRealisation %></h2>
     <img src="/img/<%= visuelWidth767 %>" alt="Visuel du projet <%= nomRealisation %>">
-    <form action="<%= action %>" method="post">
+    <form action="<%= actionUpdateRealisation %>" method="post">
         <p>
             <label for="nomRealisation">Nom de la réalisation</label>
             <input type="text" name="nomRealisation" id="nomRealisation" value="<%= locals.realisation ? locals.realisation.nomRealisation : '' %>">     

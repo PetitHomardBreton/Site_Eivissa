@@ -18,7 +18,7 @@ export function updateRealisation(req, res) {
             visuelWidth767 : result[0].visuelWidth767,
             idRealisation: result[0].id,
             /*title: 'Modifier une réalisation',*/
-            action: "/realisations/" + result[0].id + "/update"
+            actionUpdateRealisation: "/realisations/" + result[0].id + "/update"
         });
     });
 };

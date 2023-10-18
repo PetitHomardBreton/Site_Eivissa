@@ -14,6 +14,7 @@ export default (req, res) => {
       nomRealisation: visuels[0].nomRealisation,
       actionDelete: "/realisations/" + realisationId + "/visuels/delete",
       actionAdd: "/realisations/" + realisationId + "/visuels/add",
+      actionUpdate: "/realisations/" + realisationId + "/visuels/ + id +/update",
     });
   });
 };
