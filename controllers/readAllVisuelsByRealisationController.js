@@ -1,20 +1,24 @@
 import { getAllVisuelsByRealisationId } from "../models/visuelModel.js";
 
 export default (req, res) => {
-  const realisationId = req.params.realisationId;
-  getAllVisuelsByRealisationId(realisationId, (errorVisuels, visuels) => {
+  const idRealisation = req.params.idRealisation;
+  const idVisuels = req.params.id;
+  getAllVisuelsByRealisationId(idRealisation, (errorVisuels, visuels) => {
     if (errorVisuels) {
       console.error(errorVisuels);
       res.status(500).send("Erreur lors de la requête des visuels");
       return;
     }
+   
     res.render("readAllVisuelsByRealisation", {
       pageTitle: "VisuelsByRealisation",
       visuels: visuels,
       nomRealisation: visuels[0].nomRealisation,
-      actionDelete: "/realisations/" + realisationId + "/visuels/delete",
-      actionAdd: "/realisations/" + realisationId + "/visuels/add",
-      actionUpdate: "/realisations/" + realisationId + "/visuels/ + id +/update",
+      idRealisation: idRealisation,
+      idVisuels: idVisuels,
+      actionDelete: "/realisations/" + idRealisation + "/visuels/delete",
+      actionAdd: "/realisations/" + idRealisation + "/visuels/add",
+      actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
     });
   });
 };

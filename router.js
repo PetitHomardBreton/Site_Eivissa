@@ -96,7 +96,7 @@ router.post("/themes/delete", checkAuthentication, deleteTheme);
 router.get('/realisations', checkAuthentication, getAllRealisations);
 
 /* affichage des visuels par réalisation */
-router.get('/realisations/:realisationId/visuels', checkAuthentication, getAllVisuelsByRealisationId);
+router.get('/realisations/:idRealisation/visuels', checkAuthentication, getAllVisuelsByRealisationId);
 
 /* ajout d'un visuel à une réalisation */
 router.get('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisation);
