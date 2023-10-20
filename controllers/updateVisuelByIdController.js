@@ -3,8 +3,7 @@ import { getVisuelById, updateVisuel} from '../models/visuelModel.js';
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
 export function readVisuelById(req, res) {
     let id = req.params.id;
-    let hasVisuelWidth767 = result[0].visuelWidth767 ? true : false;
-    let hasVisuelWidth1920 = result[0].visuelWidth1920 ? true : false;
+
     // Récupérer les informations de la réalisation
     getVisuelById(id, (error, result) => {
         if (error) {
@@ -12,6 +11,10 @@ export function readVisuelById(req, res) {
             res.status(500).send('Erreur lors de la requête');
             return;
         }
+        let hasVisuelWidth767 = result[0].visuelWidth767 ? true : false;
+        console.log(hasVisuelWidth767);
+        let hasVisuelWidth1920 = result[0].visuelWidth1920 ? true : false;
+        console.log(hasVisuelWidth1920);
         // Renvoyer le formulaire
         res.render('updateVisuel', {
             visuel: result[0],
@@ -44,7 +47,6 @@ export function updateVisuelSubmit(req, res) {
             return;
         }
         // Rediriger vers la page des visuels de la réalisations
-        //res.redirect("/realisations/"+idRealisation/visuels);
         res.redirect("/realisations/" + idRealisation + "/visuels");
 
 
