@@ -1,10 +1,10 @@
-import { updateVisuel, getAllVisuelsByRealisationId} from '../models/visuelModel.js';
+import { getVisuelById, updateVisuel} from '../models/visuelModel.js';
 
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
-export function updateVisuelByRealisationId(req, res) {
+export function readVisuelById(req, res) {
     let id = req.params.id;
     // Récupérer les informations de la réalisation
-    getAllVisuelsByRealisationId(id, (error, result) => {
+    getVisuelById(id, (error, result) => {
         if (error) {
             console.error(error);
             res.status(500).send('Erreur lors de la requête');

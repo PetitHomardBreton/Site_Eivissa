@@ -9,7 +9,7 @@
             <% for(let i = 0; i<realisations.length; i++) { %>
                 <li>
                     <input type="radio" name="realisationToDelete" value="<%= realisations[i].id %>">
-                    <img src="/img/<%= realisations[i].visuelWidth767 %>" alt="Visuel du projet <%= realisations[i].nomRealisation %>">
+                    <img src="/img/<%= realisations[i].visuelRealisation %>" alt="Visuel du projet <%= realisations[i].nomRealisation %>">
                     <span class="nomRealisation"><%= realisations[i].nomRealisation %> </span>
                     <span class="rankingRealisation">En No. <%= realisations[i].rankingRealisation %></span>
                     <a href="/realisations/<%= realisations[i].id %>/update">

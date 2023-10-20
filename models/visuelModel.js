@@ -29,7 +29,7 @@ export const getAllVisuels = (callback) => {
 };
 
 export const getVisuelById = (id, callback) => {
-    query('visuels.*, realisations.nomRealisation FROM visuels LEFT JOIN realisations ON visuels.idRealisation = realisations.idWHERE visuels.id = ?', [id], callback);
+    query('SELECT visuels.*, realisations.nomRealisation FROM visuels LEFT JOIN realisations ON visuels.idRealisation = realisations.id WHERE visuels.id = ?', [id], callback);
 };
 
 export const getAllVisuelsByRealisationId = (id, callback) => {
@@ -50,8 +50,9 @@ export const getAllVisuelsByRealisationId = (id, callback) => {
 
 /***UPDATE***/
 
-export const updateVisuel = (data, callback) => {
-    query(`UPDATE visuels SET nameVisuel = ?, typeVisuel = ?, rankingVisuel = ?, commentaireVisuel = ?, idRealisation = ?, visuelWidth575 = ?, visuelWidth767 = ?, visuelWidth991 = ?, visuelWidth1199 = ?, visuelWidth1399 = ?, visuelWidth1920 = ? WHERE id = ?`, data, callback);
+export const updateVisuel = (id, data, callback) => {
+    //query(`UPDATE visuels SET nameVisuel = ?, typeVisuel = ?, rankingVisuel = ?, commentaireVisuel = ?, idRealisation = ?, visuelWidth575 = ?, visuelWidth767 = ?, visuelWidth991 = ?, visuelWidth1199 = ?, visuelWidth1399 = ?, visuelWidth1920 = ? WHERE id = ?`, data, callback);
+    query(`UPDATE visuels SET ? WHERE id = ?`, [data, id], callback);
 };
 
 /***DELETE***/

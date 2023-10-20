@@ -15,11 +15,11 @@ export const createRealisation = (realisationData, callback) => {
 /***READs***/
 
 export const getAllRealisations = (callback) => {
-    query('SELECT realisations.*, visuels.visuelWidth767 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id ORDER BY realisations.rankingRealisation ASC', [], callback);
+    query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels WHERE idRealisation = v.idRealisation ) ) vw ON r.id = vw.idRealisation ORDER BY r.rankingRealisation ASC ', [], callback);
 };
 
 export const getRealisationById = (id, callback) => {
-    query('SELECT realisations.*, visuels.visuelWidth767 FROM realisations LEFT JOIN visuels ON realisations.idVisuelPrincipal = visuels.id WHERE realisations.id = ?', [id], callback);
+    query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels ) ) vw ON r.id = vw.idRealisation WHERE r.id = ?', [id], callback);
 };
 
 /***UPDATE***/

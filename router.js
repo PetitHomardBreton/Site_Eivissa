@@ -25,7 +25,7 @@ import {addVisuelByRealisation, addVisuelByRealisationSubmit} from "./controller
 import { addRealisation, addRealisationSubmit } from "./controllers/createRealisation.js";  
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
 import {updateRealisation, updateRealisationSubmit} from "./controllers/updateRealisationController.js";
-import {updateVisuelByRealisationId, updateVisuelSubmit} from "./controllers/updateVisuelByRealisationController.js";
+import {readVisuelById, updateVisuelSubmit} from "./controllers/updateVisuelByIdController.js";
 import deleteTheme from "./controllers/deleteThemeController.js";
 import deleteRealisation from "./controllers/deleteRealisationController.js";
 import deleteVisuelByRealisation  from "./controllers/deleteVisuelByRealisationController.js";
@@ -34,6 +34,7 @@ import readAllContacts from "./controllers/readAllContactsController.js";
 import getAllVisuels from "./controllers/readAllVisuelsController.js";
 import getAllRealisations from "./controllers/readAllRealisationsController.js";
 import getAllVisuelsByRealisationId from "./controllers/readAllVisuelsByRealisationController.js";
+
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -102,9 +103,12 @@ router.get('/realisations/:idRealisation/visuels', checkAuthentication, getAllVi
 router.get('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisation);
 router.post('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisationSubmit);
 
+/*afficchage d'un visuel */
+router.get('/realisations/:realisationId/visuels/:id', checkAuthentication, readVisuelById);
+
 /* modification d'un visuel */
-router.get('/realisations/:realisationId/visuels/:id/update', checkAuthentication, updateVisuelByRealisationId);
 router.post('/realisations/:realisationId/visuels/:id/update', checkAuthentication, updateVisuelSubmit);
+
 
 /* suppression d'un visuel */
 router.get('/realisations/:realisationId/visuels/delete', checkAuthentication, deleteVisuelByRealisation);

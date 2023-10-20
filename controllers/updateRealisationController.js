@@ -15,7 +15,7 @@ export function updateRealisation(req, res) {
             realisation: result[0],
             pageTitle: 'Modif Realisation',
             nomRealisation: result[0].nomRealisation,
-            visuelWidth767 : result[0].visuelWidth767,
+            visuelRealisation : result[0].visuelRealisation,
             idRealisation: result[0].id,
             /*title: 'Modifier une réalisation',*/
             actionUpdateRealisation: "/realisations/" + result[0].id + "/update"

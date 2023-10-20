@@ -16,20 +16,31 @@
         </p>
         <p>
             <label for="rankingVisuel">Ordre d'apparition du visuel</label>
-            <input type="text" name="rankingVisuel" id="rankingVisuel" value="<%= locals.realisation ? locals.realisation.rankingVisuel : '' %>">   
+            <input type="text" name="rankingVisuel" id="rankingVisuel" value="<%= locals.visuel ? locals.visuel.rankingVisuel : '' %>">   
         </p>
         <p>
             <label for="commentaireVisuel">Commentaire de la réalisation</label>
-            <textarea name="commentaireVisuel" id="commentaireVisuel"><%= locals.realisation ? locals.realisation.commentaireVisuel : '' %></textarea>
+            <textarea name="commentaireVisuel" id="commentaireVisuel"><%= locals.visuel ? locals.visuel.commentaireVisuel : '' %></textarea>
         </p>
+        <p>
+            <label for="idRealisation">idRealisation</label>
+            <input type="text" name="idRealisation" id="idRealisation" value="<%= locals.visuel ? locals.visuel.idRealisation : '' %>">   
+        </p>
+        <% if(locals.hasVisuelWidth767) { %>
+            <img src="<%= locals.visuel.visuelWidth767 %>" alt="Visuel en 767px de large" style="width:767px;">
+        <% } %>
+       
         <p>
             <label for="visuelWidth767">Visuel en 767px de large</label>
-            <input type="file" name="visuelWidth767" id="visuelWidth767">
+            <input type="file" name="visuelWidth767" id="visuelWidth767" value="<%= locals.visuel ? locals.visuel.visuelWidth767 : '' %>" >
         </p>
+        <% if(locals.hasVisuelWidth1920) { %>
+            <img src="<%= locals.visuel.visuelWidth1920 %>" alt="Visuel en 1920px de large" style="width:1920px;">
+        <% } %>
         <p>
             <label for="visuelWidth1920">Visuel en 1920px de large</label>
-            <input type="file" name="visuelWidth1920" id="visuelWidth1920">
-        </p>
+            <input type="file" name="visuelWidth1920" id="visuelWidth1920" value="<%= locals.visuel ? locals.visuel.visuelWidth1920 : '' %>">
+        </p>        
         <p>
             <button type="submit">Enregistrer</button>
             <button type="reset">Annuler</button>
@@ -43,6 +54,3 @@
 </section>
 
 <%- include('footer') -%>
-
-
-
