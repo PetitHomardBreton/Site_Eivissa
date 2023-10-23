@@ -24,7 +24,7 @@
             <ul>
                 <% themes.forEach(theme => { %>
                     <li>
-                        <input type="checkbox" name="themes" value="<%= theme.id %>">
+                        <input type="checkbox" name="themes[]" value="<%= theme.id %>">
                         <label for="<%= theme.id %>"><%= theme.nameTheme %></label>
                     </li>
                 <% }) %>

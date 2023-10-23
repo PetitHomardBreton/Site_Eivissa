@@ -1,4 +1,4 @@
-/* *****************************************************************
+/******************************************************************
 GENERAL
 ******************************************************************/
 
@@ -742,6 +742,17 @@ Liste des Themes
   line-height: 1.3;
 }
 
+.createRealisation li {
+  display: flex;
+  align-items: center; /* aligne verticalement les éléments enfants */
+  margin : 2rem;
+}
+
+.createRealisation input[type="checkbox"] {
+  margin-right: 2rem; /* ajoute un espace à droite de la checkbox */
+}
+
+
 .listeThemes p,
 .themeId p,
 .themeForm p,
@@ -817,7 +828,7 @@ Liste des Réalisations
   padding: 0;
 }
 
-.listeRealisations h2, .createRealisation h2{
+.listeRealisations h2{
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;

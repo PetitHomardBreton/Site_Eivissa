@@ -8,9 +8,19 @@ export const createRealisation = (realisationData, callback) => {
     query(
         `INSERT INTO realisations (id, rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation) VALUES (?, ?, ?, ?, ?)`,
         [id, realisationData.rankingRealisation, realisationData.nomRealisation, realisationData.descriptionRealisation, realisationData.commentaireRealisation],
-        callback
+        (error) => {
+            // Si vous avez une erreur, vous la retournez comme d'habitude
+            if (error) {
+                callback(error, null);
+                return;
+            }
+            
+            // Si tout va bien, vous retournez également l'ID généré
+            callback(null, id);
+        }
     );
 }
+
 
 /***READs***/
 

@@ -4,5 +4,6 @@ import { v4 } from 'uuid';
 /***CREATE***/
 
 export const createThemeRealisationLink = (themeId, realisationId, callback) => {
-    query(`INSERT INTO themesrealisations (idThemes, idRealisations) VALUES (?, ?)`, [themeId, realisationId], callback);
+    const id = v4();
+    query(`INSERT INTO themesrealisations (id, idThemes, idRealisations) VALUES (?, ?, ?)`, [id, themeId, realisationId], callback);
 };
