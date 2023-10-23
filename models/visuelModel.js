@@ -1,5 +1,13 @@
 import query from '../database.js';
 import { v4 } from 'uuid';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 
 /***CREATE***/
 
@@ -48,21 +56,30 @@ export const getAllVisuelsByRealisationId = (id, callback) => {
          callback);
 };
 
-/***UPDATE***/
-
-export const updateVisuelInDb = (data, callback) => {
-    query(`UPDATE visuels SET nameVisuel = ?,
-                               typeVisuel = ?,
-                               rankingVisuel = ?,
-                               commentaireVisuel = ?,
-                               visuelWidth767 = ?,
-                               visuelWidth1920 = ?
-            WHERE id = ?`, data, callback);
-}
-
 
 /***DELETE***/
 
 export const deleteVisuel = (visuelId, callback) => {
-    query(`DELETE FROM visuels WHERE id IN(?)`, [visuelId], callback);
+    // Obtenez d'abord les noms des fichiers image
+    query('SELECT visuelWidth767, visuelWidth1920 FROM visuels WHERE id = ?', [visuelId], (error, results) => {
+        if (error || results.length === 0) {
+            callback(error);
+            return;
+        }
+        
+        const visuelWidth767 = results[0].visuelWidth767;
+        const visuelWidth1920 = results[0].visuelWidth1920;
+
+        // Supprimez les fichiers image
+        fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth767), (err) => {
+            if (err) console.error("Erreur lors de la suppression de visuelWidth767:", err);
+        });
+
+        fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth1920), (err) => {
+            if (err) console.error("Erreur lors de la suppression de visuelWidth1920:", err);
+        });
+
+        // Maintenant, supprimez l'entrée de la base de données
+        query(`DELETE FROM visuels WHERE id = ?`, [visuelId], callback);
+    });
 };
