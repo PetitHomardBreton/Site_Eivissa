@@ -1,37 +1,36 @@
 import query from "../database.js";
 import formidable from "formidable";
 import fs from "fs";
-import { v4 as uuidv4 } from 'uuid';
 
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
 export function readVisuelById(req, res) {
-    let id = req.params.id;
+  let id = req.params.id;
 
-    query(
-        "SELECT visuels.*, realisations.nomRealisation FROM visuels LEFT JOIN realisations ON visuels.idRealisation = realisations.id WHERE visuels.id = ?",
-        [id],
-        (error, results) => {
-            if (error) {
-                console.error(error);
-                res.status(500).send("Erreur lors de la requete");
-                return;
-            }
+  query(
+    "SELECT visuels.*, realisations.nomRealisation FROM visuels LEFT JOIN realisations ON visuels.idRealisation = realisations.id WHERE visuels.id = ?",
+    [id],
+    (error, results) => {
+      if (error) {
+        console.error(error);
+        res.status(500).send("Erreur lors de la requete");
+        return;
+      }
 
-            const visuel = results[0];
+      const visuel = results[0];
 
-            if (!visuel) {
-                return res.status(404).send(`Visuel with id ${id} not found`);
-            }
+      if (!visuel) {
+        return res.status(404).send(`Visuel with id ${id} not found`);
+      }
 
-            res.render("updateVisuel", {
-                pageTitle: "Modif Visuel",
-                title: "Modification d'un visuel",
-                actionUpdateVisuel:
-                    `/realisations/${visuel.idRealisation}/visuels/${id}/update`,
-                visuel,
-            });
-        }
-    );
+      res.render("updateVisuel", {
+        pageTitle: "Modif Visuel",
+        title: "Modification d'un visuel",
+        actionUpdateVisuel:
+          `/realisations/${visuel.idRealisation}/visuels/${id}/update`,
+        visuel,
+      });
+    }
+  );
 }
 
 export function updateVisuelSubmit(req, res) {
@@ -55,19 +54,6 @@ export function updateVisuelSubmit(req, res) {
             }
         );
 
-    const copyFileToPublic = (oldPath, originalFilename, callback) => {
-        const newFilename = uuidv4() + "_" + originalFilename;
-        const newPath = "public/img/" + newFilename;
-        
-        fs.copyFile(oldPath, newPath, (error) => {
-            if (error) {
-                console.error(`Erreur lors de la copie du fichier ${error}`);
-                return callback(error);
-            }
-            callback(null, newFilename);
-        });
-    }
-
     formData.parse(req, (error, fields, files) => {
         if (error) {
             console.error(`Erreur lors de la récupération du visuel ${error}`);
@@ -79,20 +65,28 @@ export function updateVisuelSubmit(req, res) {
         let visuelWidth1920Name = "";
 
         if (files.newVisuelWidth767 && files.newVisuelWidth767[0] && files.newVisuelWidth767[0].originalFilename) {
-            copyFileToPublic(files.newVisuelWidth767[0].filepath, files.newVisuelWidth767[0].originalFilename, (error, newFilename) => {
+            let oldPath767 = files.newVisuelWidth767[0].filepath;
+            let newPath767 = "public/img/" + files.visuelWidth767[0].originalFilename;
+            visuelWidth767Name = files.visuelWidth767[0].originalFilename;
+
+            fs.copyFile(oldPath767, newPath767, (error) => {
                 if (error) {
+                    console.error(`Erreur lors de la récupération de la photo ${error}`);
                     res.status(500).send("Erreur serveur");
                     return;
                 }
-                visuelWidth767Name = newFilename;
+                
+                if (files.newVisuelWidth1920 && files.newVisuelWidth1920[0] && files.visuelWidth1920[0].originalFilename) {
+                    let oldPath1920 = files.newVisuelWidth1920[0].filepath;
+                    let newPath1920 = "public/img/" + files.visuelWidth1920[0].originalFilename;
+                    visuelWidth1920Name = files.visuelWidth1920[0].originalFilename;
 
-                if (files.newVisuelWidth1920 && files.newVisuelWidth1920[0] && files.newVisuelWidth1920[0].originalFilename) {
-                    copyFileToPublic(files.newVisuelWidth1920[0].filepath, files.newVisuelWidth1920[0].originalFilename, (error, newFilename) => {
+                    fs.copyFile(oldPath1920, newPath1920, (error) => {
                         if (error) {
+                            console.error(`Erreur lors de la récupération de la photo ${error}`);
                             res.status(500).send("Erreur serveur");
                             return;
                         }
-                        visuelWidth1920Name = newFilename;
                         updateVisuelIntoDb([
                             fields.nameVisuel,
                             fields.typeVisuel,
@@ -115,13 +109,17 @@ export function updateVisuelSubmit(req, res) {
                     ]);
                 }
             });
-        } else if (files.newVisuelWidth1920 && files.newVisuelWidth1920[0] && files.newVisuelWidth1920[0].originalFilename) {
-            copyFileToPublic(files.newVisuelWidth1920[0].filepath, files.newVisuelWidth1920[0].originalFilename, (error, newFilename) => {
+        } else if (files.newVisuelWidth1920 && files.newVisuelWidth1920[0].originalFilename) {
+            let oldPath1920 = files.newVisuelWidth1920[0].filepath;
+            let newPath1920 = "public/img/" + files.visuelWidth1920[0].originalFilename;
+            visuelWidth1920Name = files.visuelWidth1920[0].originalFilename;
+
+            fs.copyFile(oldPath1920, newPath1920, (error) => {
                 if (error) {
+                    console.error(`Erreur lors de la récupération de la photo ${error}`);
                     res.status(500).send("Erreur serveur");
                     return;
                 }
-                visuelWidth1920Name = newFilename;
                 updateVisuelIntoDb([
                     fields.nameVisuel,
                     fields.typeVisuel,
@@ -145,4 +143,3 @@ export function updateVisuelSubmit(req, res) {
         }
     });
 }
-

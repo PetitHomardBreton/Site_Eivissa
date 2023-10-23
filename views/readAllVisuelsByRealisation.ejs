@@ -19,7 +19,7 @@
                     <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="Visuel de <%= visuels[i].nameVisuel %>">
                     <span class="rankingVisuel">Ranking du visuel: <%= visuels[i].rankingVisuel %></span>
                     <span class="nameVisuel">Nom du visuel: <%= visuels[i].nameVisuel %> </span>
-                    <a href="<%= actionRead %>">
+                    <a href="<%= actionRead(visuels[i].id) %>">
                         <i class="fa fa-pencil-square"></i>
                     </a>
                 </li>

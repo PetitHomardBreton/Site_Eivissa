@@ -20,7 +20,7 @@ export default (req, res) => {
                 idVisuels: idVisuels,
                 actionDelete: "/realisations/" + idRealisation + "/visuels/delete",
                 actionAdd: "/realisations/" + idRealisation + "/visuels/add",
-                actionRead: "/realisations/" + idRealisation + "/visuels/" + idVisuels,
+                actionRead: (id) => "/realisations/" + idRealisation + "/visuels/" + id,
                 actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
             });
         } else {
