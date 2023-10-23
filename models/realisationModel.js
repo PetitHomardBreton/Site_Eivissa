@@ -32,6 +32,16 @@ export const getRealisationById = (id, callback) => {
     query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels ) ) vw ON r.id = vw.idRealisation WHERE r.id = ?', [id], callback);
 };
 
+export const getThemesForRealisation = (realisationId, callback) => {
+    query(`
+        SELECT t.* 
+        FROM themes t 
+        JOIN themesrealisations tr ON t.id = tr.idThemes
+        WHERE tr.idRealisations = ?
+    `, [realisationId], callback);
+};
+
+
 /***UPDATE***/
 
 export const updateRealisationModel = (data, callback) => {

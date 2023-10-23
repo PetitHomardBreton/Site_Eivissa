@@ -22,6 +22,23 @@
             <textarea name="commentaireRealisation" id="commentaireRealisation"><%= locals.realisation ? locals.realisation.commentaireRealisation : '' %></textarea>
         </p>
         <p>
+            Sélectionnez les thèmes liés:
+            <ul>
+                <% allThemes.forEach(theme => { %>
+                    <li>
+                        <input 
+                            type="checkbox" 
+                            name="themes[]" 
+                            value="<%= theme.id %>" 
+                            <%= associatedThemes.some(t => t.id === theme.id) ? 'checked' : '' %>
+                        >
+                        <label for="<%= theme.id %>"><%= theme.nameTheme %></label>
+                    </li>
+                <% }) %>
+            </ul>
+        </p>
+        
+        <p>
             <button type="submit">Enregistrer</button>
             <button type="reset">Annuler</button>
         </p>
