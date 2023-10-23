@@ -10,8 +10,8 @@ export default (req, res) => {
         }
 
         if (visuels && visuels.length > 0) {
-            
-            const idVisuels = visuels[0].id; 
+
+            const idVisuels = visuels[0].id;
             res.render("readAllVisuelsByRealisation", {
                 pageTitle: "VisuelsByRealisation",
                 visuels: visuels,
@@ -24,7 +24,8 @@ export default (req, res) => {
                 actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
             });
         } else {
-            res.status(404).send("Aucun visuel trouvé pour cette réalisation.");
+            // Rediriger vers la page actionAdd
+            res.redirect("/realisations/" + idRealisation + "/visuels/add");
         }
     });
 }
