@@ -19,7 +19,17 @@
             <label for="commentaireRealisation">Commentaire</label>
             <input type="text" name="commentaireRealisation" id="commentaireRealisation" value="<%= locals.realisation ? realisation.commentaireRealisation : '' %>">
         </p>
-
+        <p>
+            Sélectionnez les thèmes liés:
+            <ul>
+                <% themes.forEach(theme => { %>
+                    <li>
+                        <input type="checkbox" name="themes" value="<%= theme.id %>">
+                        <label for="<%= theme.id %>"><%= theme.nameTheme %></label>
+                    </li>
+                <% }) %>
+            </ul>
+        </p>
         <p>
             <button type="submit">Enregistrer</button>
             <button type="reset">Annuler</button>
