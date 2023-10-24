@@ -19,9 +19,21 @@ export const createThemeRealisationLink = (
 /*** READ ***/
 
 export const getRealisationsByTheme = (themeId, callback) => {
-  const queryStr = `SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r INNER JOIN ( SELECT tr.idRealisations, v.rankingVisuel, MAX(v.visuelWidth767) AS visuelWidth767, MAX(v.visuelWidth1920) AS visuelWidth1920 FROM themesrealisations tr INNER JOIN visuels v ON tr.idRealisations = v.idRealisation WHERE tr.idThemes = ? GROUP BY tr.idRealisations, v.rankingVisuel ) vw ON r.id = vw.idRealisations LEFT JOIN ( SELECT tr.idRealisations, MIN(v.rankingVisuel) AS minRankingVisuel FROM themesrealisations tr INNER JOIN visuels v ON tr.idRealisations = v.idRealisation WHERE tr.idThemes = ? GROUP BY tr.idRealisations ) minvw ON vw.idRealisations = minvw.idRealisations WHERE vw.rankingVisuel = minvw.minRankingVisuel ORDER BY r.rankingRealisation ASC`;
+  const queryStr = `SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation
+  FROM realisations r
+  LEFT JOIN (
+      SELECT tr.idRealisations,
+             MIN(v.rankingVisuel) AS minRankingVisuel
+      FROM themesrealisations tr
+      INNER JOIN visuels v ON tr.idRealisations = v.idRealisation
+      WHERE tr.idThemes = ?
+      GROUP BY tr.idRealisations
+  ) minvw ON r.id = minvw.idRealisations
+  LEFT JOIN visuels vw ON vw.idRealisation = minvw.idRealisations AND vw.rankingVisuel = minvw.minRankingVisuel
+  WHERE vw.rankingVisuel = minvw.minRankingVisuel
+  ORDER BY r.rankingRealisation ASC`;
 
-  query(queryStr, [themeId, themeId], callback);
+  query(queryStr, themeId, callback);
 };
 
 /*** Delete ***/
