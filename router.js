@@ -33,7 +33,7 @@ import readAllContacts from "./controllers/readAllContactsController.js";
 import getAllVisuels from "./controllers/readAllVisuelsController.js";
 import getAllRealisations from "./controllers/readAllRealisationsController.js";
 import getAllVisuelsByRealisationId from "./controllers/readAllVisuelsByRealisationController.js";
-
+import getVisuelsOfRealisation from "./controllers/visuelsOfRealisationController.js";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -57,6 +57,7 @@ router.use((req, res, next) => {
  *********************************************/
 router.get("/", HomeController);
 router.get("/portfolio", portfolio);
+router.get("/portfolio/:idRealisation", getVisuelsOfRealisation);
 router.get("/contactSubmitted", contactSubmittedController);
 router.get("/formContact", showContactForm);
 router.post("/formContact", addContactSubmit);

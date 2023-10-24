@@ -1,8 +1,8 @@
-import { getAllVisuelsByRealisationId } from "../models/visuelModel.js";
+import { getVisuelsOfRealisation } from "../models/visuelModel.js";
 
 export default (req, res) => {
     const idRealisation = req.params.idRealisation;
-    getAllVisuelsByRealisationId(idRealisation, (errorVisuels, visuels) => {
+    getVisuelsOfRealisation(idRealisation, (errorVisuels, visuels) => {
         if (errorVisuels) {
             console.error(errorVisuels);
             res.status(500).send("Erreur lors de la requête des visuels");
@@ -18,6 +18,8 @@ export default (req, res) => {
                 nomRealisation: visuels[0].nomRealisation,
                 nameVisuel: visuels[0].nameVisuel,
                 commentaireVisuel: visuels[0].commentaireVisuel,
+                visuelWidth767: visuels[0].visuelWidth767,
+                visuelWidth1920: visuels[0].visuelWidth1920,
                 idRealisation: idRealisation,
                 idVisuels: idVisuels,
                 actionDelete: "/realisations/" + idRealisation + "/visuels/delete",

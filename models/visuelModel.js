@@ -56,6 +56,21 @@ export const getAllVisuelsByRealisationId = (id, callback) => {
          callback);
 };
 
+export const getVisuelsOfRealisation = (id, callback) => {
+    console.log('id visuel : ', id);
+    query(
+        `
+        SELECT 
+            visuels.*, 
+            realisations.nomRealisation AS nomRealisation
+        FROM visuels 
+        LEFT JOIN realisations ON visuels.idRealisation = realisations.id 
+        WHERE visuels.idRealisation = ?
+        ORDER BY visuels.rankingVisuel 
+        ASC;`,
+         [id], 
+         callback);
+};
 
 /***DELETE***/
 
