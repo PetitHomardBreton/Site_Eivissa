@@ -1,0 +1,60 @@
+<%- include('head') -%>
+<%- include('header') -%>
+
+<section class="realisation">
+    <h1><%= nomRealisation %></h1>
+    <ul class="realisationMenu">
+        <% themes.forEach(theme => { %>
+        <li data-theme-id="<%= theme.id %>">
+            <%= theme.nameTheme %>
+        </li>
+        <% }); %>
+    </ul>
+
+    <div class="realisationContent">
+        <div class="portfolioRealisations">
+            <ul class="portfolioRealisationList">
+                <% for(let i=0; i<visuels.length; i++) { %>
+                <li>
+                    <img src="/img/<%= visuels[i].nameVisuel %>" alt="image nommée <%= visuels[i].nameVisuel %> , illustration du projet <%= visuels[i].nomRealisation %>">
+                    <p class="commentaireVisuel">
+                        <%= visuels[i].commentaireVisuel %>
+                    </p>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<%- include('footer') -%>
+
+<script>
+    const themeElements = document.querySelectorAll('.portfolioMenu li');
+
+    themeElements.forEach(themeElem => {
+        themeElem.addEventListener('click', (e) => {
+            fetch(`/portfolio?themeId=${e.target.dataset.themeId}`)
+            .then(response => response.json())
+            .then(data => {
+                const realisationList = document.querySelector('.portfolioRealisationList');
+                let output = '';
+
+                data.forEach(realisation => {
+                    output += `
+                    <li>
+                        <img src="/img/${realisation.visuelRealisation}" alt="illustration du projet ${realisation.nomRealisation}">
+                        <h2 class="nomRealisation">${realisation.nomRealisation.toUpperCase()}</h2>
+                        <p class="descriptionRealisation">${realisation.descriptionRealisation}</p>
+                        <a href="/portfolio/${realisation.id}">En savoir +</a>
+                    </li>`;
+                });
+
+                realisationList.innerHTML = output;
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des réalisations:', error);
+            });
+        });
+    });
+</script>

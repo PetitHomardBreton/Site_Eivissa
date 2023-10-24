@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 import formidable from 'formidable';
 import nodemailer from 'nodemailer';
+import xss from 'xss';
 
 import { addContact } from '../models/contactModel.js';
 
@@ -25,10 +26,14 @@ export function addContactSubmit(req, res) {
     const form = formidable({ multiples: true });
     const creationDate = DateTime.now().toFormat('yyyy-MM-dd HH:mm:ss');
 
+    const lastname = xss(req.body.lastname);
+    const firstname = xss(req.body.firstname);
+    const email = xss(req.body.email);
+    const message = xss(req.body.message);
 
 
     addContact(
-        [req.body.lastname, req.body.firstname, req.body.email, req.body.message, creationDate],
+        [lastname, firstname, email, message, creationDate],
         (error, results) => {
             if (error) {
                 console.error(error);
