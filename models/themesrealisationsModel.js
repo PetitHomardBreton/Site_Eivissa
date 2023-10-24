@@ -8,6 +8,19 @@ export const createThemeRealisationLink = (themeId, realisationId, callback) => 
     query(`INSERT INTO themesrealisations (id, idThemes, idRealisations) VALUES (?, ?, ?)`, [id, themeId, realisationId], callback);
 };
 
+/*** READ ***/
+
+export const getRealisationsByTheme = (themeId, callback) => {
+    const queryStr = `
+        SELECT r.*
+        FROM realisations r
+        JOIN themesrealisations tr ON r.id = tr.idRealisations
+        WHERE tr.idThemes = ?
+    `;
+
+    query(queryStr, [themeId], callback);
+};
+
 /*** Delete ***/
 
 // Supprimer les associations pour une réalisation donnée
