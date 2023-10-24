@@ -20,6 +20,8 @@ export default (req, res) => {
                 commentaireVisuel: visuels[0].commentaireVisuel,
                 visuelWidth767: visuels[0].visuelWidth767,
                 visuelWidth1920: visuels[0].visuelWidth1920,
+                descriptionRealisation: visuels[0].descriptionRealisation,
+                commentaireRealisation: visuels[0].commentaireRealisation,
                 idRealisation: idRealisation,
                 idVisuels: idVisuels,
                 actionDelete: "/realisations/" + idRealisation + "/visuels/delete",

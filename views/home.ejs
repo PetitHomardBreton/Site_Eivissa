@@ -6,7 +6,7 @@
     <p>Je suis là pour transformer vos idées en images et vidéos exeptionnelles grace à la 3d et au motion design. </p>
     <button>En savoir +</button>
   </section>
-  <section class = "aPropos">
+  <section id="aPropos" class = "aPropos">
     
   <h2>étudiante<br>en 3ème année<br>d’animation et<br>modélisation 3d<br>fREELANCE</h2>
   <p>Etudiante, alternante en région nantaise et vidéaste  3D généraliste freelance, je développe au quotidien mes compétences pour donner vie à vos projets de la manière la plus créative et professionnelle qui soit.</p>
@@ -18,5 +18,30 @@
    
   </section>
 
-<%- include('formContact') -%>  
+  <section id="formContact" class = "formContact">
+    <h1>Vous avez un projet en tête?<br />Discutons-en !</h1>
+    <p>Contactez-moi dès aujourd'hui pour discuter de vos besoins spécifiques et commençons à façonner ensemble vos idées en images et vidéos exceptionnelles.</p>
+  
+    <form class= "formContact" action="/formContact" method="post">
+      <div class="Name">
+    <div class="firstname">
+      <label for="firstname">Prénom :</label>
+      <input type="text" id="firstname" name="firstname" required />
+  </div>
+  <div class="space"></div>
+  <div class="lastname">
+      <label class="lastname" for="lastname">Nom :</label>
+      <input type="text" id="lastname" name="lastname" required />
+  </div>  
+  </div>
+      <label class="email" for="email">E-mail :</label>
+      <input type="email" id="email" name="email" required />
+  
+      <label class="message" for="message">Rédigez un message :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  
+  
+  </section>
   <%- include('footer') -%>

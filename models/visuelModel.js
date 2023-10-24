@@ -62,10 +62,12 @@ export const getVisuelsOfRealisation = (id, callback) => {
         `
         SELECT 
             visuels.*, 
-            realisations.nomRealisation AS nomRealisation
+            realisations.nomRealisation AS nomRealisation,
+            realisations.descriptionRealisation AS descriptionRealisation,
+            realisations.commentaireRealisation AS commentaireRealisation
         FROM visuels 
         LEFT JOIN realisations ON visuels.idRealisation = realisations.id 
-        WHERE visuels.idRealisation = ?
+        WHERE visuels.idRealisation = ? AND visuels.rankingVisuel >= 1
         ORDER BY visuels.rankingVisuel 
         ASC;`,
          [id], 
