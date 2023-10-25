@@ -14,13 +14,13 @@
     </p>
     <p>
       <label for="typeVisuel">Type de visuel</label>
-      <input
-        type="text"
-        name="typeVisuel"
-        id="typeVisuel"
-        value="<%= locals.visuel ? visuel.typeVisuel : '' %>"
-      />
+      <select name="typeVisuel" id="typeVisuel">
+        <option value="image" <%= locals.visuel && visuel.typeVisuel === 'image' ? 'selected' : '' %>>Image</option>
+        <option value="imageAnimee" <%= locals.visuel && visuel.typeVisuel === 'imageAnimee' ? 'selected' : '' %>>Image animée</option>
+        <option value="video" <%= locals.visuel && visuel.typeVisuel === 'video' ? 'selected' : '' %>>Vidéo</option>
+      </select>
     </p>
+    
     <p>
       <label for="rankingVisuel">Numéro d'ordre d'apparition</label>
       <input

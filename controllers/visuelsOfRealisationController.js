@@ -17,6 +17,7 @@ export default (req, res) => {
                 visuels: visuels,
                 nomRealisation: visuels[0].nomRealisation,
                 nameVisuel: visuels[0].nameVisuel,
+                typeVisuel: visuels[0].typeVisuel,
                 commentaireVisuel: visuels[0].commentaireVisuel,
                 visuelWidth767: visuels[0].visuelWidth767,
                 visuelWidth1920: visuels[0].visuelWidth1920,
@@ -31,7 +32,7 @@ export default (req, res) => {
             });
         } else {
             // Rediriger vers la page actionAdd
-            res.redirect("/realisations/" + idRealisation + "/visuels/add");
+            res.redirect("/portfolio");
         }
     });
 }

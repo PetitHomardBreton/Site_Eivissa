@@ -87,14 +87,19 @@ export const deleteVisuel = (visuelId, callback) => {
         const visuelWidth767 = results[0].visuelWidth767;
         const visuelWidth1920 = results[0].visuelWidth1920;
 
-        // Supprimez les fichiers image
-        fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth767), (err) => {
-            if (err) console.error("Erreur lors de la suppression de visuelWidth767:", err);
-        });
+        // Supprimez les fichiers image pour visuelWidth767 s'il existe
+        if (visuelWidth767) {
+            fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth767), (err) => {
+                if (err) console.error("Erreur lors de la suppression de visuelWidth767:", err);
+            });
+        }
 
-        fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth1920), (err) => {
-            if (err) console.error("Erreur lors de la suppression de visuelWidth1920:", err);
-        });
+        // Supprimez les fichiers image pour visuelWidth1920 s'il existe
+        if (visuelWidth1920) {
+            fs.unlink(path.join(__dirname, '..', 'public', 'img', visuelWidth1920), (err) => {
+                if (err) console.error("Erreur lors de la suppression de visuelWidth1920:", err);
+            });
+        }
 
         // Maintenant, supprimez l'entrée de la base de données
         query(`DELETE FROM visuels WHERE id = ?`, [visuelId], callback);

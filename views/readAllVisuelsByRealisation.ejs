@@ -16,8 +16,19 @@
                 <% } %>
                 <li>
                     <input type="radio" name="visuelToDelete" value="<%= visuels[i].id %>">
+                    <% if (visuels[i].typeVisuel === "video") { %>
+                        <video controls width="20%">
+                            <source src="/img/<%= visuels[i].visuelWidth767 %>" type="video/mp4">
+                            Votre navigateur ne prend pas en charge la vidéo.
+                        </video>
+                        <video controls width="20%">
+                            <source src="/img/<%= visuels[i].visuelWidth1920 %>" type="video/mp4">
+                            Votre navigateur ne prend pas en charge la vidéo.
+                        </video>
+                    <% } else { %>
                     <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="Visuel de <%= visuels[i].nameVisuel %>">
                     <img src="/img/<%= visuels[i].visuelWidth1920 %>" alt="Visuel de <%= visuels[i].nameVisuel %>">
+                    <% } %>
                     <span class="rankingVisuel">Ranking du visuel: <%= visuels[i].rankingVisuel %></span>
                     <span class="nameVisuel">Nom du visuel: <%= visuels[i].nameVisuel %> </span>
                 </li>

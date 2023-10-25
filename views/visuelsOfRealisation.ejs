@@ -4,18 +4,27 @@
 <section class="visuelsOfRealisation">
     <h1><%= nomRealisation %></h1>
     <h2><%= descriptionRealisation%> <br><%= commentaireRealisation%></h2>
-   
 
     <div class="visuelContent">
         <div class="visuels">
             <ul class="visuelsList">
                 <% for(let i=0; i<visuels.length; i++) { %>
                 <li>
+                
+                <% if (visuels[i].typeVisuel === "video") { %>
+                    <video controls width="100%" loop>
+                        <source media="(max-width: 767px)" src="/img/<%= visuels[i].visuelWidth767 %>" type="video/mp4">
+                        <source media="(min-width: 768px)" src="/img/<%= visuels[i].visuelWidth1920 %>" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la vidéo.
+                    </video>
+                <% } else { %>
                     <picture>
                         <source media="(max-width: 767px)" srcset="/img/<%= visuels[i].visuelWidth767 %>">
                         <source media="(min-width: 768px)" srcset="/img/<%= visuels[i].visuelWidth1920 %>">
                         <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="image nommée <%= visuels[i].nameVisuel %> , illustration du projet <%= visuels[i].nomRealisation %>">
-                      </picture>
+                    </picture>
+                <% } %>
+
                     <p class="commentaireVisuel">
                         <%= visuels[i].commentaireVisuel %>
                     </p>
@@ -27,4 +36,3 @@
 </section>
 
 <%- include('footer') -%>
-</script>
