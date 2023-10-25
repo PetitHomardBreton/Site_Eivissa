@@ -34,6 +34,7 @@ import getAllVisuels from "./controllers/readAllVisuelsController.js";
 import getAllRealisations from "./controllers/readAllRealisationsController.js";
 import getAllVisuelsByRealisationId from "./controllers/readAllVisuelsByRealisationController.js";
 import getVisuelsOfRealisation from "./controllers/visuelsOfRealisationController.js";
+import nodemon from "nodemon";
 
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
@@ -65,7 +66,6 @@ router.post("/formContact", addContactSubmit);
 /*********************************************
  * Routes Admin
 *********************************************/
-  
 /* login */
 router.get('/login', loginForm);
 router.post('/login', login);
