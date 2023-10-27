@@ -315,33 +315,15 @@ Portfolio
   padding: 0.5rem 1rem;
   margin: 1rem 17px;
 
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s;
+
+  transition: all 0.6s;
   
 }
 
-.portfolioMenu li::before{
-  content: '';
-  position: absolute;
-  background-color: #d59c3c;
-  height: 100%;
-  top: 0;
-  left: 0;
-  width: 0%;
-  z-index: -1;
-  transition: all 0.3s;
-  
-}
 
-.portfolioMenu li:hover {
-  color: #050819;
-}
 
-.portfolioMenu li:hover::before {
-  width: 100%;
 
-}
+
 
 /**************************************************************************
 Realisation
