@@ -13,7 +13,7 @@ export default (req, res) => {
 
             const idVisuels = visuels[0].id;
             res.render("visuelsOfRealisation", {
-                pageTitle: "VisuelsByRealisation",
+                pageTitle: "Visuels de " + visuels[0].nomRealisation,
                 visuels: visuels,
                 nomRealisation: visuels[0].nomRealisation,
                 nameVisuel: visuels[0].nameVisuel,

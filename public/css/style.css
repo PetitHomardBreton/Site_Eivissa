@@ -234,26 +234,21 @@ footer .reseauxSociaux img {
 /**************************************************************************
 Portfolio
 ***************************************************************************/
-.portfolioContent{
-  border: red solid 1px;
-}
-.portfolioRealisations {
-  margin:1rem;
-  border: green solid 1px;
 
-}
+
+
 
 .portfolioRealisationList{
   margin: 1rem;
-  border: blue solid 1px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
 }
 
 .portfolioRealisationList li{
   margin: 1rem;
   max-width: 500px;
-  border: yellow solid 1px;
   padding: 1rem;
 }
 
@@ -267,7 +262,7 @@ Portfolio
 }
 
 .portfolioRealisations h2 {
-  font-size: clamp(17px, 4.5vw, 35px);
+  font-size: clamp(17px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: clamp(5px, 0.01vw, 10px);
@@ -275,7 +270,7 @@ Portfolio
 }
 
 .portfolioRealisations p{
-  font-size: clamp(11px, 2vw, 17px);
+  font-size: clamp(11px, 1.5vw, 17px);
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   /* 182.353% */
@@ -307,6 +302,7 @@ Portfolio
 }
 
 .portfolioMenu li {
+  cursor: pointer;
   color: var(--Dore, #d59c3c);
   font-family: Raleway;
   font-size: clamp(11px, 1.6vw, 20px);
