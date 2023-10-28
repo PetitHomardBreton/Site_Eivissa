@@ -229,6 +229,7 @@ footer .reseauxSociaux img {
   width: clamp(56px, 5vw, 98px);
   height: auto;
   margin: auto;
+  cursor: default;
 }
 
 /**************************************************************************
@@ -701,21 +702,80 @@ Home
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
   text-decoration: none;
+  display: inline-block;
 }
 
-.domainesExpertises h2 {
-  background-color: var(--navbar-bg-color);
-  font-size: clamp(17px, 5vw, 60px);
-  font-weight: 300;
+#domainesExpertises h2 {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-left: 9vw;
   margin-right: 9vw;
-text-align: right;
-  max-width: 60%;
   color: #d59c3c;
-  text-align: left;
   line-height: 1.3;
+}
+
+#domainesExpertises p{
+  font-size: clamp(11px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+#domainesExpertises .articleAlignLeft {
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: auto;
+}
+
+#domainesExpertises .articleAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: auto;
+}
+#domainesExpertises img{
+width: 100%; 
+height: auto;
+display: block;
+margin: auto;
+max-width: 578px;
+}
+
+#domainesExpertises h3{
+  font-size: clamp(17px, 5vw, 60px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+
+
+
+#domainesExpertises a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#domainesExpertises .textAlignRight a {
+  float: right;  
+  clear: both;  
 }
 
 .formContact , .contactSubmitted {

@@ -21,6 +21,11 @@ function toggleMenu() {
 }
 toggleMenu();
 
+/*************************************************/
+/*        Animation sur les thèmes               */
+/*************************************************/
+
+
 // Sélectionnez tous les éléments de liste
 const themeItems = document.querySelectorAll('.portfolioMenu li');
 
@@ -43,5 +48,11 @@ themeItems.forEach((themeItem, index) => {
     });
 });
 
+/*******************************************/
+/*Masquage redirection survorl logo footer */
+/*******************************************/
 
+function redirectToLogin() {
+  window.location.href = "/login";
+}
 
