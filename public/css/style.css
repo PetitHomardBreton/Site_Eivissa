@@ -232,6 +232,350 @@ footer .reseauxSociaux img {
   cursor: default;
 }
 
+/***********************************************************************/
+/*********  Page Home **************************************************/
+/***********************************************************************/
+
+/*****************************/
+/************Intro************/
+/*      Page Home            */
+/*****************************/
+
+.intro {
+  height: clamp(456px, 90vw, 869px);
+  max-width: 1920px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/Bannière_Intro-1199x543.png");
+  background-size: cover;
+  background-position: center;
+  border-bottom: #d59c3c solid 1.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro h1 {
+  margin: 0 auto 3rem 10%;
+  padding-top: 3.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 80%;
+}
+
+.intro p {
+  max-width: max-content;
+  margin: 0 auto 0 10%;
+  padding: 0;
+  max-width: 70%;
+}
+
+.intro h2 {
+  max-width: max-content;
+  margin: 3rem auto 2rem 10%;
+  max-width: 65%;
+  line-height: 1.75;
+}
+
+.intro a  {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin: 2rem auto 2rem 9vw;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*****************************/
+/**********A propos***********/
+/*      Page Home            */
+/*****************************/
+
+.aPropos {
+  background-image: url("../img/Photo_Profil-767x496.png");
+  background-color: #050819;
+  background-size: 100% auto;
+  /* Largeur à 100% et hauteur ajustée proportionnellement */
+  background-position: center top;
+  /* centré verticalement */
+  background-repeat: no-repeat;
+  /* éviter la répétition de l'image si elle est trop petite en hauteur */
+  /*display: flex;*/
+  flex-direction: column;
+  align-content: end;
+  padding-bottom: 4rem;
+}
+
+.aPropos h2 {
+  font-size: clamp(19px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 0;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-bottom: 2rem;
+  max-width: 65%;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+  padding-top: 40vw;
+}
+
+.aPropos h3 {
+  font-family: Raleway;
+  font-size: clamp(11px, 1vw, 17px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-top: 2rem;
+  max-width: 60%;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+
+
+
+.aPropos p {
+  font-family: Raleway;
+  font-size: clamp(10px, 1vw, 17px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-bottom: 0;
+}
+
+.aPropos a{
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin: 2rem 0 2rem 9vw;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+ }
+
+/*****************************/
+/****Domaines d'expertises****/
+/*      Page Home            */
+/*****************************/
+
+#domainesExpertises {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#domainesExpertises h2 {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+#domainesExpertises .textAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
+
+#domainesExpertises p{
+  font-size: clamp(11px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+}
+#domainesExpertises .articleAlignLeft {
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+#domainesExpertises .articleAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
+#domainesExpertises img{
+width: 100%; 
+height: auto;
+display: block;
+margin: auto;
+max-width: 578px;
+}
+
+#domainesExpertises h3{
+  font-size: clamp(17px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+
+
+
+#domainesExpertises a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#domainesExpertises .textAlignRight a {
+  float: right;  
+  clear: both;  
+}
+
+#domainesExpertises .voirTousProjets{
+ margin: 2rem auto;
+}
+
+/*****************************/
+/*********Contct Form*********/
+/*      Page Home            */
+/*****************************/
+
+.formContact , .contactSubmitted {
+  height: auto;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/respirateur-767x431.png");
+  /* Image par défaut pour mobile */
+  background-position: center center;
+  /* Centre l'image */
+  background-repeat: no-repeat;
+  /* Empêche la répétition de l'image */
+  background-size: cover;
+  /* Agrandit l'image pour couvrir l'élément */
+/*padding-bottom: 4rem;*/
+
+}
+
+
+.formContact h2 , .contactSubmitted h2 {
+  font-size: clamp(17px, 5vw, 60px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d59c3c;
+  margin-top: 2rem;
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+.formContact p,
+.formContact form {
+  margin-top: 1rem;
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+.contactSubmitted a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-bottom: 9vw;
+}
+
+.formContact label {
+  text-transform: uppercase;
+}
+
+.Name {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+
+.firstname, .lastname, .email{
+  width: 100%;
+  
+}
+
+#firstname,
+#lastname {
+  width: 100%;
+  height: clamp(24px, 3vw, 48px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+
+#email {
+  width: 100%;
+  height: clamp(24px, 3vw, 48px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+#message {
+  width: 100%;
+  height: clamp(116px, 15vw, 217px);
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.buttonContact{
+  margin: 2rem auto;
+
+
+}
+
+
 /**************************************************************************
 Portfolio
 ***************************************************************************/
@@ -371,72 +715,6 @@ Realisation
   margin-left: 4vw;
 }
 
-/**************************************************************************
-Contact
-***************************************************************************/
-.contact p {
-  max-width: 952px;
-  text-align: center;
-  font-family: Raleway;
-  font-size: clamp(10px, 2vw, 17px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  /* 182.353% */
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-}
-
-.formContact {
-  display: flex;
-  max-width: 952px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-
-  background-color: transparent;
-  padding: 1rem 0;
-}
-
-.formContact label {
-  text-transform: uppercase;
-}
-
-.Name {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#firstname,
-#lastname {
-  width: clamp(240px, 75vw, 460px);
-  height: clamp(24px, 3vw, 48px);
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
-.space {
-  width: 3rem;
-}
-
-#email {
-  width: 100%;
-  height: clamp(24px, 3vw, 48px);
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
-#message {
-  width: 100%;
-  height: clamp(116px, 15vw, 217px);
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
 
 /**************************************************************************
   Small device 
@@ -583,270 +861,10 @@ Contact
   }
 }
 
-/****************************************
-Home
-****************************************/
 
-.intro {
-  height: clamp(456px, 90vw, 869px);
-  max-width: 1920px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/Bannière_Intro-1199x543.png");
-  background-size: cover;
-  background-position: center;
-  border-bottom: #d59c3c solid 1.5px;
-}
-
-.intro h1 {
-  margin: 0 auto 3rem 10%;
-  padding-top: 3.5rem;
-  margin-bottom: 2.5rem;
-  max-width: 80%;
-}
-
-.intro p {
-  max-width: max-content;
-  margin: 0 auto 0 10%;
-  padding: 0;
-  max-width: 70%;
-}
-
-.intro h2 {
-  max-width: max-content;
-  margin: 3rem auto 2rem 10%;
-  max-width: 65%;
-  line-height: 1.75;
-}
-
-.intro button {
-  font-size: clamps(10px, 2vw, 20px);
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  color: #d59c3c;
-  background-color: transparent;
-  border: #d59c3c solid 1.5px;
-  text-transform: uppercase;
-  padding: 0 1rem;
-  margin-top: 1.5rem;
-  margin-left: 10%;
-}
-
-.aPropos {
-  background-image: url("../img/Photo_Profil-767x496.png");
-  background-color: #050819;
-  background-size: 100% auto;
-  /* Largeur à 100% et hauteur ajustée proportionnellement */
-  background-position: center top;
-  /* centré verticalement */
-  background-repeat: no-repeat;
-  /* éviter la répétition de l'image si elle est trop petite en hauteur */
-  /*display: flex;*/
-  flex-direction: column;
-  align-content: end;
-  padding-bottom: 4rem;
-}
-
-.aPropos h2 {
-  font-size: clamp(19px, 3vw, 35px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-top: 0;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-bottom: 2rem;
-  max-width: 65%;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
-  padding-top: 40vw;
-}
-
-.aPropos h3 {
-  font-family: Raleway;
-  font-size: clamp(11px, 1vw, 17px);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-top: 2rem;
-  max-width: 60%;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
-}
-
-
-
-.aPropos p {
-  font-family: Raleway;
-  font-size: clamp(10px, 1vw, 17px);
-  font-style: normal;
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-bottom: 0;
-}
-
-.aPropos a {
-  font-family: Raleway;
-  font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
-  text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
-  margin: 2rem 0 2rem 9vw;
-  padding: 0.9rem 2rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-/*****************************/
-/****Domaines d'expertises****/
-/*****************************/
-
-#domainesExpertises {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#domainesExpertises h2 {
-  font-size: clamp(20px, 5vw, 60px);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  color: #d59c3c;
-  line-height: 1.3;
-}
-#domainesExpertises .textAlignRight {
-  display: block;
-  text-align: right;
-  margin-right: 9vw;
-  margin-left: 9vw;
-}
-
-#domainesExpertises p{
-  font-size: clamp(11px, 1.5vw, 17px);
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
-}
-#domainesExpertises .articleAlignLeft {
-  text-align: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
-}
-
-#domainesExpertises .articleAlignRight {
-  display: block;
-  text-align: right;
-  margin-right: 9vw;
-  margin-left: 9vw;
-}
-#domainesExpertises img{
-width: 100%; 
-height: auto;
-display: block;
-margin: auto;
-max-width: 578px;
-}
-
-#domainesExpertises h3{
-  font-size: clamp(17px, 3vw, 35px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-left: 0;
-  margin-right: 0;
-  color: #d59c3c;
-  line-height: 1.3;
-}
-
-
-
-#domainesExpertises a {
-  font-family: Raleway;
-  font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
-  text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-}
-
-#domainesExpertises .textAlignRight a {
-  float: right;  
-  clear: both;  
-}
-
-#domainesExpertises .voirTousProjets{
- margin: 2rem auto;
-}
-
-/*****************************/
-/*********Contct Form*********/
-/*****************************/
-
-.formContact , .contactSubmitted {
-  height: auto;
-  max-width: 1920px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../img/respirateur-767x431.png");
-  /* Image par défaut pour mobile */
-  background-position: center center;
-  /* Centre l'image */
-  background-repeat: no-repeat;
-  /* Empêche la répétition de l'image */
-  background-size: cover;
-  /* Agrandit l'image pour couvrir l'élément */
-}
-
-.formContact h1 , .contactSubmitted h1 {
-  margin-top: 2rem;
-  text-align: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
-}
-
-.formContact p,
-.formContact form {
-  margin-top: 1rem;
-  text-align: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
-}
-
-.contactSubmitted a {
-  font-family: Raleway;
-  font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
-  text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
-  padding: 0.9rem 2rem;
-  letter-spacing: 2px;
-  text-decoration: none;
-  margin-bottom: 9vw;
-}
 
 /*************************************************************
-Liste des Themes
+Page ADMIN : Liste des Themes
 **************************************************************/
 .listeThemes,
 .themeId,
@@ -967,7 +985,7 @@ i.fa.fa-pencil-square {
 }
 
 /*************************************************************
-Liste des Réalisations
+Page ADMIN : Liste des Réalisations
 **************************************************************/
 
 .listeRealisations, .createRealisation {
@@ -1017,7 +1035,7 @@ Liste des Réalisations
 }
 
 /*************************************************************
-Liste des contacts
+Page ADMIN : Liste des contacts
 **************************************************************/
 
 .listeContacts {
@@ -1046,7 +1064,7 @@ Liste des contacts
 
 
 /*************************************************************
-Liste des Visuels
+Page ADMIN : Liste des Visuels
 **************************************************************/
 .listeVisuels {
   background-color: #050819;
@@ -1122,6 +1140,12 @@ Liste des Visuels
       url("../img/Bannière_Intro-1920x869.png");
   }
 
+  .intro a  {
+
+    margin: 2rem auto;
+  }
+
+
   .aPropos {
     background-image: url("../img/Photo_Profil-1920x1242.png");
   }
@@ -1189,14 +1213,10 @@ Liste des Visuels
     width: 100%;
   }
 
-  .intro {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
+
 
   .intro h1 {
-    margin: 24rem auto 11rem auto;
+    margin: 4vw auto 10rem auto;
     text-align: center;
   }
 
@@ -1212,6 +1232,31 @@ Liste des Visuels
     margin: 0 auto auto auto;
   }
 
+  .formContact h2 , .contactSubmitted h2 {
+    text-align: center;
+  }
+
+  .formContact p {
+   max-width: 950px;
+    text-align: center;
+  }
+  .formContact form {
+  width: 75%;
+  max-width: 950px;
+}
+
+form .Name {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.firstname, .lastname {
+  width: calc(50% - 1.5rem); /* 50% de la largeur totale, moins une marge pour l'espacement */
+}
 
 /*****************************/
 /****Domaines d'expertises****/

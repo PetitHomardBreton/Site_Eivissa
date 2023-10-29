@@ -4,7 +4,7 @@
     <h1>Généraliste 3d<br />Motion-designer <br />Freelance</h1>
     <p>Bienvenue dans mon unviers créatif, où l’imagination devient réalitée !</p>
     <p>Je suis là pour transformer vos idées en images et vidéos exeptionnelles grace à la 3d et au motion design. </p>
-    <button>En savoir +</button>
+    <a href="#domainesExpertises">En savoir +</a>
   </section>
 
   <section id="aPropos" class = "aPropos">    
@@ -61,27 +61,28 @@
   </section>
 
   <section id="formContact" class = "formContact">
-    <h1>Vous avez un projet en tête?<br />Discutons-en !</h1>
+    <h2>Vous avez un projet en tête?<br />Discutons-en !</h2>
     <p>Contactez-moi dès aujourd'hui pour discuter de vos besoins spécifiques et commençons à façonner ensemble vos idées en images et vidéos exceptionnelles.</p>
   
-    <form class= "formContact" action="/formContact" method="post">
+    <form action="/formContact" method="post">
+
       <div class="Name">
-    <div class="firstname">
-      <label for="firstname">Prénom :</label>
-      <input type="text" id="firstname" name="firstname" required />
-  </div>
-  <div class="space"></div>
-  <div class="lastname">
-      <label class="lastname" for="lastname">Nom :</label>
-      <input type="text" id="lastname" name="lastname" required />
-  </div>  
-  </div>
+        <div class="firstname">
+          <label for="firstname">Prénom :</label>
+          <input type="text" id="firstname" name="firstname" required />
+        </div>
+        <div class="lastname">
+          <label class="lastname" for="lastname">Nom :</label>
+          <input type="text" id="lastname" name="lastname" required />
+        </div>  
+      </div>
+      
       <label class="email" for="email">E-mail :</label>
       <input type="email" id="email" name="email" required />
   
       <label class="message" for="message">Rédigez un message :</label>
       <textarea id="message" name="message" rows="4" required></textarea>
-      <button type="submit">Envoyer</button>
+      <button class = "buttonContact" type="submit">Envoyer</button>
     </form>
   
   </section>
