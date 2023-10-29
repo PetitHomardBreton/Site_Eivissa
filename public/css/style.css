@@ -705,6 +705,16 @@ Home
   display: inline-block;
 }
 
+/*****************************/
+/****Domaines d'expertises****/
+/*****************************/
+
+#domainesExpertises {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #domainesExpertises h2 {
   font-size: clamp(20px, 5vw, 60px);
   font-weight: 400;
@@ -715,6 +725,12 @@ Home
   color: #d59c3c;
   line-height: 1.3;
 }
+#domainesExpertises .textAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
 
 #domainesExpertises p{
   font-size: clamp(11px, 1.5vw, 17px);
@@ -722,20 +738,18 @@ Home
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
   color: #d59c3c;
-  margin-left: 9vw;
-  margin-right: 9vw;
 }
 #domainesExpertises .articleAlignLeft {
   text-align: left;
   margin-left: 9vw;
-  margin-right: auto;
+  margin-right: 9vw;
 }
 
 #domainesExpertises .articleAlignRight {
   display: block;
   text-align: right;
   margin-right: 9vw;
-  margin-left: auto;
+  margin-left: 9vw;
 }
 #domainesExpertises img{
 width: 100%; 
@@ -746,7 +760,7 @@ max-width: 578px;
 }
 
 #domainesExpertises h3{
-  font-size: clamp(17px, 5vw, 60px);
+  font-size: clamp(17px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -777,6 +791,14 @@ max-width: 578px;
   float: right;  
   clear: both;  
 }
+
+#domainesExpertises .voirTousProjets{
+ margin: 2rem auto;
+}
+
+/*****************************/
+/*********Contct Form*********/
+/*****************************/
 
 .formContact , .contactSubmitted {
   height: auto;
@@ -1190,6 +1212,33 @@ Liste des Visuels
     margin: 0 auto auto auto;
   }
 
+
+/*****************************/
+/****Domaines d'expertises****/
+/*       Medium device       */
+/*****************************/
+.expertise{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 9vw;
+  margin-right: 0;
+}
+
+.expertiseOrdreInv{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: 0;
+  margin-right: 9vw;
+}
+#domainesExpertises h3, #domainesExpertises img{
+margin-top: 3vw;
+}
+
+/*****************************/
+/********Contact Form*********/
+/*       Medium device       */
+/*****************************/
   .contact h1,
   .contact p,
   .contact form {
