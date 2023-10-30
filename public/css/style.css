@@ -715,6 +715,9 @@ Realisation
   margin-left: 4vw;
 }
 
+.visuelsList video{
+  width : 100%
+}
 
 /**************************************************************************
   Small device 
