@@ -1,6 +1,6 @@
 <body>
   <header>
-    <nav class="navbar dark-mode" role="navigation">
+    <nav class="navbar dark-mode" >
       <a href="/">
         <img
           id="logoLeft"
@@ -32,7 +32,7 @@
     </nav>
     <% if (locals.isLogged) { %>
     <h2 class="admin__title">Espace Admin</h2>
-    <nav role="navigation">
+    <nav >
       <ul class="navbar__admins">
         <li class="themes"><a href="/themes">les Themes</a></li>
         <li class="realisations"><a href="/realisations">Les réalisations</a></li>
@@ -43,4 +43,4 @@
     </nav>
     <% } %>
   </header>
-  <main class="main-content" role="main">
+  <main class="main-content">
