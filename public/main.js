@@ -60,19 +60,25 @@ function redirectToLogin() {
 /*Charger les vidéos en funct de l'écran   */
 /*******************************************/
 
+
 document.addEventListener('DOMContentLoaded', function() {
   var video = document.getElementById('video');
 
-  function loadVideo() {
-    if (window.matchMedia("(max-width: 767px)").matches) {
-      video.src = "/img/<%= visuels[i].visuelWidth767 %>";
-    } else {
-      video.src = "/img/<%= visuels[i].visuelWidth1920 %>";
+  // Vérifiez si l'élément vidéo existe avant de charger la vidéo
+  if (video) {
+    function loadVideo() {
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        video.src = "/img/<%= visuels[i].visuelWidth767 %>";
+      } else {
+        video.src = "/img/<%= visuels[i].visuelWidth1920 %>";
+      }
     }
+
+    loadVideo();
+
+    window.addEventListener('resize', loadVideo);
   }
-
-  loadVideo();
-
-  window.addEventListener('resize', loadVideo);
 });
+
+
 
