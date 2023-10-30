@@ -56,3 +56,23 @@ function redirectToLogin() {
   window.location.href = "/login";
 }
 
+/*******************************************/
+/*Charger les vidéos en funct de l'écran   */
+/*******************************************/
+
+document.addEventListener('DOMContentLoaded', function() {
+  var video = document.getElementById('video');
+
+  function loadVideo() {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      video.src = "/img/<%= visuels[i].visuelWidth767 %>";
+    } else {
+      video.src = "/img/<%= visuels[i].visuelWidth1920 %>";
+    }
+  }
+
+  loadVideo();
+
+  window.addEventListener('resize', loadVideo);
+});
+

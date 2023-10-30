@@ -12,11 +12,16 @@
                 <li>
                 
                 <% if (visuels[i].typeVisuel === "video") { %>
-                    <video controls width="100%" loop>
-                        <source media="(max-width: 767px)" src="/img/<%= visuels[i].visuelWidth767 %>" type="video/mp4">
-                        <source media="(min-width: 768px)" src="/img/<%= visuels[i].visuelWidth1920 %>" type="video/mp4">
-                        Votre navigateur ne prend pas en charge la vidéo.
-                    </video>
+
+<video id="video" controls loop>
+  <source src="/img/<%= visuels[i].visuelWidth767 %>" type="video/mp4">
+  <source src="/img/<%= visuels[i].visuelWidth1920 %>" type="video/mp4">
+  Votre navigateur ne prend pas en charge la vidéo.
+</video>
+
+
+
+
                 <% } else { %>
                     <picture>
                         <source media="(max-width: 767px)" srcset="/img/<%= visuels[i].visuelWidth767 %>">
