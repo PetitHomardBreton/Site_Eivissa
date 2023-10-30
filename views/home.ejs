@@ -4,19 +4,82 @@
     <h1>Généraliste 3d<br />Motion-designer <br />Freelance</h1>
     <p>Bienvenue dans mon unviers créatif, où l’imagination devient réalitée !</p>
     <p>Je suis là pour transformer vos idées en images et vidéos exeptionnelles grace à la 3d et au motion design. </p>
-    <button>En savoir +</button>
+    <a href="#domainesExpertises">En savoir +</a>
   </section>
-  <section class = "aPropos">
-    
+
+  <section id="aPropos" class = "aPropos">    
   <h2>étudiante<br>en 3ème année<br>d’animation et<br>modélisation 3d<br>fREELANCE</h2>
   <p>Etudiante, alternante en région nantaise et vidéaste  3D généraliste freelance, je développe au quotidien mes compétences pour donner vie à vos projets de la manière la plus créative et professionnelle qui soit.</p>
     <p>De l’animation 3D au Motion Design en passant par la Post Production, mon profil 360° couvre tous les aspects de la production vidéo.</p>
     <p>Avec une passion pour l'animation et un profil polyvalent, je suis prête à collaborer avec vous pour réaliser vos rêves visuels.</p>
     <h3>Prêt à embarquer dans cette aventure créative ?</h3>
 
-    <button>Prendre contact</button>
-   
+    <a href="/formContact">Prendre contact</a>   
   </section>
 
-<%- include('contact') -%>  
+  <section id="domainesExpertises" class = "">
+
+    <h2 class="textAlignRight">Domaines d’expertises</h2>
+        <p class="textAlignRight">Modéliation et Animation 3D, Motion Design, Caracter Design, Post Production ou encore FXs, 
+        mon profil polyvalent me permet de donner vie à toutes vos idées à travers une multidues de médiums.</p>
+        <p class="textAlignRight">D’une simple image à une vidéo, je retranscris au mieux vos rêves créatifs.</p>
+
+<div class="expertiseOrdreInv">
+          <img src="/img/Expertise1-578x325.png" alt="image illustrant le savoir faire de modélisation">
+          <article class="articleAlignLeft">
+          <h3>Modélisation et Animation 3d</h3>
+          <p>De la modélisation à l’animation, je donne vie à l’imaginaire en images fixes ou animées.</p>
+        </article>
+</div>
+<div class="expertise">
+
+          <img class="imgAlignRight" src="/img/Expertise2-578x325.png" alt="image illustrant le savoir faire de motion design">
+          <article class="articleAlignRight">
+          <h3>Motion Design</h3>
+          <p>Animation 2D, de logo ou de wording, je dynamise vos communications grâce au motion design.</p>
+        </article>
+</div>
+<div class="expertiseOrdreInv">
+          <img src="/img/Expertise3-578x325.png" alt="image illustrant le savoir faire de caracter design">
+          <article class="articleAlignLeft">
+          <h3>Caracter Design</h3>
+          <p>Besoin d’un personnage ? Mes compétences en caracter design me permet de donner vie au protagoniste de vos rêves.</p>
+        </article>
+        </div>
+<div class="expertise">
+          <img class="imgAlignRight" src="/img/Expertise4-578x325.png" alt="image illustrant le savoir faire de Post-Production et FXS">
+          <article class="articleAlignRight">
+          <h3>Post-Production et FXs</h3>
+          <p>Des effets spéciaux à la post-production, j’améliore les images et films d’animations pour atteindre le meilleur résultat.</p>
+        </article>
+        </div>
+        <a class="voirTousProjets" href="/portfolio">voir tous les projets</a> 
+  </section>
+
+  <section id="formContact" class = "formContact">
+    <h2>Vous avez un projet en tête?<br />Discutons-en !</h2>
+    <p>Contactez-moi dès aujourd'hui pour discuter de vos besoins spécifiques et commençons à façonner ensemble vos idées en images et vidéos exceptionnelles.</p>
+  
+    <form action="/formContact" method="post">
+
+      <div class="Name">
+        <div class="firstname">
+          <label for="firstname">Prénom :</label>
+          <input type="text" id="firstname" name="firstname" required />
+        </div>
+        <div class="lastname">
+          <label class="lastname" for="lastname">Nom :</label>
+          <input type="text" id="lastname" name="lastname" required />
+        </div>  
+      </div>
+      
+      <label class="email" for="email">E-mail :</label>
+      <input type="email" id="email" name="email" required />
+  
+      <label class="message" for="message">Rédigez un message :</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+      <button class = "buttonContact" type="submit">Envoyer</button>
+    </form>
+  
+  </section>
   <%- include('footer') -%>

@@ -1,0 +1,56 @@
+<%- include('head') -%>
+<%- include('header') -%>
+
+<section class="realisationForm">
+    <h2>Modifier <%= nomRealisation %></h2>
+    <img src="/img/<%= visuelRealisation %>" alt="Visuel du projet <%= nomRealisation %>">
+    <form action="<%= actionUpdateRealisation %>" method="post">
+        <p>
+            <label for="nomRealisation">Nom de la réalisation</label>
+            <input type="text" name="nomRealisation" id="nomRealisation" value="<%= locals.realisation ? locals.realisation.nomRealisation : '' %>">     
+        </p>
+        <p>
+            <label for="rankingRealisation">Ordre de priorité de la réalisation</label>
+            <input type="text" name="rankingRealisation" id="rankingRealisation" value="<%= locals.realisation ? locals.realisation.rankingRealisation : '' %>">   
+        </p>
+        <p>
+            <label for="descriptionRealisation">Description de la réalisation</label>
+            <textarea name="descriptionRealisation" id="descriptionRealisation"><%= locals.realisation ? locals.realisation.descriptionRealisation : '' %></textarea>
+        </p>
+        <p>
+            <label for="commentaireRealisation">Commentaire de la réalisation</label>
+            <textarea name="commentaireRealisation" id="commentaireRealisation"><%= locals.realisation ? locals.realisation.commentaireRealisation : '' %></textarea>
+        </p>
+        <p>
+            Sélectionnez les thèmes liés:
+            <ul>
+                <% allThemes.forEach(theme => { %>
+                    <li>
+                        <input 
+                            type="checkbox" 
+                            name="themes[]" 
+                            value="<%= theme.id %>" 
+                            <%= associatedThemes.some(t => t.id === theme.id) ? 'checked' : '' %>
+                        >
+                        <label for="<%= theme.id %>"><%= theme.nameTheme %></label>
+                    </li>
+                <% }) %>
+            </ul>
+        </p>
+        
+        <p>
+            <button type="submit">Enregistrer</button>
+            <button type="reset">Annuler</button>
+        </p>
+    </form>
+    
+
+    <a class="versVisuelsRealisation" href="/realisations/<%= idRealisation %>/visuels">Les visuels de la réalisation</a>
+
+
+</section>
+
+<%- include('footer') -%>
+
+
+

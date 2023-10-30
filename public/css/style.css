@@ -1,4 +1,4 @@
-/* *****************************************************************
+/******************************************************************
 GENERAL
 ******************************************************************/
 
@@ -24,9 +24,9 @@ html {
 body {
   max-width: 1920px;
   box-sizing: border-box;
+  background-color: #050819;
   margin: 0 auto;
   padding: 0;
-  background-color: var(--navbar-bg-color);
   font-family: "Raleway", sans-serif;
 }
 
@@ -229,83 +229,293 @@ footer .reseauxSociaux img {
   width: clamp(56px, 5vw, 98px);
   height: auto;
   margin: auto;
+  cursor: default;
 }
 
-/**************************************************************************
-Portfolio
-***************************************************************************/
-.portfolio {
-  opacity: 0;
-  transition: opacity 1s;
-  /* Animation douce lors de l'affichage */
-}
+/***********************************************************************/
+/*********  Page Home **************************************************/
+/***********************************************************************/
 
-.videoIntroPortfolio {
+/*****************************/
+/************Intro************/
+/*      Page Home            */
+/*****************************/
+
+.intro {
+  height: clamp(456px, 90vw, 869px);
   max-width: 1920px;
-  width: 100%;
-  /* Fait en sorte que la vidéo prenne toute la largeur disponible */
-  height: auto;
-  /* Maintient le ratio de la vidéo */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* Assurez-vous que la vidéo est en arrière-plan */
-  /*opacity: 1;*/
-  transition: opacity 2s;
-  /* Animation douce pour l'estompage */
-}
-
-.portfolioMenu {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/Bannière_Intro-1199x543.png");
+  background-size: cover;
+  background-position: center;
+  border-bottom: #d59c3c solid 1.5px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: auto;
-  background-color: #050819;
-  margin: 1rem;
-  padding: 1rem 0;
 }
 
-.portfolioMenu li {
-  color: var(--Dore, #d59c3c);
+.intro h1 {
+  margin: 0 auto 3rem 10%;
+  padding-top: 3.5rem;
+  margin-bottom: 2.5rem;
+  max-width: 80%;
+}
+
+.intro p {
+  max-width: max-content;
+  margin: 0 auto 0 10%;
+  padding: 0;
+  max-width: 70%;
+}
+
+.intro h2 {
+  max-width: max-content;
+  margin: 3rem auto 2rem 10%;
+  max-width: 65%;
+  line-height: 1.75;
+}
+
+.intro a  {
   font-family: Raleway;
-  font-size: clamp(11px, 1.6vw, 20px);
-  font-style: normal;
   font-weight: 500;
-  line-height: normal;
-  letter-spacing: 2px;
+  font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  border: 2px solid var(--Dore, #d59c3c);
-  padding: 0.5rem 1rem;
-  margin: 1rem 17px;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin: 2rem auto 2rem 9vw;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
 }
 
-/**************************************************************************
-Contact
-***************************************************************************/
-.contact p {
-  max-width: 952px;
-  text-align: center;
+/*****************************/
+/**********A propos***********/
+/*      Page Home            */
+/*****************************/
+
+.aPropos {
+  background-image: url("../img/Photo_Profil-767x496.png");
+  background-color: #050819;
+  background-size: 100% auto;
+  /* Largeur à 100% et hauteur ajustée proportionnellement */
+  background-position: center top;
+  /* centré verticalement */
+  background-repeat: no-repeat;
+  /* éviter la répétition de l'image si elle est trop petite en hauteur */
+  /*display: flex;*/
+  flex-direction: column;
+  align-content: end;
+  padding-bottom: 4rem;
+}
+
+.aPropos h2 {
+  font-size: clamp(19px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 0;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-bottom: 2rem;
+  max-width: 65%;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+  padding-top: 40vw;
+}
+
+.aPropos h3 {
   font-family: Raleway;
-  font-size: clamp(10px, 2vw, 17px);
+  font-size: clamp(11px, 1vw, 17px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-top: 2rem;
+  max-width: 60%;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+
+
+
+.aPropos p {
+  font-family: Raleway;
+  font-size: clamp(10px, 1vw, 17px);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
-  /* 182.353% */
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-}
-
-.formContact {
-  display: flex;
-  max-width: 952px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
   margin-left: 9vw;
   margin-right: 9vw;
-  background-color: transparent;
-  padding: 1rem 0;
+  margin-bottom: 0;
+}
+
+.aPropos a{
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin: 2rem 0 2rem 9vw;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  display: inline-block;
+ }
+
+/*****************************/
+/****Domaines d'expertises****/
+/*      Page Home            */
+/*****************************/
+
+#domainesExpertises {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#domainesExpertises h2 {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+#domainesExpertises .textAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
+
+#domainesExpertises p{
+  font-size: clamp(11px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+}
+#domainesExpertises .articleAlignLeft {
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+#domainesExpertises .articleAlignRight {
+  display: block;
+  text-align: right;
+  margin-right: 9vw;
+  margin-left: 9vw;
+}
+#domainesExpertises img{
+width: 100%; 
+height: auto;
+display: block;
+margin: auto;
+max-width: 578px;
+}
+
+#domainesExpertises h3{
+  font-size: clamp(17px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 0;
+  margin-right: 0;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+
+
+
+#domainesExpertises a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+#domainesExpertises .textAlignRight a {
+  float: right;  
+  clear: both;  
+}
+
+#domainesExpertises .voirTousProjets{
+ margin: 4.5vw auto 1.2vw auto;
+}
+
+/*****************************/
+/*********Contct Form*********/
+/*      Page Home            */
+/*****************************/
+
+.formContact , .contactSubmitted {
+  height: auto;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/respirateur-767x431.png");
+  /* Image par défaut pour mobile */
+  background-position: center center;
+  /* Centre l'image */
+  background-repeat: no-repeat;
+  /* Empêche la répétition de l'image */
+  background-size: cover;
+  /* Agrandit l'image pour couvrir l'élément */
+/*padding-bottom: 4rem;*/
+
+}
+
+
+.formContact h2 , .contactSubmitted h2 {
+  font-size: clamp(17px, 5vw, 60px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d59c3c;
+  margin-top: 2rem;
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+.formContact p,
+.formContact form {
+  margin-top: 1rem;
+  text-align: left;
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+
+.contactSubmitted a {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  margin-bottom: 9vw;
 }
 
 .formContact label {
@@ -318,20 +528,25 @@ Contact
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+
+}
+
+.firstname, .lastname, .email{
+  width: 100%;
+  
 }
 
 #firstname,
 #lastname {
-  width: clamp(240px, 75vw, 460px);
+  width: 100%;
   height: clamp(24px, 3vw, 48px);
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
-.space {
-  width: 3rem;
-}
+
 
 #email {
   width: 100%;
@@ -348,6 +563,158 @@ Contact
   margin: 8px 0;
   box-sizing: border-box;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.buttonContact{
+  margin: 2rem auto;
+
+
+}
+
+
+/**************************************************************************
+Portfolio
+***************************************************************************/
+
+
+
+
+.portfolioRealisationList{
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.portfolioRealisationList li{
+  margin: 1rem;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+
+
+.portfolioRealisations img {
+  width: 100%;
+  height: auto;
+  margin: auto
+  padding: 0;
+}
+
+.portfolioRealisations h2 {
+  font-size: clamp(17px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: clamp(5px, 0.01vw, 10px);
+   color: #d59c3c;
+}
+
+.portfolioRealisations p{
+  font-size: clamp(11px, 1.5vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  /* 182.353% */
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+}
+
+.portfolioRealisations a{
+  font-size: clamp(15px, 2vw, 20px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+
+  text-decoration: none;
+}
+
+.portfolioMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: #050819;
+  margin: 1rem;
+  padding: 1rem 0;
+}
+
+.portfolioMenu li {
+  cursor: pointer;
+  color: var(--Dore, #d59c3c);
+  font-family: Raleway;
+  font-size: clamp(11px, 1.6vw, 20px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 2px solid var(--Dore, #d59c3c);
+  padding: 0.5rem 1rem;
+  margin: 1rem 17px;
+
+
+  transition: all 0.6s;
+  
+}
+
+
+
+
+
+
+/**************************************************************************
+Realisation
+***************************************************************************/
+.visuelsOfRealisation h1 {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 3.5rem 0 3rem 4vw;
+  max-width: max-content;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+.visuelsOfRealisation h2 {
+  font-size: clamp(17px, 4.5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: clamp(5px, 0.01vw, 10px);
+   color: #d59c3c;
+   margin-left: 4vw;
+}
+
+
+.visuelsOfRealisation ul{
+  padding: 0;
+}
+
+.visuelsOfRealisation img{
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0;
+}
+
+.visuelsOfRealisation p {
+  font-size: clamp(11px, 2vw, 17px);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  /* 182.353% */
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+  margin-left: 4vw;
+}
+
 
 /**************************************************************************
   Small device 
@@ -494,169 +861,27 @@ Contact
   }
 }
 
-/****************************************
-Home
-****************************************/
 
-.intro {
-  height: clamp(456px, 90vw, 869px);
-  max-width: 1920px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../img/Bannière_Intro-1199x543.png");
-  background-size: cover;
-  background-position: center;
-  border-bottom: #d59c3c solid 1.5px;
-}
-
-.intro h1 {
-  margin: 0 auto 3rem 10%;
-  padding-top: 3.5rem;
-  margin-bottom: 2.5rem;
-  max-width: 80%;
-}
-
-.intro p {
-  max-width: max-content;
-  margin: 0 auto 0 10%;
-  padding: 0;
-  max-width: 70%;
-}
-
-.intro h2 {
-  max-width: max-content;
-  margin: 3rem auto 2rem 10%;
-  max-width: 65%;
-  line-height: 1.75;
-}
-
-.intro button {
-  font-size: clamps(10px, 2vw, 20px);
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  color: #d59c3c;
-  background-color: transparent;
-  border: #d59c3c solid 1.5px;
-  text-transform: uppercase;
-  padding: 0 1rem;
-  margin-top: 1.5rem;
-  margin-left: 10%;
-}
-
-.aPropos {
-  background-image: url("../img/Photo_Profil-575x372.png");
-  background-color: #050819;
-  background-size: 100% auto;
-  /* Largeur à 100% et hauteur ajustée proportionnellement */
-  background-position: center top;
-  /* centré verticalement */
-  background-repeat: no-repeat;
-  /* éviter la répétition de l'image si elle est trop petite en hauteur */
-  /*display: flex;*/
-  flex-direction: column;
-  align-content: end;
-}
-
-.aPropos h2 {
-  font-size: clamp(19px, 5vw, 35px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-top: 0;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-bottom: 2rem;
-  max-width: 65%;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
-  padding-top: 40vw;
-}
-
-.aPropos h3 {
-  font-family: Raleway;
-  font-size: clamp(11px, 2vw, 17px);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-top: 2rem;
-  max-width: 60%;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
-}
-
-.aPropos p {
-  margin-left: 9vw;
-  margin-right: 9vw;
-  margin-bottom: 0;
-}
-
-.aPropos button {
-  color: var(--Dore, #d59c3c);
-  /*text-align: center;*/
-  font-family: Raleway;
-  font-size: clamp(15px, 2vw, 20px);
-  font-style: normal;
-  font-weight: 500;
-  line-height: 30px;
-  /* 200% */
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-left: 9vw;
-  margin-top: 2.5rem;
-  padding: 0.5rem;
-}
-
-.contact {
-  background-color: #050819;
-  height: auto;
-  max-width: 1920px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("../img/respirateur-575x323.png");
-  /* Image par défaut pour mobile */
-  background-position: center center;
-  /* Centre l'image */
-  background-repeat: no-repeat;
-  /* Empêche la répétition de l'image */
-  background-size: cover;
-  /* Agrandit l'image pour couvrir l'élément */
-}
-
-.contact h1 {
-  margin-top: 2rem;
-  text-align: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
-}
-
-.contact p,
-.contact form {
-  margin-top: 1rem;
-  text-align: left;
-  margin-left: 9vw;
-  margin-right: 9vw;
-}
 
 /*************************************************************
-Liste des Themes
+Page ADMIN : Liste des Themes
 **************************************************************/
 .listeThemes,
 .themeId,
 .themeForm,
-.createTheme {
+.createTheme,
+.createVisuel,
+.realisationForm,
+.listeVisuelsByRealisation,
+.createVisuelByRealisation{
   background-color: #050819;
   margin-left: 9vw;
 }
 
 .themeId h1,
 .themeForm h1,
-.createTheme h1 {
+.createTheme h1,
+.listeVisuelsByRealisation h1 {
   background-color: var(--navbar-bg-color);
   font-size: clamp(17px, 5vw, 60px);
   font-weight: 300;
@@ -672,7 +897,12 @@ Liste des Themes
 .listeThemes h2,
 .themeId h2,
 .themeForm h2,
-.createTheme h2 {
+.createTheme h2,
+.createRealisation h2,
+.createVisuel h2,
+.realisationForm h2,
+.listeVisuelsByRealisation h2,
+.createVisuelByRealisation h2{
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -685,10 +915,22 @@ Liste des Themes
   line-height: 1.3;
 }
 
+.createRealisation li {
+  display: flex;
+  align-items: center; /* aligne verticalement les éléments enfants */
+  margin : 2rem;
+}
+
+.createRealisation input[type="checkbox"] {
+  margin-right: 2rem; /* ajoute un espace à droite de la checkbox */
+}
+
+
 .listeThemes p,
 .themeId p,
 .themeForm p,
-.createTheme p {
+.createTheme p 
+.listeVisuelsByRealisation p{
   margin-left: 9vw;
 }
 .rankingTheme,
@@ -697,9 +939,29 @@ Liste des Themes
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
+.redirections {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+   }
+
+   .createVisuelByRealisation a{
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: clamp(15px, 2vw, 20px);
+    text-transform: uppercase;
+    color: #d59c3c;
+    border: #d59c3c solid 1.5px;
+    padding: 0.9rem 2rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    display:inline-block;
+    margin-top: 2rem;
+  }
+
 
 .newTheme,
-.themeId a {
+.newVisuel{
   font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
@@ -723,78 +985,193 @@ i.fa.fa-pencil-square {
 }
 
 /*************************************************************
-Media queries images
+Page ADMIN : Liste des Réalisations
 **************************************************************/
-/* Pour les écrans à partir de 576px */
-@media (min-width: 576px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-767x496.png");
-  }
 
-  .contact {
-    background-image: url("../img/respirateur-767x431.png"); // Image par défaut pour mobile
-  }
+.listeRealisations, .createRealisation {
+  margin-left: 9vw;
+  background-color: #050819;
 }
 
-/* Pour les écrans à partir de 768px */
-@media (min-width: 768px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-991x641.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-991x557.png");
-  }
+.listeRealisations img,
+.realisationForm img,
+.listeVisuelsByRealisation img{
+  width: 200px;
+  height: auto;
+  padding: 0;
 }
 
-/* Pour les écrans à partir de 992px */
-@media (min-width: 992px) {
-  .aPropos {
-    background-image: url("../img/Photo_Profil-1199x776.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-1199x674.png");
-  }
+.listeRealisations h2{
+  font-size: clamp(19px, 5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
 }
 
-/* Pour les écrans à partir de 1200px */
-@media (min-width: 1200px) {
-  .intro {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../img/Bannière_Intro-1399x633.png");
-  }
-
-  .aPropos {
-    background-image: url("../img/Photo_Profil-1399x905.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-1399x787.png");
-  }
+.listeRealisations p {
+  font-family: Raleway;
+  font-size: clamp(11px, 2vw, 17px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+    color: #d59c3c;
 }
 
-/* Pour les écrans à partir de 1400px */
-
-@media (min-width: 1400px) {
-  .intro {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../img/Bannière_Intro-1920x869.png");
-  }
-
-  .aPropos {
-    background-image: url("../img/Photo_Profil-1920x1242.png");
-  }
-
-  .contact {
-    background-image: url("../img/respirateur-1920x1080.png");
-  }
+.newRealisation {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
 }
+
+/*************************************************************
+Page ADMIN : Liste des contacts
+**************************************************************/
+
+.listeContacts {
+  margin-left: 9vw;
+  background-color: #050819;
+}
+
+.listeContacts h2 {
+  font-size: clamp(19px, 5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.contactRecu {
+  border: #d59c3c solid 1.5px;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+
+
+/*************************************************************
+Page ADMIN : Liste des Visuels
+**************************************************************/
+.listeVisuels {
+  background-color: #050819;
+  margin-left: 9vw;
+}
+
+
+.listeVisuels h2 {
+  font-size: clamp(19px, 5vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.listeVisuels h3 {
+  font-family: Raleway;
+  font-size: clamp(11px, 2vw, 17px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 9vw;
+  margin-right: 9vw;
+  margin-top: 2rem;
+  max-width: 60%;
+  color: #d59c3c;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.listeVisuels img {
+  height: 110px;
+  width: auto;
+  margin: auto;
+  padding: 0;
+}
+
+.nomRealisation,
+.rankingRealisation,
+.rankingVisuel,
+.nameVisuel,
+.listeRealisations img
+ {
+  color: #d59c3c;
+  font-size: clamp(15px, 2vw, 20px);
+  margin: 1rem;
+}
+.newVisuel,
+.versVisuelsRealisation {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: clamp(15px, 2vw, 20px);
+  text-transform: uppercase;
+  color: #d59c3c;
+  border: #d59c3c solid 1.5px;
+  padding: 0.9rem 2rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
 
 /*******************************************************************************
 ******* Medium device *******
 ********************************************************************************/
 @media screen and (min-width: 780px) {
+  .intro {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/Bannière_Intro-1920x869.png");
+  }
+
+  .intro a  {
+
+    margin: 2rem auto;
+  }
+
+
+  .aPropos {
+    background-image: url("../img/Photo_Profil-1920x1242.png");
+  }
+.aPropos h2 {
+  margin-left: 53%;
+  padding-top: 7%;
+}
+
+
+.aPropos h3 {
+  margin-left: 53%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.aPropos p {
+  margin-left: 53%;
+}
+
+.aPropos a {
+  margin-left: 53%;
+}
+
+  .contact {
+    background-image: url("../img/respirateur-1920x1080.png");
+  }
   #logoLeft {
     display: none;
   }
@@ -836,14 +1213,10 @@ Media queries images
     width: 100%;
   }
 
-  .intro {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
+
 
   .intro h1 {
-    margin: 24rem auto 11rem auto;
+    margin: 4vw auto 10rem auto;
     text-align: center;
   }
 
@@ -859,6 +1232,58 @@ Media queries images
     margin: 0 auto auto auto;
   }
 
+  .formContact h2 , .contactSubmitted h2 {
+    text-align: center;
+  }
+
+  .formContact p {
+   max-width: 950px;
+    text-align: center;
+  }
+  .formContact form {
+  width: 75%;
+  max-width: 950px;
+}
+
+form .Name {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.firstname, .lastname {
+  width: calc(50% - 1.5rem); /* 50% de la largeur totale, moins une marge pour l'espacement */
+}
+
+/*****************************/
+/****Domaines d'expertises****/
+/*       Medium device       */
+/*****************************/
+.expertise{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 9vw;
+  margin-right: 0;
+}
+
+.expertiseOrdreInv{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-left: 0;
+  margin-right: 9vw;
+}
+#domainesExpertises h3, #domainesExpertises img{
+margin-top: 3vw;
+}
+
+/*****************************/
+/********Contact Form*********/
+/*       Medium device       */
+/*****************************/
   .contact h1,
   .contact p,
   .contact form {

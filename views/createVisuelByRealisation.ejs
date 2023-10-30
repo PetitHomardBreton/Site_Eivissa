@@ -1,0 +1,78 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="createVisuelByRealisation">
+  <h2>Ajout d'un visuel à la réalisation <%= nomRealisation %></h2>
+  <form action="<%= actionAdd %>" method="post" enctype="multipart/form-data"> 
+    <p>
+      <label for="nameVisuel">Nom du visuel</label>
+      <input
+        type="text"
+        name="nameVisuel"
+        id="nameVisuel"
+        value="<%= locals.visuel ? visuel.nameVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="typeVisuel">Type de visuel</label>
+      <select name="typeVisuel" id="typeVisuel">
+        <option value="image" <%= locals.visuel && visuel.typeVisuel === 'image' ? 'selected' : '' %>>Image</option>
+        <option value="imageAnimee" <%= locals.visuel && visuel.typeVisuel === 'imageAnimee' ? 'selected' : '' %>>Image animée</option>
+        <option value="video" <%= locals.visuel && visuel.typeVisuel === 'video' ? 'selected' : '' %>>Vidéo</option>
+      </select>
+    </p>
+    
+    <p>
+      <label for="rankingVisuel">Numéro d'ordre d'apparition</label>
+      <input
+        type="text"
+        name="rankingVisuel"
+        id="rankingVisuel"
+        value="<%= locals.visuel ? visuel.rankingVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="commentaireVisuel">Commentaire</label> <!-- Correction de l'attribut "for" -->
+      <input
+        type="text"
+        name="commentaireVisuel"
+        id="commentaireVisuel"
+        value="<%= locals.visuel ? visuel.commentaireVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <input
+        type="hidden"
+        name="idRealisation"
+        id="idRealisation"
+        value="<%= realisationId %>"
+      />
+    </p>
+    <p>
+      <label for="visuelWidth767">Visuel en 767px de large</label>
+      <input
+        type="file"
+        name="visuelWidth767"
+        id="visuelWidth767"
+      />
+    </p>
+    <p>
+      <label for="visuelWidth1920">Visuel en 1920px de large</label>
+      <input
+        type="file"
+        name="visuelWidth1920"
+        id="visuelWidth1920"
+      />
+    </p>
+    <p>
+      <button type="submit">Enregistrer</button>
+      <button type="reset">Annuler</button>
+    </p>
+  </form>
+  <div class="redirections">
+    <a href="/realisations/<%= realisationId %>/visuels">Retour à la liste des visuels de la realisation</a>
+    <a href="/realisations/<%= realisationId %>/update">Retour à la réalisation</a>
+    <a href="/realisations">Retour à la liste des réalisations</a>
+  </div>
+</section>
+<%- include('footer') -%>
+

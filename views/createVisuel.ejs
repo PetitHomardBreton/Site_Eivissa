@@ -1,0 +1,74 @@
+<%- include('head') -%>
+<%- include('header') -%>
+<section class="createVisuel">
+  <h2><%= title %></h2>
+  <form action="<%= action %>" method="post" enctype="multipart/form-data"> 
+    <p>
+      <label for="nameVisuel">Nom du visuel</label>
+      <input
+        type="text"
+        name="nameVisuel"
+        id="nameVisuel"
+        value="<%= locals.visuel ? visuel.nameVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="typeVisuel">Type de visuel</label>
+      <input
+        type="text"
+        name="typeVisuel"
+        id="typeVisuel"
+        value="<%= locals.visuel ? visuel.typeVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="rankingVisuel">Numéro d'ordre d'apparition</label>
+      <input
+        type="text"
+        name="rankingVisuel"
+        id="rankingVisuel"
+        value="<%= locals.visuel ? visuel.rankingVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="commentaireVisuel">Commentaire</label> <!-- Correction de l'attribut "for" -->
+      <input
+        type="text"
+        name="commentaireVisuel"
+        id="commentaireVisuel"
+        value="<%= locals.visuel ? visuel.commentaireVisuel : '' %>"
+      />
+    </p>
+    <p>
+      <label for="idRealisation">id de la réalisation</label>
+      <input
+        type="text"
+        name="idRealisation"
+        id="idRealisation"
+        value="<%= locals.visuel ? visuel.idRealisation : '' %>"
+      />
+    </p>
+    <p>
+      <label for="visuelWidth767">Visuel en 767px de large</label>
+      <input
+        type="file"
+        name="visuelWidth767"
+        id="visuelWidth767"
+      />
+    </p>
+    <p>
+      <label for="visuelWidth1920">Visuel en 1920px de large</label>
+      <input
+        type="file"
+        name="visuelWidth1920"
+        id="visuelWidth1920"
+      />
+    </p>
+    <p>
+      <button type="submit">Enregistrer</button>
+      <button type="reset">Annuler</button>
+    </p>
+  </form>
+</section>
+<%- include('footer') -%>
+

@@ -1,0 +1,32 @@
+<%- include('head') -%>
+  <%- include('header') -%>
+    <section class="Portfolio">
+      <h1>portfolio</h1>
+      <ul class="portfolioMenu">
+        <% themes.forEach(theme=> { %>
+          <li>
+            <%= theme.nameTheme %>
+          </li>
+          <% }); %>
+      </ul>
+
+      <div class="portfolioContent">
+        <div class="portfolioRealisations">
+          <ul class="portfolioRealisationList">
+            <% for(let i=0; i<realisations.length; i++) { %>
+              <li>
+                <img src="/img/<%= realisations[i].visuelRealisation %>" alt="illustration du projet <%= realisations[i].nomRealisation %>">
+                <h2 class="nomRealisation">
+                  <%= realisations[i].nomRealisation.toUpperCase() %>
+                </h2>
+                <p class="descriptionRealisation">
+                  <%= realisations[i].descriptionRealisation %>
+                </p>
+                <a href="/portfolio/<%= realisations[i].id %>">En savoir +</a>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <%- include('footer') -%>

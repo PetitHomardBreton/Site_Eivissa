@@ -1,15 +1,25 @@
 <%- include('head') -%>
-    <%- include('header') -%>
-        <section class="themeId">
-            <h1>Thème :</h1>
-            <h2>Thème n°<%= theme.rankingTheme %>
-            </h2>
+<%- include('header') -%>
 
-            <h2>
-                <%= theme.nameTheme %>
-            </h2>
+<section class="themeForm">
+    <h2><%= title %></h2>
+    <form action="<%= action %>" method="post">
+        <p>
+            <label for="nameTheme">Nom du thème</label>
+            <input type="text" name="nameTheme" id="nameTheme" value="<%= locals.theme ? theme.nameTheme : '' %>">     
+        </p>
+        <p>
+            <label for="rankingTheme">ordre de priorité du thème</label>
+            <input type="text" name="rankingTheme" id="rankingTheme" value="<%= locals.theme ? theme.rankingTheme : '' %>">   
+        </p>
+        
+        <p>
+            <button type="submit">Enregistrer</button>
+            <button type="reset">Annuler</button>
+        </p>
+    </form>
+</section>
 
-            <a href="/themes/<%= theme.id %>/update">Modifier le thème</a>
-        </section>
+<%- include('footer') -%>
 
-        <%- include('footer') -%>
+

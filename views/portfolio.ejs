@@ -1,11 +1,67 @@
 <%- include('head') -%>
 <%- include('header') -%>
+
 <section class="Portfolio">
-  <h1>portfolio</h1>
-  <ul class="portfolioMenu">
-    <% themes.forEach(theme => { %>
-        <li><%= theme %></li>
-    <% }); %>
-  </ul>
+    <h1>Portfolio</h1>
+    <ul class="portfolioMenu">
+        <% themes.forEach(theme => { %>
+        <li data-theme-id="<%= theme.id %>">
+            <%= theme.nameTheme %>
+        </li>
+        <% }); %>
+    </ul>
+    
+
+    
+        <div class="portfolioRealisations">
+            <ul class="portfolioRealisationList">
+                <% for(let i=0; i<realisations.length; i++) { %>
+                <li>
+                    <article class = realisation>
+                    <img src="/img/<%= realisations[i].visuelRealisation %>" alt="illustration du projet <%= realisations[i].nomRealisation %>">
+                    <h2 class="nomRealisation">
+                        <%= realisations[i].nomRealisation.toUpperCase() %>
+                    </h2>
+                    <p class="descriptionRealisation">
+                        <%= realisations[i].descriptionRealisation %>
+                    </p>
+                    <a href="/portfolio/<%= realisations[i].id %>">En savoir +</a>
+                </article>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    
 </section>
+
 <%- include('footer') -%>
+
+<script>
+    const themeElements = document.querySelectorAll('.portfolioMenu li');
+
+    themeElements.forEach(themeElem => {
+        themeElem.addEventListener('click', (e) => {
+            fetch(`/portfolio?themeId=${e.target.dataset.themeId}`)
+            .then(response => response.json())
+            .then(data => {
+                const realisationList = document.querySelector('.portfolioRealisationList');
+                let output = '';
+
+                data.forEach(realisation => {
+                    output += `
+                    <li>
+                        <img src="/img/${realisation.visuelRealisation}" alt="illustration du projet ${realisation.nomRealisation}">
+                        <h2 class="nomRealisation">${realisation.nomRealisation.toUpperCase()}</h2>
+                        <p class="descriptionRealisation">${realisation.descriptionRealisation}</p>
+                        <a href="/portfolio/${realisation.id}">En savoir +</a>
+                    </li>`;
+                });
+
+                realisationList.innerHTML = output;
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des réalisations:', error);
+            });
+        });
+    });
+</script>

@@ -18,12 +18,13 @@
         </a>
     </section>
 
-    <% if (locals.isLogged) { %>
-        <a class="Logout" href="/logout">Logout</a>
-        <% } else { %>
-            <a href="/login"><img class="logoFooter" src="/img/logo-eivissa-2.png"
-                    alt="logo d'Eivissa BARBE / Lien vers page Admin"></a>
+
+            <% if (locals.isLogged) { %>
+                <a class="Logout" href="/logout">Logout</a>
+            <% } else { %>
+                <img class="logoFooter" src="/img/logo-eivissa-2.png" alt="logo d'Eivissa BARBE" onclick="redirectToLogin();">
             <% } %>
+
 
 
                 <p class="mentionsLegales">mentions légales mentions légales mentions légales mentions légales mentions
