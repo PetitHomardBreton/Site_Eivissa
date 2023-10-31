@@ -42,7 +42,7 @@ import escapeData from './sanitizeInput.js';
  ********************************************/
 const checkAuthentication = (req, res, next) => {
   if(!req.session.isLogged) {
-      res.redirect('/login');
+      res.redirect('/');
       return;
   }
   next();

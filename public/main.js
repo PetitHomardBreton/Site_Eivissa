@@ -22,31 +22,38 @@ function toggleMenu() {
 toggleMenu();
 
 /*************************************************/
-/*        Animation sur les thèmes               */
+/*   Animation sur les thèmes /page Portfolio    */
 /*************************************************/
 
 
-// Sélectionnez tous les éléments de liste
-const themeItems = document.querySelectorAll('.portfolioMenu li');
+// Vérifiez si l'URL actuelle est '/portfolio'
+if (window.location.pathname === '/portfolio') {
+  // Sélectionnez tous les éléments de liste
+  const themeItems = document.querySelectorAll('.portfolioMenu li');
 
-// Définissez les styles pour l'élément actif (premier élément)
-themeItems[0].style.backgroundColor = '#d59c3c';
-themeItems[0].style.color = '#050819';
+  // Vérifiez si themeItems contient au moins un élément
+  if (themeItems && themeItems.length > 0) {
+      // Définissez les styles pour l'élément actif (premier élément)
+      themeItems[0].style.backgroundColor = '#d59c3c';
+      themeItems[0].style.color = '#050819';
 
-// Ajoutez un gestionnaire d'événements clic à chaque élément
-themeItems.forEach((themeItem, index) => {
-    themeItem.addEventListener('click', () => {
-        // Réinitialisez les styles de tous les éléments de liste
-        themeItems.forEach((item, itemIndex) => {
-            item.style.backgroundColor = '';
-            item.style.color = 'var(--Dore, #d59c3c)';
-        });
+      // Ajoutez un gestionnaire d'événements clic à chaque élément
+      themeItems.forEach((themeItem, index) => {
+          themeItem.addEventListener('click', () => {
+              // Réinitialisez les styles de tous les éléments de liste
+              themeItems.forEach((item, itemIndex) => {
+                  item.style.backgroundColor = '';
+                  item.style.color = 'var(--Dore, #d59c3c)';
+              });
 
-        // Définissez les styles pour l'élément cliqué
-        themeItem.style.backgroundColor = '#d59c3c';
-        themeItem.style.color = '#050819';
-    });
-});
+              // Définissez les styles pour l'élément cliqué
+              themeItem.style.backgroundColor = '#d59c3c';
+              themeItem.style.color = '#050819';
+          });
+      });
+  }
+}
+
 
 /*******************************************/
 /*Masquage redirection survorl logo footer */
