@@ -36,6 +36,7 @@ import getVisuelsOfRealisation from "./controllers/visuelsOfRealisationControlle
 import escapeData from './sanitizeInput.js';
 
 
+
 /*********************************************
  * Middleware pour vérifier si l'utilisateur
  * est connecté
@@ -52,6 +53,15 @@ router.use((req, res, next) => {
   res.locals.isLogged = req.session.isLogged;
   next();
 });
+
+/***************************************
+ * Importation du controller d'erreur
+ **************************************/
+
+import errorController from "./controllers/errorController.js";
+
+
+
 
 /*********************************************
   *Routes publiques get
@@ -121,7 +131,7 @@ router.post('/realisations/:id/update', checkAuthentication, escapeData, updateR
 router.post("/realisations/delete", checkAuthentication, escapeData, deleteRealisation);
 
 
-
+router.use(errorController.get404);
 
 
 export default router;
