@@ -65,10 +65,10 @@ function redirectToLogin() {
 
 /*******************************************/
 /*Charger les vidéos en funct de l'écran   */
-/*******************************************/
+/*******************************************
 
 
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
   var video = document.getElementById('video');
 
   // Vérifiez si l'élément vidéo existe avant de charger la vidéo
@@ -85,7 +85,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('resize', loadVideo);
   }
-});
+});*/
 
+/*
+document.addEventListener("DOMContentLoaded", function() {
+  var video = document.getElementById('video');
+  var source = document.createElement('source');
 
+  if (window.innerWidth <= 767) {
+      source.setAttribute('src', '/img/' + visuelWidth767 );
+  } else {
+      source.setAttribute('src', '/img/' + visuelWidth1920 );
+  }
 
+  source.setAttribute('type', 'video/mp4');
+  video.appendChild(source);
+  video.load();
+});*/

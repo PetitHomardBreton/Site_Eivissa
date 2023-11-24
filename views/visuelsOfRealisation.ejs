@@ -13,11 +13,23 @@
                 
                 <% if (visuels[i].typeVisuel === "video") { %>
 
-<video id="video" controls loop>
-  <source src="/img/<%= visuels[i].visuelWidth767 %>" type="video/mp4">
-  <source src="/img/<%= visuels[i].visuelWidth1920 %>" type="video/mp4">
-  Votre navigateur ne prend pas en charge la vidéo.
-</video>
+                    <video id="video" controls loop autoplay muted></video>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            var video = document.getElementById('video');
+                            var source = document.createElement('source');
+                        
+                            if (window.innerWidth <= 767) {
+                                source.setAttribute('src', '/img/' + '<%= visuels[i].visuelWidth767 %>');
+                            } else {
+                                source.setAttribute('src', '/img/' + '<%= visuels[i].visuelWidth1920 %>');
+                            }
+                        
+                            source.setAttribute('type', 'video/mp4');
+                            video.appendChild(source);
+                            video.load();
+                        });
+                        </script>
 
 
 
