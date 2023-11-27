@@ -11,6 +11,7 @@ const router = express.Router();
 
 import HomeController from "./controllers/home.js";
 /*import ThemeDetailController from "./controllers/readThemeByIdController.js";*/
+import mentionsLegalesController from "./controllers/mentionsLegalesController.js";
 import {showContactForm} from "./controllers/formContact.js";
 import {addContactSubmit} from "./controllers/formContact.js";
 import contactSubmittedController from "./controllers/contactSubmitted.js";
@@ -71,6 +72,7 @@ router.get("/portfolio", portfolio);
 router.get("/portfolio/:idRealisation", getVisuelsOfRealisation);
 router.get("/contactSubmitted", contactSubmittedController);
 router.get("/formContact", showContactForm);
+router.get("/mentionsLegales", mentionsLegalesController);
 
 /*********************************************
  * Routes publiques post

@@ -2,8 +2,6 @@
 <%- include('header') -%>
 
 <section class="visuelsOfRealisation">
-    <h1><%= nomRealisation %></h1>
-    <h2><%= descriptionRealisation%> <br><%= commentaireRealisation%></h2>
 
     <div class="visuelContent">
         <div class="visuels">
@@ -13,7 +11,7 @@
                 
                 <% if (visuels[i].typeVisuel === "video") { %>
 
-                    <video id="video" controls loop autoplay muted></video>
+                    <video id="video" controls loop autoplay muted playsinline></video>
                     <script>
                         document.addEventListener("DOMContentLoaded", function() {
                             var video = document.getElementById('video');
@@ -38,13 +36,11 @@
                     <picture>
                         <source media="(max-width: 767px)" srcset="/img/<%= visuels[i].visuelWidth767 %>">
                         <source media="(min-width: 768px)" srcset="/img/<%= visuels[i].visuelWidth1920 %>">
-                        <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="image nommée <%= visuels[i].nameVisuel %> , illustration du projet <%= visuels[i].nomRealisation %>">
+                        <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="image nommée <%= visuels[i].nameVisuel %> , illustration du projet <%= visuels[i].nomRealisation %>. description : <%= visuels[i].commentaireVisuel %>">
                     </picture>
                 <% } %>
 
-                    <p class="commentaireVisuel">
-                        <%= visuels[i].commentaireVisuel %>
-                    </p>
+
                 </li>
                 <% } %>
             </ul>

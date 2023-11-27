@@ -1,94 +1,98 @@
-import { getThemesForRealisation, updateRealisationModel, getRealisationById} from '../models/realisationModel.js';
-import { getAllThemes } from '../models/themeModel.js';
-import { createThemeRealisationLink, deleteThemesForRealisation } from '../models/themesrealisationsModel.js';
+import { getThemesForRealisation, updateRealisationModel, getRealisationById } from '../models/realisationModel.js'; // Importation de la fonction getRealisationById
+import { getAllThemes } from '../models/themeModel.js'; // Importation de la fonction getAllThemes
+import { createThemeRealisationLink, deleteThemesForRealisation } from '../models/themesrealisationsModel.js'; // Importation de la fonction createThemeRealisationLink et deleteThemesForRealisation
 
 /***AFFICHER LE FORMULAIRE DE MODIFICATION */
-export function updateRealisation(req, res) {
-    let id = req.params.id;
+export function updateRealisation(req, res) { // Exportation de la fonction updateRealisation
+    let id = req.params.id; // Récupérer l’identifiant de la réalisation à modifier
 
     // Récupérer les informations de la réalisation
-    getRealisationById(id, (error, realisationResult) => {
-        if (error) {
-            console.error(error);
-            res.status(500).send('Erreur lors de la requête');
-            return;
+    getRealisationById(id, (error, realisationResult) => { // Appel de la fonction getRealisationById
+        console.log('realisationResult: ', realisationResult); // Afficher les informations de la réalisation dans la console
+        if (error) { // Si erreur
+            console.error(error); // Afficher l’erreur
+            res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
+            return; // Arrêter
         }
 
-        getThemesForRealisation(id, (error, themesForRealisation) => {
-            if (error) {
-                console.error(error);
-                res.status(500).send('Erreur lors de la requête');
-                return;
+        getThemesForRealisation(id, (error, themesForRealisation) => { // Appel de la fonction getThemesForRealisation
+            console.log('themesForRealisation: ', themesForRealisation); // Afficher les thèmes associés à la réalisation dans la console
+            if (error) { // Si erreur
+                console.error(error); // Afficher l’erreur
+                res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
+                return; // Arrêter
             }
 
-            getAllThemes((error, allThemes) => {
-                if (error) {
-                    console.error(error);
-                    res.status(500).send('Erreur lors de la requête');
-                    return;
+            getAllThemes((error, allThemes) => { // Appel de la fonction getAllThemes
+                console.log(allThemes); // Afficher tous les thèmes
+                if (error) { // Si erreur
+                    console.error(error); // Afficher l’erreur
+                    res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
+                    return; // Arrêter
                 }
 
                 // Renvoyer le formulaire
-                res.render('updateRealisation', {
-                    realisation: realisationResult[0],
-                    associatedThemes: themesForRealisation,
-                    allThemes: allThemes,
-                    pageTitle: 'Modif Realisation',
-                    nomRealisation: realisationResult[0].nomRealisation,
-                    visuelRealisation: realisationResult[0].visuelRealisation,
-                    idRealisation: realisationResult[0].id,
-                    actionUpdateRealisation: "/realisations/" + realisationResult[0].id + "/update"
+                res.render('updateRealisation', { // Renvoyer la page updateRealisation
+                    realisation: realisationResult[0], // Renvoyer les informations de la réalisation
+                    associatedThemes: themesForRealisation, // Renvoyer les thèmes associés à la réalisation
+                    allThemes: allThemes, // Renvoyer tous les thèmes
+                    pageTitle: 'Modif Realisation', // Renvoyer le titre de la page
+                    nomRealisation: realisationResult[0].nomRealisation, // Renvoyer le nom de la réalisation
+                    visuelRealisation: realisationResult[0].visuelRealisation,  // Renvoyer le visuel de la réalisation
+                    idRealisation: realisationResult[0].id, // Renvoyer l’identifiant de la réalisation
+                    actionUpdateRealisation: "/realisations/" + realisationResult[0].id + "/update" // Renvoyer l’action du formulaire
                 });
             });
         });
     });
 };
 
-export function updateRealisationSubmit(req, res) {
-    let id = req.params.id;
-    const { rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation, themes } = req.body;
+export function updateRealisationSubmit(req, res) { // Exportation de la fonction updateRealisationSubmit
+    let id = req.params.id; // Récupérer l’identifiant de la réalisation à modifier
+    const { rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation, themes } = req.body; // Récupérer les informations du formulaire
 
-    updateRealisationModel([rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation, id], (error, result) => {
-        if (error) {
-            console.error(error);
-            res.status(500).send('Erreur lors de la requête');
-            return;
+    // Convertir la chaîne de caractères en un tableau d'identifiants de thèmes
+    const themeArray = typeof themes === 'string' ? themes.split(',') : themes;
+
+    console.log('themeArray: ', themeArray); // Afficher le tableau dans la console
+    console.log('themes: ', themes); // Afficher les thèmes dans la console
+    console.log('typeof themes: ', typeof themes); // Afficher le type des thèmes dans la console
+    console.log('Array.isArray(themes): ', Array.isArray(themes)); // Afficher si les thèmes sont un tableau dans la console
+
+    // Mettre à jour la réalisation
+
+    updateRealisationModel([rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation, id], (error, result) => { // Appel de la fonction updateRealisationModel
+        if (error) { // Si erreur
+            console.error(error); // Afficher l’erreur
+            res.status(500).send('Erreur lors de la mise à jour de la réalisation'); // Afficher le message d’erreur
+            return; // Arrêter
         }
 
-        // Mettre à jour les associations de thèmes pour la réalisation :
-        deleteThemesForRealisation(id, (error) => {
-            if (error) {
-                console.error(error);
-                res.status(500).send('Erreur lors de la suppression des thèmes associés');
-                return;
+        deleteThemesForRealisation(id, (error) => { // Appel de la fonction deleteThemesForRealisation
+            if (error) { // Si erreur
+                console.error(error); // Afficher l’erreur
+                res.status(500).send('Erreur lors de la suppression des thèmes associés');  // Afficher le message d’erreur
+                return;  // Arrêter
+
             }
 
-            // Si des thèmes ont été sélectionnés, ajoutez-les comme nouvelles associations :
-            if (themes && themes.length > 0) {
-                let addedCount = 0;
-                themes.forEach(themeId => {
-                    createThemeRealisationLink(themeId, id, (error) => {
-                        if (error) {
-                            console.error(error);
-                            res.status(500).send('Erreur lors de l’ajout d’un thème associé');
-                            return;
-                        }
-
-                        addedCount++;
-                        if (addedCount === themes.length) {
-                            // Redirigez vers la page des réalisations après avoir traité tous les thèmes
-                            res.redirect('/realisations');
-                        }
-                    });
+            // Parcourez le tableau des identifiants de thèmes et créez les liens
+            themeArray.forEach(themeId => { // Parcourir le tableau des identifiants de thèmes
+                console.log('themeId: ', themeId); // Afficher l’identifiant du thème dans la console
+                createThemeRealisationLink(themeId, id, (error) => {    // Appel de la fonction createThemeRealisationLink
+                    if (error) { // Si erreur
+                        console.error(error); // Afficher l’erreur
+                        res.status(500).send('Erreur lors de l’ajout d’un thème associé'); // Afficher le message d’erreur
+                        return; // Arrêter
+                    }
                 });
-            } else {
-                // Si aucun thème n'est sélectionné, redirigez simplement
-                res.redirect('/realisations');
-            }
+            });
+
+            // Redirigez après avoir traité les thèmes associés
+            res.redirect('/realisations'); // Rediriger vers la page realisations
         });
     });
 }
-
 
 
 
