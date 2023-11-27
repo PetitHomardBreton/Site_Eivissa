@@ -253,7 +253,30 @@ footer .reseauxSociaux img {
 }
 
 .footer__mentionsLegales{
+  font-size: clamp(10px, 1vw, 17px);
+  font-weight: 500;
+  color: #d59c3c;
   text-decoration: none;
+  margin: 1vw auto;
+}
+
+.mentionsLegales__text--center{
+  text-align: center;
+  font-size: clamp(10px, 1vw, 17px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+  margin-bottom: 5rem;
+}
+.mentionsLegales__text {
+font-size: clamp(10px, 1vw, 17px);
+font-style: normal;
+font-weight: 400;
+line-height: clamp(15px, 3vw, 31px);
+letter-spacing: clamp(2px, 0.3vw, 3.4px);
+color: #d59c3c;
 }
 
 /***********************************************************************/
@@ -485,15 +508,21 @@ max-width: 578px;
 }
 
 
-.formContact h2 , .contactSubmitted h2 {
+.formContact__title , .contactSubmitted h2 {
   margin-top: 2rem;
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
 }
 
-.formContact p,
+.formContact__text,
 .formContact form {
+  font-size: clamp(10px, 1vw, 17px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
   margin-top: 1rem;
   text-align: left;
   margin-left: 9vw;
@@ -558,12 +587,8 @@ max-width: 578px;
   box-sizing: border-box;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.buttonContact{
+.formContact__buttonContact{
+  width: 100%;
   margin: 2rem auto;
 
 
@@ -693,7 +718,7 @@ Realisation
   max-width: 1200px;
   width: 63%;
   display: block;
-  margin: 0 auto;
+  margin: 3vw auto;
 }
 
 /**************************************************************************
@@ -1208,11 +1233,11 @@ Page ADMIN : Liste des Visuels
     width: 100%;
   }
 
-  .formContact h2 , .contactSubmitted h2 {
+  .formContact__title , .contactSubmitted h2 {
     text-align: center;
   }
 
-  .formContact p {
+  .formContact__text {
    max-width: 950px;
     text-align: center;
   }
