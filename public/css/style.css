@@ -30,26 +30,15 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-header {
-  font-family: "Raleway", sans-serif;
-}
 
 
 
-h1,
-h2,
-h3,
-nav,
-.more,
-p,
-button,
-a {
-  font-family: "Raleway", sans-serif;
-}
+
+
 
 h1 {
   background-color: var(--navbar-bg-color);
-  font-size: clamp(17px, 5vw, 60px);
+  font-size: clamp(20px, 5vw, 60px);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -112,7 +101,7 @@ h3{
 }
 
 p,
-label, a{
+label, /*a*/{
   display: block;
   /* Make sure they are all on their own line */
   font-size: clamp(12px, 2vw, 20px);
@@ -145,7 +134,6 @@ button {
   padding: 1rem 2rem;
   background-color: transparent;
   font-size: clamp(15px, 2vw, 20px);
-  font-family: Raleway;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -159,7 +147,6 @@ button {
   padding: 2rem;
   background-color: transparent;
   font-size: clamp(20px, 5vw, 60px);
-  font-family: Raleway;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 50px;
@@ -278,7 +265,7 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-.intro {
+.homeIntro {
   height: clamp(456px, 90vw, 869px);
   max-width: 1920px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -291,15 +278,14 @@ footer .reseauxSociaux img {
   justify-content: center;
 }
 
-.intro h1 {
+.homeIntro__title {
   margin: 0 auto 3rem 10%;
   padding-top: 3.5rem;
   margin-bottom: 2.5rem;
   max-width: 80%;
 }
 
-.intro a  {
-  font-family: Raleway;
+.homeIntro__link {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -317,7 +303,7 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-.aPropos {
+.homeAPropos {
   background-image: url("../img/Photo_Profil-767x496.png");
   background-color: #050819;
   background-size: 100% auto;
@@ -332,7 +318,7 @@ footer .reseauxSociaux img {
   padding-bottom: 4rem;
 }
 
-.aPropos h2 {
+.homeAPropos__titleH2 {
   font-size: clamp(19px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -348,8 +334,7 @@ footer .reseauxSociaux img {
   padding-top: 40vw;
 }
 
-.aPropos h3 {
-  font-family: Raleway;
+.homeAPropos__titleH3 {
   font-size: clamp(11px, 1vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -365,20 +350,19 @@ footer .reseauxSociaux img {
 
 
 
-.aPropos p {
-  font-family: Raleway;
+.homeAPropos__text {
   font-size: clamp(10px, 1vw, 17px);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
   margin-left: 9vw;
   margin-right: 9vw;
   margin-bottom: 0;
 }
 
-.aPropos a{
-  font-family: Raleway;
+.homeAPropos__link {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -396,43 +380,43 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-#domainesExpertises {
+.home__domainesExpertises {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#domainesExpertises h2 {
+.home__domainesExpertises  h2 {
   margin-left: 9vw;
   margin-right: 9vw;
 }
-#domainesExpertises .textAlignRight {
+.home__domainesExpertises .textAlignRight {
   display: block;
   text-align: right;
   margin-right: 9vw;
   margin-left: 9vw;
 }
 
-#domainesExpertises p{
+.home__domainesExpertises p{
   font-size: clamp(11px, 1.5vw, 17px);
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
   color: #d59c3c;
 }
-#domainesExpertises .articleAlignLeft {
+.home__domainesExpertises .articleAlignLeft {
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
 }
 
-#domainesExpertises .articleAlignRight {
+.home__domainesExpertises .articleAlignRight {
   display: block;
   text-align: right;
   margin-right: 9vw;
   margin-left: 9vw;
 }
-#domainesExpertises img{
+.home__domainesExpertises img{
 width: 100%; 
 height: auto;
 display: block;
@@ -440,7 +424,7 @@ margin: auto;
 max-width: 578px;
 }
 
-#domainesExpertises h3{
+.home__domainesExpertises h3{
   font-size: clamp(17px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -453,8 +437,7 @@ max-width: 578px;
 
 
 
-#domainesExpertises a {
-  font-family: Raleway;
+.home__domainesExpertises a {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -468,12 +451,12 @@ max-width: 578px;
   text-decoration: none;
 }
 
-#domainesExpertises .textAlignRight a {
+.home__domainesExpertises .textAlignRight a {
   float: right;  
   clear: both;  
 }
 
-#domainesExpertises .voirTousProjets{
+.home__domainesExpertises .voirTousProjets{
  margin: 4.5vw auto 1.2vw auto;
 }
 
@@ -518,7 +501,6 @@ max-width: 578px;
 }
 
 .contactSubmitted a {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -643,7 +625,6 @@ Portfolio
   color: #d59c3c;
   border: #d59c3c solid 1.5px;
   padding: 0.9rem 2rem;
-
   text-decoration: none;
 }
 
@@ -661,7 +642,6 @@ Portfolio
 .portfolioMenu li {
   cursor: pointer;
   color: var(--Dore, #d59c3c);
-  font-family: Raleway;
   font-size: clamp(11px, 1.6vw, 20px);
   font-style: normal;
   font-weight: 500;
@@ -864,6 +844,10 @@ Realisation
 /*************************************************************
 page Mentions légales
 **************************************************************/
+.mentionsLegales {
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
 .mentionsLegales__p-enVigeur{
   text-align: center;
 }
@@ -895,16 +879,8 @@ Page ADMIN : Liste des Themes
 .themeForm h1,
 .createTheme h1,
 .listeVisuelsByRealisation h1 {
-  background-color: var(--navbar-bg-color);
-  font-size: clamp(17px, 5vw, 60px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   margin: 3.5rem auto 3rem;
   max-width: max-content;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
 }
 
 .listeThemes h2,
@@ -959,7 +935,6 @@ Page ADMIN : Liste des Themes
    }
 
    .createVisuelByRealisation a{
-    font-family: Raleway;
     font-weight: 500;
     font-size: clamp(15px, 2vw, 20px);
     text-transform: uppercase;
@@ -975,7 +950,6 @@ Page ADMIN : Liste des Themes
 
 .newTheme,
 .newVisuel{
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1027,7 +1001,6 @@ Page ADMIN : Liste des Réalisations
 }
 
 .listeRealisations p {
-  font-family: Raleway;
   font-size: clamp(11px, 2vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -1036,7 +1009,6 @@ Page ADMIN : Liste des Réalisations
 }
 
 .newRealisation {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1099,7 +1071,6 @@ Page ADMIN : Liste des Visuels
 }
 
 .listeVisuels h3 {
-  font-family: Raleway;
   font-size: clamp(11px, 2vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -1132,7 +1103,6 @@ Page ADMIN : Liste des Visuels
 }
 .newVisuel,
 .versVisuelsRealisation {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1148,37 +1118,44 @@ Page ADMIN : Liste des Visuels
 ******* Medium device *******
 ********************************************************************************/
 @media screen and (min-width: 780px) {
-  .intro {
+  .homeIntro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/Bannière_Intro-1920x869.png");
   }
 
-  .intro a  {
+  .homeIntro__title {
+    margin: 4vw auto 10rem auto;
+    text-align: center;
+  }
+
+  .homeIntro__link  {
 
     margin: 2rem auto;
   }
+  
 
 
-  .aPropos {
+  .homeAPropos {
     background-image: url("../img/Photo_Profil-1920x1242.png");
   }
-.aPropos h2 {
+
+.homeAPropos__titleH2 {
   margin-left: 53%;
   padding-top: 7%;
 }
 
 
-.aPropos h3 {
+.homeAPropos__titleH3 {
   margin-left: 53%;
   margin-top: 3%;
   margin-bottom: 3%;
 }
 
-.aPropos p {
+.homeAPropos__text {
   margin-left: 53%;
 }
 
-.aPropos a {
+.homeAPropos__link {
   margin-left: 53%;
 }
 
@@ -1208,7 +1185,6 @@ Page ADMIN : Liste des Visuels
 
   .navbar__link a,
   .navbar__admins a {
-    font-family: Raleway;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -1230,25 +1206,6 @@ Page ADMIN : Liste des Visuels
 
   .navbar__link:hover > a::after {
     width: 100%;
-  }
-
-
-
-  .intro h1 {
-    margin: 4vw auto 10rem auto;
-    text-align: center;
-  }
-
-  .intro p {
-    display: none;
-  }
-
-  .intro h2 {
-    display: none;
-  }
-
-  .intro button {
-    margin: 0 auto auto auto;
   }
 
   .formContact h2 , .contactSubmitted h2 {
@@ -1295,10 +1252,10 @@ form .Name {
   margin-left: 0;
   margin-right: 9vw;
 }
-#domainesExpertises h3, #domainesExpertises img{
+.home__domainesExpertises h3, .home__domainesExpertises img{
 margin-top: 3vw;
 }
-#domainesExpertises .textAlignRight {
+.home__domainesExpertises  .textAlignRight {
    text-align: center;
 }
 
@@ -1306,7 +1263,6 @@ margin-top: 3vw;
 /********Contact Form*********/
 /*       Medium device       */
 /*****************************/
-  .contact h1,
   .contact p,
   .contact form {
     text-align: center;

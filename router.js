@@ -71,13 +71,13 @@ router.get("/", HomeController);
 router.get("/portfolio", portfolio);
 router.get("/portfolio/:idRealisation", getVisuelsOfRealisation);
 router.get("/contactSubmitted", contactSubmittedController);
-router.get("/formContact", showContactForm);
+router.get("/", showContactForm);
 router.get("/mentionsLegales", mentionsLegalesController);
 
 /*********************************************
  * Routes publiques post
  ****************************************/
-router.post("/formContact", escapeData, addContactSubmit);
+router.post("/", escapeData, addContactSubmit);
 
 /*********************************************
  * Routes Admin get
