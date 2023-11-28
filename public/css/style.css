@@ -219,6 +219,22 @@ ul {
   display: none;
 }
 
+#scrollTop {
+  position: fixed;
+  /* right:  calc(50% - 50vw + 20px); */
+  right: 20px;
+  bottom: 20px;
+  cursor: pointer;
+  display: none; /* Masqué par défaut, apparaitra lors du défilement */
+}
+
+/* Style supplémentaire pour l'image si nécessaire */
+#scrollTop img {
+  width: clamp(30px, 5vw, 70px); /* Ajustez la taille selon vos besoins */
+  height: auto;
+}
+
+
 /**************************************************************************
 Footer
 ***************************************************************************/

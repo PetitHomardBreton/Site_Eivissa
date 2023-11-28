@@ -54,6 +54,27 @@ if (window.location.pathname === '/portfolio') {
   }
 }
 
+/***************************************************/
+/*Animation fleche remontée vers le haut de la page*/
+/***************************************************/
+
+window.addEventListener('scroll', function() {
+  var scrollTopBtn = document.getElementById('scrollTop');
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollTopBtn.style.display = "block";
+  } else {
+      scrollTopBtn.style.display = "none";
+  }
+});
+
+document.getElementById('scrollTop').addEventListener('click', function(event){
+  event.preventDefault();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
+
+
+
+
 
 /*******************************************/
 /*Masquage redirection survorl logo footer */
