@@ -228,8 +228,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
-  margin: 0;
+  padding: 0;
+  margin: 2vw auto 0;
   border-top: #d59c3c solid 1.5px;
  
 }
@@ -948,12 +948,14 @@ Page ADMIN : Liste des Themes
   line-height: 1.3;
 }
 
+.realisationForm li,
 .createRealisation li {
   display: flex;
   align-items: center; /* aligne verticalement les éléments enfants */
   margin : 2rem;
 }
 
+.realisationForm input[type="checkbox"] ,
 .createRealisation input[type="checkbox"] {
   margin-right: 2rem; /* ajoute un espace à droite de la checkbox */
 }
