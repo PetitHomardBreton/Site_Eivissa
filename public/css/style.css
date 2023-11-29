@@ -221,16 +221,15 @@ ul {
 
 #scrollTop {
   position: fixed;
-  /* right:  calc(50% - 50vw + 20px); */
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 70px;
   cursor: pointer;
   display: none; /* Masqué par défaut, apparaitra lors du défilement */
 }
 
 /* Style supplémentaire pour l'image si nécessaire */
 #scrollTop img {
-  width: clamp(30px, 5vw, 70px); /* Ajustez la taille selon vos besoins */
+  width: clamp(30px, 4vw, 70px); /* Ajustez la taille selon vos besoins */
   height: auto;
 }
 
@@ -245,9 +244,12 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 0;
-  margin: 2vw auto 0;
   border-top: #d59c3c solid 1.5px;
  
+}
+
+.footer-margin {
+  margin: 2vw auto 0;
 }
 
 footer .reseauxSociaux {
@@ -1220,6 +1222,11 @@ Page ADMIN : Liste des Visuels
 .homeAPropos__link {
   margin-left: 53%;
 }
+
+#scrollTop {
+  right: 70px;
+}
+
 
   .contact {
     background-image: url("../img/respirateur-1920x1080.png");

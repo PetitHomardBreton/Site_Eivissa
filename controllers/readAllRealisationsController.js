@@ -8,5 +8,6 @@ export default (req, res) => {
             return;
         }
         res.render('readAllRealisations', { realisations: results, pageTitle: 'Realisations' });
+        
     });
 };
