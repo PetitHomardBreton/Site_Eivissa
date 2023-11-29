@@ -39,12 +39,14 @@ export function addRealisationSubmit(req, res) {
 
         console.log("Generated ID:", generatedId);
 
-        // Après avoir ajouté la réalisation:
-        const selectedThemes = req.body.themes;
+        // Traitement des ID des thèmes
+        // Diviser la chaîne d'ID de thèmes en un tableau
+        const themeIds = req.body.themes.split(',').map(themeId => themeId.trim());
 
         // Utilisez un compteur pour suivre le nombre de liaisons insérées
         let count = 0;
-        selectedThemes.forEach(themeId => {
+        themeIds.forEach(themeId => {
+            console.log("ID du thème :", themeId);
             createThemeRealisationLink(themeId, generatedId, (error) => {
                 if (error) {
                     console.error(`Erreur lors de la création de la liaison thème-réalisation : ${error}`);
@@ -53,13 +55,14 @@ export function addRealisationSubmit(req, res) {
 
                 // Incrémente le compteur et vérifie si toutes les liaisons ont été insérées
                 count++;
-                if (count === selectedThemes.length) {
-                    // Redirection vers la liste des realisation seulement après que toutes les liaisons aient été insérées
+                if (count === themeIds.length) {
+                    // Redirection vers la liste des réalisations seulement après que toutes les liaisons aient été insérées
                     res.redirect('/realisations');
                 }
             });
         });
     });
 }
+
 
 

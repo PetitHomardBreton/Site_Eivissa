@@ -2,9 +2,9 @@
 <%- include('header') -%>
 
 <section class="visuelsOfRealisation">
-
-    <div class="visuelContent">
-        <div class="visuels">
+    <h1 class="visuelsOfRealisation__title"><%= nomRealisation %></h1>
+    <h2 class="visuelsOfRealisation__subTitle"><%= descriptionRealisation%></h2>
+    <p class="visuelsOfRealisation__text"><%= commentaireRealisation%></p>
             <ul class="visuelsList">
                 <% for(let i=0; i<visuels.length; i++) { %>
                 <li>
@@ -44,8 +44,6 @@
                 </li>
                 <% } %>
             </ul>
-        </div>
-    </div>
 </section>
 
 <%- include('footer') -%>

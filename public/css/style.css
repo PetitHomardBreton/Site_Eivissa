@@ -713,6 +713,12 @@ Portfolio
 /**************************************************************************
 Realisation
 ***************************************************************************/
+.visuelsOfRealisation__title,
+.visuelsOfRealisation__subTitle,
+.visuelsOfRealisation__text {
+  display: none;
+  visibility: hidden;
+}
 
 .visuelsOfRealisation ul{
   padding: 0;
@@ -727,15 +733,7 @@ Realisation
   padding: 0;
 }
 
-.visuelsOfRealisation p {
-  font-size: clamp(11px, 2vw, 17px);
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  /* 182.353% */
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
-  margin-left: 4vw;
-}
+
 
 .visuelsList video{
   max-width: 1200px;
@@ -1052,6 +1050,12 @@ Page ADMIN : Liste des Réalisations
   height: auto;
   padding: 0;
 }
+
+.listeVisuelsByRealisation__video{
+  width :20%;
+}
+
+
 
 .listeRealisations h2{
   font-size: clamp(19px, 5vw, 35px);
