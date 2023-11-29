@@ -54,5 +54,3 @@ app.use(helmet());
 // importation du module compression pour compresser les réponses HTTP
 import compression from 'compression';
 app.use(compression());
-
-

@@ -248,9 +248,10 @@ footer {
  
 }
 
-.footer-margin {
-  margin: 2vw auto 0;
+.footer--With-Margin {
+  margin-top: 2vw;
 }
+
 
 footer .reseauxSociaux {
   display: flex;
