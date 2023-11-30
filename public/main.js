@@ -78,6 +78,7 @@ document.getElementById('scrollTop').addEventListener('click', function(event){
 /*************************************************/
 
 // slider
+
 const track = document.querySelector('.caroussel');
 const items = document.querySelectorAll('.caroussel__item');
 let currentIndex = 0;
@@ -104,9 +105,21 @@ function nextSlide() {
     }
 }
 
+const nextButton = document.querySelector('.caroussel__arrow--right');
+const prevButton = document.querySelector('.caroussel__arrow--left');
+
+nextButton.addEventListener('click', () => {
+    movingForward = true; // Assurez-vous que le mouvement va vers l'avant
+    nextSlide();
+});
+
+prevButton.addEventListener('click', () => {
+    movingForward = false; // Change la direction pour aller vers l'arrière
+    goToSlide(currentIndex - 1);
+});
+
+
 setInterval(nextSlide, 2000);
-
-
 
 
 

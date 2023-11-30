@@ -744,17 +744,17 @@ Realisation
   margin: 3vw auto;
 }
 
-/*SLIDER*/
-
 .visuelsCaroussel {
   overflow: hidden;
-  width: 80vw;
-  max-width: 1500px;
+  width: 100vw;
+  max-width: 1920px;
   margin: 0 auto;
+  position: relative;
 }
 
 .visuelsCaroussel__title{
   text-align: center;
+  margin: 2rem auto 0;
 }
 .caroussel {
   display: flex;
@@ -769,11 +769,30 @@ Realisation
   display: flex;
 }
 
-.visuelsCaroussel img {
+.caroussel__item__img {
   width: 80%;
   height: auto;
   display: block;
 }
+
+
+.visuelsCaroussel__buttons {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.caroussel__arrow {
+  border: none;
+  padding: 0 2rem;
+}
+
+.caroussel__arrow__img {
+  width: clamp(20px, 3vw, 45px);
+  height: auto;
+}
+
 
 /**************************************************************************
   Small device 
