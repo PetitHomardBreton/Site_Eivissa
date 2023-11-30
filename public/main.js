@@ -77,12 +77,14 @@ document.getElementById('scrollTop').addEventListener('click', function(event){
 /*        slider page réalisations               */
 /*************************************************/
 
-// slider
+/* Autre possibilité de slider :
+// slider gauche à droite puis droite à gauche :
 
 const track = document.querySelector('.caroussel');
 const items = document.querySelectorAll('.caroussel__item');
 let currentIndex = 0;
 let movingForward = true; // Nouvelle variable pour suivre la direction
+
 
 function goToSlide(index) {
     if (index < 0) {
@@ -99,14 +101,51 @@ function goToSlide(index) {
 
 function nextSlide() {
     if (movingForward) {
-        goToSlide(currentIndex + 1);
+        goToSlide(currentIndex + 2);
     } else {
-        goToSlide(currentIndex - 1);
+        goToSlide(currentIndex - 2);
     }
 }
 
+function prevSlide() {
+  if (currentIndex <= 0) {
+      currentIndex = items.length - 1; // Retour à la fin si nous sommes au début
+  } else {
+      currentIndex--;
+  }
+  goToSlide(currentIndex);
+}
 
+setInterval(nextSlide, 2000); */
 
+const track = document.querySelector('.caroussel');
+const items = document.querySelectorAll('.caroussel__item');
+let currentIndex = 0;
+
+// Fonction pour aller à un slide spécifique
+function goToSlide(index) {
+    // Bouclage du carrousel
+    if (index < 0) {
+        index = items.length - 1; // Boucle au dernier élément si l'index est inférieur à 0
+    } else if (index >= items.length) {
+        index = 0; // Boucle au premier élément si l'index dépasse le dernier élément
+    }
+
+    track.style.transform = `translateX(-${index * (100 / items.length)}%)`;
+    currentIndex = index;
+}
+
+// Fonction pour aller au slide suivant
+function nextSlide() {
+    goToSlide(currentIndex + 2); // Avance de deux éléments
+}
+
+// Fonction pour aller au slide précédent
+function prevSlide() {
+    goToSlide(currentIndex - 2); // Recule de deux éléments
+}
+
+// Initialisation du défilement automatique
 setInterval(nextSlide, 2000);
 
 

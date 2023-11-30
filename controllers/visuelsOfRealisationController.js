@@ -16,37 +16,41 @@ export default (req, res) => {
                 return;
             }
 
-        if (visuels && visuels.length > 0) {
+            // Filtrer pour exclure le visuel actuel de la liste du carrousel
+            const filteredVisuelsCaroussel = visuelsCaroussel.filter(visuel => visuel.idRealisation !== idRealisation);
 
-            visuels.forEach(visuel => {
-                console.log(`Visuel ID: ${visuel.id}, Width767: ${visuel.visuelWidth767}, Width1920: ${visuel.visuelWidth1920}`);
-            });
+            if (visuels && visuels.length > 0) {
 
-            const idVisuels = visuels[0].id;
-            res.render("visuelsOfRealisation", {
-                pageTitle: "Visuels de " + visuels[0].nomRealisation,
-                visuels: visuels,
-                nomRealisation: visuels[0].nomRealisation,
-                nameVisuel: visuels[0].nameVisuel,
-                typeVisuel: visuels[0].typeVisuel,
-                commentaireVisuel: visuels[0].commentaireVisuel,
-                visuelWidth767: visuels[0].visuelWidth767,
-                visuelWidth1920: visuels[0].visuelWidth1920,
-                descriptionRealisation: visuels[0].descriptionRealisation,
-                commentaireRealisation: visuels[0].commentaireRealisation,
-                idRealisation: idRealisation,
-                idVisuels: idVisuels,
-                actionDelete: "/realisations/" + idRealisation + "/visuels/delete",
-                actionAdd: "/realisations/" + idRealisation + "/visuels/add",
-                actionRead: (id) => "/realisations/" + idRealisation + "/visuels/" + id,
-                actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
-                visuelsCaroussel: visuelsCaroussel,
-            });
-        } else {
-            // Rediriger vers la page actionAdd
-            res.redirect("/portfolio");
-        }
+                visuels.forEach(visuel => {
+                    console.log(`Visuel ID: ${visuel.id}, Width767: ${visuel.visuelWidth767}, Width1920: ${visuel.visuelWidth1920}`);
+                });
+
+                const idVisuels = visuels[0].id;
+                res.render("visuelsOfRealisation", {
+                    pageTitle: "Visuels de " + visuels[0].nomRealisation,
+                    visuels: visuels,
+                    nomRealisation: visuels[0].nomRealisation,
+                    nameVisuel: visuels[0].nameVisuel,
+                    typeVisuel: visuels[0].typeVisuel,
+                    commentaireVisuel: visuels[0].commentaireVisuel,
+                    visuelWidth767: visuels[0].visuelWidth767,
+                    visuelWidth1920: visuels[0].visuelWidth1920,
+                    descriptionRealisation: visuels[0].descriptionRealisation,
+                    commentaireRealisation: visuels[0].commentaireRealisation,
+                    idRealisation: idRealisation,
+                    idVisuels: idVisuels,
+                    actionDelete: "/realisations/" + idRealisation + "/visuels/delete",
+                    actionAdd: "/realisations/" + idRealisation + "/visuels/add",
+                    actionRead: (id) => "/realisations/" + idRealisation + "/visuels/" + id,
+                    actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
+                    visuelsCaroussel: filteredVisuelsCaroussel,
+                });
+            } else {
+                // Rediriger vers la page actionAdd
+                res.redirect("/portfolio");
+            }
+        });
     });
-});
 };
+
 

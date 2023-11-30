@@ -748,18 +748,28 @@ Realisation
   position: relative;
   overflow: hidden;
   width: 100vw;
-  max-width: 1920px;
+  max-width: 1500px;
   margin: 0 auto;
   position: relative;
 }
 
+.caroussel__ArrowsAndTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .visuelsCaroussel__title{
+  font-size: clamp(19px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   text-align: center;
   margin: 2rem auto 0;
 }
 .caroussel {
   display: flex;
-  transition: transform 4s ease;
+  transition: transform 1s ease;
   align-items: center;
   padding: 10px;
 }
@@ -774,15 +784,14 @@ Realisation
   width: 80%;
   height: auto;
   display: block;
+  border-radius: clamp( 3px, 1vw, 10px);
 }
 
 
-.visuelsCaroussel__buttons {
+/*.visuelsCaroussel__buttons {
   display: flex;
   justify-content: space-between;
-
-
-}
+}*/
 
 .caroussel__arrow {
   border: none;
@@ -797,10 +806,11 @@ Realisation
 
 .caroussel-fade {
   position: absolute;
-  top: 0;
+  top: 30%;
   bottom: 0;
-  width: 25vw; /* ou la largeur que vous souhaitez pour l'effet d'estompage */
-  z-index: 1; /* Assurez-vous que cela est supérieur au z-index des éléments du carrousel */
+  width: 20vw;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .caroussel-fade-left {
