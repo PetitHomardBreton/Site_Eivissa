@@ -745,6 +745,7 @@ Realisation
 }
 
 .visuelsCaroussel {
+  position: relative;
   overflow: hidden;
   width: 100vw;
   max-width: 1920px;
@@ -758,7 +759,7 @@ Realisation
 }
 .caroussel {
   display: flex;
-  transition: transform 0.3s ease;
+  transition: transform 4s ease;
   align-items: center;
   padding: 10px;
 }
@@ -786,11 +787,30 @@ Realisation
 .caroussel__arrow {
   border: none;
   padding: 0 2rem;
+  z-index: 2;
 }
 
 .caroussel__arrow__img {
   width: clamp(20px, 3vw, 45px);
   height: auto;
+}
+
+.caroussel-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25vw; /* ou la largeur que vous souhaitez pour l'effet d'estompage */
+  z-index: 1; /* Assurez-vous que cela est supérieur au z-index des éléments du carrousel */
+}
+
+.caroussel-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(5, 8, 25, 1), transparent);
+}
+
+.caroussel-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(5, 8, 25, 1), transparent);
 }
 
 
