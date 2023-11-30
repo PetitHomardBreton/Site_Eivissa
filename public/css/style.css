@@ -753,10 +753,15 @@ Realisation
   position: relative;
 }
 
-.caroussel__ArrowsAndTitle{
+.caroussel__ArrowsAndTitle {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
+}
+
+.visuelsCaroussel__buttons {
+  margin : 0 auto;
 }
 
 .visuelsCaroussel__title{
@@ -765,9 +770,11 @@ Realisation
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-align: center;
-  margin: 2rem auto 0;
+  margin: 0 auto ;
 }
 .caroussel {
+  box-sizing: border-box;
+  width : 100%;
   display: flex;
   transition: transform 1s ease;
   align-items: center;
@@ -775,9 +782,9 @@ Realisation
 }
 
 .caroussel__item {
-  flex: 0 0 clamp(100px, 20vw, 300px);
+  flex: 0 0 clamp(100px, 20vw, 300px); 
   margin-bottom: 10px;
-  display: flex;
+
 }
 
 .caroussel__item__img {
@@ -806,7 +813,7 @@ Realisation
 
 .caroussel-fade {
   position: absolute;
-  top: 30%;
+  top: 20%;
   bottom: 0;
   width: 20vw;
   z-index: 1;

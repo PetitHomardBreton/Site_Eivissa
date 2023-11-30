@@ -77,77 +77,55 @@ document.getElementById('scrollTop').addEventListener('click', function(event){
 /*        slider page réalisations               */
 /*************************************************/
 
-/* Autre possibilité de slider :
-// slider gauche à droite puis droite à gauche :
+document.querySelector('.caroussel__arrow--left').addEventListener('click', prevSlide);
+document.querySelector('.caroussel__arrow--right').addEventListener('click', nextSlide);
 
 const track = document.querySelector('.caroussel');
 const items = document.querySelectorAll('.caroussel__item');
 let currentIndex = 0;
-let movingForward = true; // Nouvelle variable pour suivre la direction
-
-
-function goToSlide(index) {
-    if (index < 0) {
-        index = 0;
-        movingForward = true; // Change la direction si vous atteignez le début
-    }
-    else if (index >= items.length) {
-        index = items.length - 1;
-        movingForward = false; // Change la direction si vous atteignez la fin
-    }
-    track.style.transform = `translateX(-${index * (100 / items.length )}%)`;
-    currentIndex = index;
-}
-
-function nextSlide() {
-    if (movingForward) {
-        goToSlide(currentIndex + 2);
-    } else {
-        goToSlide(currentIndex - 2);
-    }
-}
-
-function prevSlide() {
-  if (currentIndex <= 0) {
-      currentIndex = items.length - 1; // Retour à la fin si nous sommes au début
-  } else {
-      currentIndex--;
-  }
-  goToSlide(currentIndex);
-}
-
-setInterval(nextSlide, 2000); */
-
-const track = document.querySelector('.caroussel');
-const items = document.querySelectorAll('.caroussel__item');
-let currentIndex = 0;
+const firstItem = document.querySelector('.caroussel__item');
+let itemWidth = firstItem.getBoundingClientRect().width;
+console.log('Largeur du premier élément du carrousel:', itemWidth);
 
 // Fonction pour aller à un slide spécifique
-function goToSlide(index) {
-    // Bouclage du carrousel
-    if (index < 0) {
-        index = items.length - 1; // Boucle au dernier élément si l'index est inférieur à 0
-    } else if (index >= items.length) {
-        index = 0; // Boucle au premier élément si l'index dépasse le dernier élément
-    }
 
-    track.style.transform = `translateX(-${index * (100 / items.length)}%)`;
+function goToSlide(index) {
+    const totalWidth = itemWidth * index;
+    track.style.transform = `translateX(-${totalWidth}px)`;
     currentIndex = index;
+    console.log('currentIndex : ' + currentIndex);
 }
 
+window.addEventListener('resize', () => {
+    // Mettez à jour la largeur de l'élément du carrousel
+    itemWidth = document.querySelector('.caroussel__item').getBoundingClientRect().width;
+
+    // Recalculez la position du carrousel
+    const totalWidth = itemWidth * currentIndex;
+    track.style.transform = `translateX(-${totalWidth}px)`;
+});
+
 // Fonction pour aller au slide suivant
-function nextSlide() {
-    goToSlide(currentIndex + 2); // Avance de deux éléments
+function nextSlide(event) {
+    if (currentIndex < items.length - 3) {
+       event.stopPropagation(); // Arrête la propagation de l'événement
+        goToSlide(currentIndex + 1);
+    } else {
+       event.stopPropagation();// Arrête la propagation de l'événement
+        goToSlide(0); // Retour au début si nous sommes à la fin
+    }
 }
 
 // Fonction pour aller au slide précédent
-function prevSlide() {
-    goToSlide(currentIndex - 2); // Recule de deux éléments
+function prevSlide(event) {
+    if (currentIndex > 0) {
+        event.stopPropagation(); // Arrête la propagation de l'événement
+        goToSlide(currentIndex - 1);
+    } else {
+        event.stopPropagation(); // Arrête la propagation de l'événement
+        goToSlide(items.length - 1); // Aller à la fin si nous sommes au début
+    }
 }
-
-// Initialisation du défilement automatique
-setInterval(nextSlide, 2000);
-
 
 
 /*******************************************/
