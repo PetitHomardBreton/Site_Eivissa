@@ -46,17 +46,4 @@
             </ul>
 </section>
 
-<section class="visuelsCaroussel">
-    <h2 class="visuelsCaroussel__title">autres projets</h2>
-    <div class="caroussel">
-        <% visuelsCaroussel.forEach(function(visuel) { %>
-            <div class="caroussel__item">
-                <a href="/portfolio/<%= visuel.idRealisation %>">
-                <img src="/img/<%= visuel.visuelWidth767 || visuel.visuelWidth1920 %>" alt="<%= visuel.nomRealisation %>">
-                </a>
-            </div>
-        <% }); %>
-    </div>
-</section>
-
 <%- include('footer') -%>

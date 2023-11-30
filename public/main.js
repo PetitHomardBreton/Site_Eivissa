@@ -73,6 +73,40 @@ document.getElementById('scrollTop').addEventListener('click', function(event){
 });
 
 
+/*************************************************/
+/*        slider page réalisations               */
+/*************************************************/
+
+// slider
+const track = document.querySelector('.caroussel');
+const items = document.querySelectorAll('.caroussel__item');
+let currentIndex = 0;
+let movingForward = true; // Nouvelle variable pour suivre la direction
+
+function goToSlide(index) {
+    if (index < 0) {
+        index = 0;
+        movingForward = true; // Change la direction si vous atteignez le début
+    }
+    else if (index >= items.length) {
+        index = items.length - 1;
+        movingForward = false; // Change la direction si vous atteignez la fin
+    }
+    track.style.transform = `translateX(-${index * (100 / items.length )}%)`;
+    currentIndex = index;
+}
+
+function nextSlide() {
+    if (movingForward) {
+        goToSlide(currentIndex + 1);
+    } else {
+        goToSlide(currentIndex - 1);
+    }
+}
+
+setInterval(nextSlide, 2000);
+
+
 
 
 

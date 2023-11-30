@@ -74,6 +74,33 @@ export const getVisuelsOfRealisation = (id, callback) => {
          callback);
 };
 
+/***READ pour Caroussel ***/
+export const getAllVisuelsForCaroussel= (callback) => {
+    query(`
+        SELECT 
+          v.idRealisation,
+          r.rankingRealisation,
+          v.visuelWidth767,
+          v.visuelWidth1920, -- Ajout de cette ligne pour récupérer également visuelWidth1920
+          v.rankingVisuel
+        FROM 
+          visuels v
+        INNER JOIN (
+          SELECT 
+            idRealisation, 
+            MIN(rankingVisuel) as minRankingVisuel
+          FROM 
+            visuels
+          GROUP BY 
+            idRealisation
+        ) vm ON v.idRealisation = vm.idRealisation AND v.rankingVisuel = vm.minRankingVisuel
+        JOIN realisations r ON v.idRealisation = r.id
+        ORDER BY 
+          r.rankingRealisation ASC, 
+          v.rankingVisuel ASC;
+    `, [], callback);
+};
+
 /***DELETE***/
 
 export const deleteVisuel = (visuelId, callback) => {

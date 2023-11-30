@@ -1,4 +1,4 @@
-import { getVisuelsOfRealisation, getAllVisuelsForCaroussel } from "../models/visuelModel.js";
+import { getVisuelsOfRealisation } from "../models/visuelModel.js";
 
 export default (req, res) => {
     const idRealisation = req.params.idRealisation;
@@ -8,13 +8,6 @@ export default (req, res) => {
             res.status(500).send("Erreur lors de la requête des visuels");
             return;
         }
-
-        getAllVisuelsForCaroussel((errorCaroussel, visuelsCaroussel) => {
-            if (errorCaroussel) {
-                console.error(errorCaroussel);
-                res.status(500).send("Erreur lors de la récupération des visuels pour le carroussel");
-                return;
-            }
 
         if (visuels && visuels.length > 0) {
 
@@ -40,13 +33,12 @@ export default (req, res) => {
                 actionAdd: "/realisations/" + idRealisation + "/visuels/add",
                 actionRead: (id) => "/realisations/" + idRealisation + "/visuels/" + id,
                 actionUpdate: "/realisations/" + idRealisation + "/visuels/" + idVisuels + "/update",
-                visuelsCaroussel: visuelsCaroussel,
             });
         } else {
             // Rediriger vers la page actionAdd
             res.redirect("/portfolio");
         }
     });
-});
-};
+}
+
 

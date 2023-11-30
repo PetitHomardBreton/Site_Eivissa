@@ -34,10 +34,9 @@ export default (req, res) => {
             }
 
             res.render('portfolio', {
-                pageTitle: 'Portfolio',
-                fullPage: false,
-                themes,
-                realisations
+                pageTitle: 'Portfolio', /* Titre de la page */
+                themes, /* Liste des thèmes */
+                realisations /* Liste des réalisations */
             });
         });
     });
