@@ -11,7 +11,8 @@ GENERAL
   --navbar-bg-color: #f0f0f0;
 }
 
-.dark-mode {
+
+.navbar--burger {
   --navbar-color: #d59c3c;
   --navbar-bg-color: #050819;
 }
@@ -28,25 +29,18 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: "Raleway", sans-serif;
+  font-variant-numeric: lining-nums proportional-nums; /* Pour les chiffres */
 }
 
-header {
-  font-family: "Raleway", sans-serif;
-}
 
-h1,
-h2,
-h3,
-nav,
-.more,
-p,
-button {
-  font-family: "Raleway", sans-serif;
-}
+
+
+
+
 
 h1 {
   background-color: var(--navbar-bg-color);
-  font-size: clamp(17px, 5vw, 60px);
+  font-size: clamp(20px, 5vw, 60px);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -54,6 +48,24 @@ h1 {
   max-width: max-content;
   color: #d59c3c;
   text-align: left;
+  line-height: 1.3;
+}
+
+h2 {
+  font-size: clamp(20px, 5vw, 60px);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+
+h3{
+  font-size: clamp(17px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d59c3c;
   line-height: 1.3;
 }
 
@@ -91,15 +103,13 @@ h1 {
 }
 
 p,
-label {
+label /*,a*/{
   display: block;
-  /* Make sure they are all on their own line */
   font-size: clamp(12px, 2vw, 20px);
   font-weight: 300;
   letter-spacing: 0.2em;
   color: #d59c3c;
   margin-top: 0rem;
-  /*margin-bottom: 2rem;*/
   padding: 0;
   line-height: 1.35;
 }
@@ -124,7 +134,6 @@ button {
   padding: 1rem 2rem;
   background-color: transparent;
   font-size: clamp(15px, 2vw, 20px);
-  font-family: Raleway;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -138,7 +147,6 @@ button {
   padding: 2rem;
   background-color: transparent;
   font-size: clamp(20px, 5vw, 60px);
-  font-family: Raleway;
   font-weight: 500;
   text-transform: uppercase;
   line-height: 50px;
@@ -183,15 +191,20 @@ ul {
   color: var(--navbar-color);
 }
 
+/*
 .navbar__links {
   display: flex;
   justify-content: space-between;
   width: 90%;
   margin: auto;
 }
+*/
 
 .navbar__link {
   padding: 0 10px;
+  transform: translateX(101%);
+  transition: all 0.5s ease-in-out;
+  margin: 1.2rem auto;
 }
 
 .navbar__link > a {
@@ -200,12 +213,27 @@ ul {
 }
 
 .navbar__logo {
-  margin: 0 20%;
+  margin: 0 10vw;
 }
 
 .burger {
   display: none;
 }
+
+#scrollTop {
+  position: fixed;
+  right: 30px;
+  bottom: 70px;
+  cursor: pointer;
+  display: none; /* Masqué par défaut, apparaitra lors du défilement */
+}
+
+/* Style supplémentaire pour l'image si nécessaire */
+#scrollTop img {
+  width: clamp(30px, 4vw, 70px); /* Ajustez la taille selon vos besoins */
+  height: auto;
+}
+
 
 /**************************************************************************
 Footer
@@ -216,8 +244,16 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 0;
+  border-top: #d59c3c solid 1.5px;
+  margin-top: 1px;
+ 
 }
+
+.footer--With-Margin {
+  margin-top: 2vw;
+}
+
 
 footer .reseauxSociaux {
   display: flex;
@@ -237,8 +273,35 @@ footer .reseauxSociaux img {
 .logoFooter {
   width: clamp(56px, 5vw, 98px);
   height: auto;
-  margin: auto;
+  margin: 2rem;
   cursor: default;
+}
+
+.footer__mentionsLegales{
+  font-size: clamp(10px, 1vw, 17px);
+  font-weight: 500;
+  color: #d59c3c;
+  text-decoration: none;
+  margin: 1vw auto;
+}
+
+.mentionsLegales__text--center{
+  text-align: center;
+  font-size: clamp(10px, 1vw, 17px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
+  margin-bottom: 5rem;
+}
+.mentionsLegales__text {
+font-size: clamp(10px, 1vw, 17px);
+font-style: normal;
+font-weight: 400;
+line-height: clamp(15px, 3vw, 31px);
+letter-spacing: clamp(2px, 0.3vw, 3.4px);
+color: #d59c3c;
 }
 
 /***********************************************************************/
@@ -250,7 +313,7 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-.intro {
+.homeIntro {
   height: clamp(456px, 90vw, 869px);
   max-width: 1920px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -263,29 +326,14 @@ footer .reseauxSociaux img {
   justify-content: center;
 }
 
-.intro h1 {
+.homeIntro__title {
   margin: 0 auto 3rem 10%;
   padding-top: 3.5rem;
   margin-bottom: 2.5rem;
   max-width: 80%;
 }
 
-.intro p {
-  max-width: max-content;
-  margin: 0 auto 0 10%;
-  padding: 0;
-  max-width: 70%;
-}
-
-.intro h2 {
-  max-width: max-content;
-  margin: 3rem auto 2rem 10%;
-  max-width: 65%;
-  line-height: 1.75;
-}
-
-.intro a  {
-  font-family: Raleway;
+.homeIntro__link {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -303,7 +351,7 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-.aPropos {
+.homeAPropos {
   background-image: url("../img/Photo_Profil-767x496.png");
   background-color: #050819;
   background-size: 100% auto;
@@ -318,7 +366,7 @@ footer .reseauxSociaux img {
   padding-bottom: 4rem;
 }
 
-.aPropos h2 {
+.homeAPropos__titleH2 {
   font-size: clamp(19px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -334,8 +382,7 @@ footer .reseauxSociaux img {
   padding-top: 40vw;
 }
 
-.aPropos h3 {
-  font-family: Raleway;
+.homeAPropos__titleH3 {
   font-size: clamp(11px, 1vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -351,20 +398,19 @@ footer .reseauxSociaux img {
 
 
 
-.aPropos p {
-  font-family: Raleway;
+.homeAPropos__text {
   font-size: clamp(10px, 1vw, 17px);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
   margin-left: 9vw;
   margin-right: 9vw;
   margin-bottom: 0;
 }
 
-.aPropos a{
-  font-family: Raleway;
+.homeAPropos__link {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -382,49 +428,43 @@ footer .reseauxSociaux img {
 /*      Page Home            */
 /*****************************/
 
-#domainesExpertises {
+.home__domainesExpertises {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#domainesExpertises h2 {
-  font-size: clamp(20px, 5vw, 60px);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+.home__domainesExpertises  h2 {
   margin-left: 9vw;
   margin-right: 9vw;
-  color: #d59c3c;
-  line-height: 1.3;
 }
-#domainesExpertises .textAlignRight {
+.home__domainesExpertises .textAlignRight {
   display: block;
   text-align: right;
   margin-right: 9vw;
   margin-left: 9vw;
 }
 
-#domainesExpertises p{
+.home__domainesExpertises p{
   font-size: clamp(11px, 1.5vw, 17px);
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
   color: #d59c3c;
 }
-#domainesExpertises .articleAlignLeft {
+.home__domainesExpertises .articleAlignLeft {
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
 }
 
-#domainesExpertises .articleAlignRight {
+.home__domainesExpertises .articleAlignRight {
   display: block;
   text-align: right;
   margin-right: 9vw;
   margin-left: 9vw;
 }
-#domainesExpertises img{
+.home__domainesExpertises img{
 width: 100%; 
 height: auto;
 display: block;
@@ -432,7 +472,7 @@ margin: auto;
 max-width: 578px;
 }
 
-#domainesExpertises h3{
+.home__domainesExpertises h3{
   font-size: clamp(17px, 3vw, 35px);
   font-weight: 300;
   text-transform: uppercase;
@@ -445,8 +485,7 @@ max-width: 578px;
 
 
 
-#domainesExpertises a {
-  font-family: Raleway;
+.home__domainesExpertises a {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -460,12 +499,12 @@ max-width: 578px;
   text-decoration: none;
 }
 
-#domainesExpertises .textAlignRight a {
+.home__domainesExpertises .textAlignRight a {
   float: right;  
   clear: both;  
 }
 
-#domainesExpertises .voirTousProjets{
+.home__domainesExpertises .voirTousProjets{
  margin: 4.5vw auto 1.2vw auto;
 }
 
@@ -494,20 +533,21 @@ max-width: 578px;
 }
 
 
-.formContact h2 , .contactSubmitted h2 {
-  font-size: clamp(17px, 5vw, 60px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #d59c3c;
+.formContact__title , .contactSubmitted h2 {
   margin-top: 2rem;
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
 }
 
-.formContact p,
+.formContact__text,
 .formContact form {
+  font-size: clamp(10px, 1vw, 17px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: #d59c3c;
   margin-top: 1rem;
   text-align: left;
   margin-left: 9vw;
@@ -515,7 +555,6 @@ max-width: 578px;
 }
 
 .contactSubmitted a {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -573,12 +612,8 @@ max-width: 578px;
   box-sizing: border-box;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.buttonContact{
+.formContact__buttonContact{
+  width: 100%;
   margin: 2rem auto;
 
 
@@ -611,7 +646,7 @@ Portfolio
 .portfolioRealisations img {
   width: 100%;
   height: auto;
-  margin: auto
+  margin: auto;
   padding: 0;
 }
 
@@ -640,7 +675,6 @@ Portfolio
   color: #d59c3c;
   border: #d59c3c solid 1.5px;
   padding: 0.9rem 2rem;
-
   text-decoration: none;
 }
 
@@ -658,7 +692,6 @@ Portfolio
 .portfolioMenu li {
   cursor: pointer;
   color: var(--Dore, #d59c3c);
-  font-family: Raleway;
   font-size: clamp(11px, 1.6vw, 20px);
   font-style: normal;
   font-weight: 500;
@@ -682,51 +715,121 @@ Portfolio
 /**************************************************************************
 Realisation
 ***************************************************************************/
-.visuelsOfRealisation h1 {
-  font-size: clamp(20px, 5vw, 60px);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  margin: 3.5rem 0 3rem 4vw;
-  max-width: max-content;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
+.visuelsOfRealisation__title,
+.visuelsOfRealisation__subTitle,
+.visuelsOfRealisation__text {
+  display: none;
+  visibility: hidden;
 }
-.visuelsOfRealisation h2 {
-  font-size: clamp(17px, 4.5vw, 35px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: clamp(5px, 0.01vw, 10px);
-   color: #d59c3c;
-   margin-left: 4vw;
-}
-
 
 .visuelsOfRealisation ul{
   padding: 0;
+  margin: 0 auto;
+
 }
 
 .visuelsOfRealisation img{
   width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto -3px auto;
   padding: 0;
 }
 
-.visuelsOfRealisation p {
-  font-size: clamp(11px, 2vw, 17px);
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  /* 182.353% */
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
-  margin-left: 4vw;
-}
+
 
 .visuelsList video{
-  width : 100%
+  max-width: 1200px;
+  width: 63%;
+  display: block;
+  margin: 3vw auto;
 }
+
+.visuelsCaroussel {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.caroussel__ArrowsAndTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.visuelsCaroussel__buttons {
+  margin : 0 auto;
+}
+
+.visuelsCaroussel__title{
+  font-size: clamp(19px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  margin: 0 auto ;
+}
+.caroussel {
+  box-sizing: border-box;
+  width : 100%;
+  display: flex;
+  transition: transform 1s ease;
+  align-items: center;
+  padding: 10px;
+}
+
+.caroussel__item {
+  flex: 0 0 clamp(100px, 20vw, 300px); 
+  margin-bottom: 10px;
+
+}
+
+.caroussel__item__img {
+  width: 80%;
+  height: auto;
+  display: block;
+  border-radius: clamp( 3px, 1vw, 10px);
+}
+
+
+/*.visuelsCaroussel__buttons {
+  display: flex;
+  justify-content: space-between;
+}*/
+
+.caroussel__arrow {
+  border: none;
+  padding: 0 2rem;
+  z-index: 2;
+}
+
+.caroussel__arrow__img {
+  width: clamp(20px, 3vw, 45px);
+  height: auto;
+}
+
+.caroussel-fade {
+  position: absolute;
+  top: 20%;
+  bottom: 0;
+  width: 20vw;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.caroussel-fade-left {
+  left: 0;
+  background: linear-gradient(to right, rgba(5, 8, 25, 1), transparent);
+}
+
+.caroussel-fade-right {
+  right: 0;
+  background: linear-gradient(to left, rgba(5, 8, 25, 1), transparent);
+}
+
 
 /**************************************************************************
   Small device 
@@ -742,9 +845,13 @@ Realisation
     display: none;
   }
 
+/*
+
   header nav.no-border {
     border-bottom: none;
   }
+*/
+
 
   .navbar__links {
     overflow: hidden;
@@ -767,11 +874,13 @@ Realisation
     transform: translateX(0);
   }
 
+  /*
   .navbar__link {
     transform: translateX(101%);
     transition: all 0.5s ease-in-out;
     margin: 1.2rem auto;
   }
+*/
 
   .show-nav .navbar__link {
     transform: translateX(0);
@@ -873,6 +982,32 @@ Realisation
   }
 }
 
+/*************************************************************
+page Mentions légales
+**************************************************************/
+.mentionsLegales {
+  margin-left: 9vw;
+  margin-right: 9vw;
+}
+.mentionsLegales__p-enVigeur{
+  text-align: center;
+}
+.mentionsLegales__h2 {
+  font-size: clamp(17px, 3vw, 35px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #d59c3c;
+  line-height: 1.3;
+}
+
+/*************************************************************
+Page ADMIN : Login
+**************************************************************/
+.Login__form {
+  margin-left: 9vw;
+}
+
 
 
 /*************************************************************
@@ -894,16 +1029,8 @@ Page ADMIN : Liste des Themes
 .themeForm h1,
 .createTheme h1,
 .listeVisuelsByRealisation h1 {
-  background-color: var(--navbar-bg-color);
-  font-size: clamp(17px, 5vw, 60px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   margin: 3.5rem auto 3rem;
   max-width: max-content;
-  color: #d59c3c;
-  text-align: left;
-  line-height: 1.3;
 }
 
 .listeThemes h2,
@@ -927,12 +1054,14 @@ Page ADMIN : Liste des Themes
   line-height: 1.3;
 }
 
+.realisationForm li,
 .createRealisation li {
   display: flex;
   align-items: center; /* aligne verticalement les éléments enfants */
   margin : 2rem;
 }
 
+.realisationForm input[type="checkbox"] ,
 .createRealisation input[type="checkbox"] {
   margin-right: 2rem; /* ajoute un espace à droite de la checkbox */
 }
@@ -958,7 +1087,6 @@ Page ADMIN : Liste des Themes
    }
 
    .createVisuelByRealisation a{
-    font-family: Raleway;
     font-weight: 500;
     font-size: clamp(15px, 2vw, 20px);
     text-transform: uppercase;
@@ -974,7 +1102,6 @@ Page ADMIN : Liste des Themes
 
 .newTheme,
 .newVisuel{
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1013,6 +1140,12 @@ Page ADMIN : Liste des Réalisations
   padding: 0;
 }
 
+.listeVisuelsByRealisation__video{
+  width :20%;
+}
+
+
+
 .listeRealisations h2{
   font-size: clamp(19px, 5vw, 35px);
   font-weight: 300;
@@ -1026,7 +1159,6 @@ Page ADMIN : Liste des Réalisations
 }
 
 .listeRealisations p {
-  font-family: Raleway;
   font-size: clamp(11px, 2vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -1035,7 +1167,6 @@ Page ADMIN : Liste des Réalisations
 }
 
 .newRealisation {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1098,7 +1229,6 @@ Page ADMIN : Liste des Visuels
 }
 
 .listeVisuels h3 {
-  font-family: Raleway;
   font-size: clamp(11px, 2vw, 17px);
   font-weight: 500;
   text-transform: uppercase;
@@ -1131,7 +1261,6 @@ Page ADMIN : Liste des Visuels
 }
 .newVisuel,
 .versVisuelsRealisation {
-  font-family: Raleway;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
@@ -1147,39 +1276,51 @@ Page ADMIN : Liste des Visuels
 ******* Medium device *******
 ********************************************************************************/
 @media screen and (min-width: 780px) {
-  .intro {
+  .homeIntro {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("../img/Bannière_Intro-1920x869.png");
   }
 
-  .intro a  {
+  .homeIntro__title {
+    margin: 4vw auto 10rem auto;
+    text-align: center;
+  }
+
+  .homeIntro__link  {
 
     margin: 2rem auto;
   }
+  
 
 
-  .aPropos {
+  .homeAPropos {
     background-image: url("../img/Photo_Profil-1920x1242.png");
   }
-.aPropos h2 {
+
+.homeAPropos__titleH2 {
   margin-left: 53%;
   padding-top: 7%;
 }
 
 
-.aPropos h3 {
+.homeAPropos__titleH3 {
   margin-left: 53%;
   margin-top: 3%;
   margin-bottom: 3%;
 }
 
-.aPropos p {
+.homeAPropos__text {
   margin-left: 53%;
 }
 
-.aPropos a {
+.homeAPropos__link {
   margin-left: 53%;
 }
+
+#scrollTop {
+  right: 70px;
+}
+
 
   .contact {
     background-image: url("../img/respirateur-1920x1080.png");
@@ -1188,12 +1329,30 @@ Page ADMIN : Liste des Visuels
     display: none;
   }
 
+  #logoCenter {
+    width: clamp(56px, 5vw, 98px);
+    height: auto;
+    margin: 1.6rem 2rem;
+  }
+
   .navbar__link.third {
     display: none;
   }
 
   .navbar__links,
   .navbar__admins {
+    width: 90%;
+    margin: auto;
+    padding: 0%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .navbar__link {
+    padding: 0;
+    transform:none;
+    /*transition: all 0.5s ease-in-out;*/
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1201,14 +1360,15 @@ Page ADMIN : Liste des Visuels
 
   .navbar__link a,
   .navbar__admins a {
-    font-family: Raleway;
+    display: block;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
-    font-size: clamp(11px, 1.6vw, 20px);
+    font-size: clamp(11px, 2vw, 20px);
     letter-spacing: 2px;
     color: var(--Dore, #d59c3c);
+    margin: auto 1vw;
   }
 
   .navbar__link > a::after,
@@ -1225,30 +1385,11 @@ Page ADMIN : Liste des Visuels
     width: 100%;
   }
 
-
-
-  .intro h1 {
-    margin: 4vw auto 10rem auto;
+  .formContact__title , .contactSubmitted h2 {
     text-align: center;
   }
 
-  .intro p {
-    display: none;
-  }
-
-  .intro h2 {
-    display: none;
-  }
-
-  .intro button {
-    margin: 0 auto auto auto;
-  }
-
-  .formContact h2 , .contactSubmitted h2 {
-    text-align: center;
-  }
-
-  .formContact p {
+  .formContact__text {
    max-width: 950px;
     text-align: center;
   }
@@ -1288,15 +1429,17 @@ form .Name {
   margin-left: 0;
   margin-right: 9vw;
 }
-#domainesExpertises h3, #domainesExpertises img{
+.home__domainesExpertises h3, .home__domainesExpertises img{
 margin-top: 3vw;
+}
+.home__domainesExpertises  .textAlignRight {
+   text-align: center;
 }
 
 /*****************************/
 /********Contact Form*********/
 /*       Medium device       */
 /*****************************/
-  .contact h1,
   .contact p,
   .contact form {
     text-align: center;

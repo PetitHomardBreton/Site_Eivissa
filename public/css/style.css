@@ -4,68 +4,59 @@ GENERAL
 
 :root {
   --font-size: 1rem;
-}
+  --primary-bg-color: #050819;
+  --secondary-bg-color: #030510;
+  --primary-txt-color: #d59c3c;
+  --secondary-txt-color: #f0f0f0;
 
-.light-mode {
-  --navbar-color: #050819;
-  --navbar-bg-color: #f0f0f0;
-}
-
-
-.navbar--burger {
-  --navbar-color: #d59c3c;
-  --navbar-bg-color: #050819;
+  --font-size-h1: clamp(20px, 5vw, 60px);
+  --font-size-h2: clamp(17px, 3vw, 35px);
+  --font-size-h3: clamp(15px, 3vw, 35px);
 }
 
 html {
   font-size: 62.5%;
-  background-color: #030510;
+  background-color: var(--secondary-bg-color);
 }
 
 body {
   max-width: 1920px;
   box-sizing: border-box;
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   margin: 0 auto;
   padding: 0;
   font-family: "Raleway", sans-serif;
   font-variant-numeric: lining-nums proportional-nums; /* Pour les chiffres */
 }
 
-
-
-
-
-
-
 h1 {
-  background-color: var(--navbar-bg-color);
-  font-size: clamp(20px, 5vw, 60px);
+  /*background-color: var(--primary-bg-color);*/
+  font-size: var(--font-size-h1);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin: 3.5rem auto 3rem;
   max-width: max-content;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
 
 h2 {
-  font-size: clamp(20px, 5vw, 60px);
+  font-size: var(--font-size-h1);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   line-height: 1.3;
 }
 
 h3{
-  font-size: clamp(17px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   line-height: 1.3;
 }
 
@@ -82,10 +73,11 @@ h3{
   padding-top: 5vw;
   max-width: max-content;
   background-color: #0000;
-  color: #050819;
+  color: var(--primary-bg-color);
   text-align: center;
   line-height: 1.3;
 }
+
 #error img {
   width: 100%;
   height: auto;
@@ -108,15 +100,15 @@ label /*,a*/{
   font-size: clamp(12px, 2vw, 20px);
   font-weight: 300;
   letter-spacing: 0.2em;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   margin-top: 0rem;
   padding: 0;
   line-height: 1.35;
 }
 
 .Logout {
-  font-size: clamp(20px, 5vw, 60px);
-  color: #d59c3c;
+  font-size: var(--font-size-h1);
+  color: var(--primary-txt-color);
   margin: 2rem auto;
 }
 
@@ -124,13 +116,13 @@ input,
 textarea {
   font-size: clamp(12px, 2vw, 20px);
   background-color: transparent;
-  border: 1px solid #d59c3c;
-  color: #d59c3c;
+  border: 1px solid var(--primary-txt-color);
+  color: var(--primary-txt-color);
 }
 
 button {
-  color: #d59c3c;
-  border: #d59c3c solid 1px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1px;
   padding: 1rem 2rem;
   background-color: transparent;
   font-size: clamp(15px, 2vw, 20px);
@@ -141,12 +133,12 @@ button {
 }
 
 .logout {
-  color: #d59c3c;
-  border: #d59c3c solid 1px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: transparent;
-  font-size: clamp(20px, 5vw, 60px);
+  font-size: var(--font-size-h1);
   font-weight: 500;
   text-transform: uppercase;
   line-height: 50px;
@@ -158,7 +150,7 @@ button {
 HEADER
 ******************************************************************/
 header nav {
-  border-bottom: #d59c3c solid 1.5px;
+  border-bottom: var(--primary-txt-color) solid 1.5px;
 }
 
 /*
@@ -187,8 +179,8 @@ ul {
   justify-content: space-between;
   padding: 10px;
   font-size: 1.1rem;
-  background: var(--navbar-bg-color);
-  color: var(--navbar-color);
+  background: var(--primary-bg-color);
+  color: var(--primary-txt-color);
 }
 
 /*
@@ -208,7 +200,7 @@ ul {
 }
 
 .navbar__link > a {
-  color: var(--navbar-color);
+  color: var(--primary-txt-color);
   text-decoration: none;
 }
 
@@ -239,13 +231,13 @@ ul {
 Footer
 ***************************************************************************/
 footer {
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0;
-  border-top: #d59c3c solid 1.5px;
+  border-top: var(--primary-txt-color) solid 1.5px;
   margin-top: 1px;
  
 }
@@ -260,7 +252,7 @@ footer .reseauxSociaux {
   justify-content: center;
   align-items: center;
   margin: auto;
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
 }
 
 footer .reseauxSociaux img {
@@ -280,7 +272,7 @@ footer .reseauxSociaux img {
 .footer__mentionsLegales{
   font-size: clamp(10px, 1vw, 17px);
   font-weight: 500;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-decoration: none;
   margin: 1vw auto;
 }
@@ -292,7 +284,7 @@ footer .reseauxSociaux img {
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   margin-bottom: 5rem;
 }
 .mentionsLegales__text {
@@ -301,7 +293,7 @@ font-style: normal;
 font-weight: 400;
 line-height: clamp(15px, 3vw, 31px);
 letter-spacing: clamp(2px, 0.3vw, 3.4px);
-color: #d59c3c;
+color: var(--primary-txt-color);
 }
 
 /***********************************************************************/
@@ -320,7 +312,7 @@ color: #d59c3c;
     url("../img/Bannière_Intro-1199x543.png");
   background-size: cover;
   background-position: center;
-  border-bottom: #d59c3c solid 1.5px;
+  border-bottom: var(--primary-txt-color) solid 1.5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,8 +329,8 @@ color: #d59c3c;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   margin: 2rem auto 2rem 9vw;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
@@ -353,7 +345,7 @@ color: #d59c3c;
 
 .homeAPropos {
   background-image: url("../img/Photo_Profil-767x496.png");
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   background-size: 100% auto;
   /* Largeur à 100% et hauteur ajustée proportionnellement */
   background-position: center top;
@@ -376,7 +368,7 @@ color: #d59c3c;
   margin-right: 9vw;
   margin-bottom: 2rem;
   max-width: 65%;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
   padding-top: 40vw;
@@ -391,7 +383,7 @@ color: #d59c3c;
   margin-right: 9vw;
   margin-top: 2rem;
   max-width: 60%;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
@@ -404,7 +396,7 @@ color: #d59c3c;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   margin-left: 9vw;
   margin-right: 9vw;
   margin-bottom: 0;
@@ -414,8 +406,8 @@ color: #d59c3c;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   margin: 2rem 0 2rem 9vw;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
@@ -450,7 +442,7 @@ color: #d59c3c;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
+  color: var(--primary-txt-color);
 }
 .home__domainesExpertises .articleAlignLeft {
   text-align: left;
@@ -473,13 +465,13 @@ max-width: 578px;
 }
 
 .home__domainesExpertises h3{
-  font-size: clamp(17px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-left: 0;
   margin-right: 0;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   line-height: 1.3;
 }
 
@@ -489,8 +481,8 @@ max-width: 578px;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: inline-block;
@@ -547,7 +539,7 @@ max-width: 578px;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   margin-top: 1rem;
   text-align: left;
   margin-left: 9vw;
@@ -558,8 +550,8 @@ max-width: 578px;
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
   text-decoration: none;
@@ -651,11 +643,11 @@ Portfolio
 }
 
 .portfolioRealisations h2 {
-  font-size: clamp(17px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: clamp(5px, 0.01vw, 10px);
-   color: #d59c3c;
+   color: var(--primary-txt-color);
 }
 
 .portfolioRealisations p{
@@ -664,7 +656,7 @@ Portfolio
   line-height: clamp(15px, 3vw, 31px);
   /* 182.353% */
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: #d59c3c;
+  color: var(--primary-txt-color);
 }
 
 .portfolioRealisations a{
@@ -672,8 +664,8 @@ Portfolio
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   padding: 0.9rem 2rem;
   text-decoration: none;
 }
@@ -684,21 +676,21 @@ Portfolio
   justify-content: center;
   align-items: center;
   margin: auto;
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   margin: 1rem;
   padding: 1rem 0;
 }
 
 .portfolioMenu li {
   cursor: pointer;
-  color: var(--Dore, #d59c3c);
+  color: var(--Dore, var(--primary-txt-color));
   font-size: clamp(11px, 1.6vw, 20px);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 2px;
   text-transform: uppercase;
-  border: 2px solid var(--Dore, #d59c3c);
+  border: 2px solid var(--Dore, var(--primary-txt-color));
   padding: 0.5rem 1rem;
   margin: 1rem 17px;
 
@@ -834,7 +826,7 @@ Realisation
 /**************************************************************************
   Small device 
 ***************************************************************************/
-@media screen and (max-width: 779.98px) {
+/*@media screen and (max-width: 779.98px) {*/
   #logoLeft {
     width: 56px;
     height: auto;
@@ -864,7 +856,7 @@ Realisation
     position: absolute;
     top: 100px;
     right: 0;
-    background: var(--navbar-bg-color);
+    background: var(--primary-bg-color);
     transform: translateX(110%);
     transition: all 0.5s ease-in-out;
   }
@@ -891,7 +883,7 @@ Realisation
     padding: 1rem;
     font-size: 15px;
     letter-spacing: 0.15rem;
-    color: var(--navbar-color);
+    color: var(--primary-txt-color);
     transition: all 0.4s ease-in-out;
   }
 
@@ -922,7 +914,7 @@ Realisation
     width: 28px;
     height: 2px;
     border-radius: 3px;
-    background: var(--navbar-color);
+    background: var(--primary-txt-color);
     transition: all 0.5s ease-in-out;
   }
 
@@ -933,7 +925,7 @@ Realisation
     height: 2px;
     position: absolute;
     left: 0;
-    background: var(--navbar-color);
+    background: var(--primary-txt-color);
     border-radius: 3px;
     transition: all 0.5s ease-in-out;
   }
@@ -980,7 +972,9 @@ Realisation
   .show-nav .five {
     transition: all 1.4s ease-out;
   }
-}
+
+  /*
+}*/
 
 /*************************************************************
 page Mentions légales
@@ -993,11 +987,11 @@ page Mentions légales
   text-align: center;
 }
 .mentionsLegales__h2 {
-  font-size: clamp(17px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   line-height: 1.3;
 }
 
@@ -1021,7 +1015,7 @@ Page ADMIN : Liste des Themes
 .realisationForm,
 .listeVisuelsByRealisation,
 .createVisuelByRealisation{
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   margin-left: 9vw;
 }
 
@@ -1049,7 +1043,7 @@ Page ADMIN : Liste des Themes
   margin-left: 9vw;
   margin-right: 1rem;
   margin-bottom: 2rem;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
@@ -1076,7 +1070,7 @@ Page ADMIN : Liste des Themes
 }
 .rankingTheme,
 .nameTheme {
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
@@ -1090,8 +1084,8 @@ Page ADMIN : Liste des Themes
     font-weight: 500;
     font-size: clamp(15px, 2vw, 20px);
     text-transform: uppercase;
-    color: #d59c3c;
-    border: #d59c3c solid 1.5px;
+    color: var(--primary-txt-color);
+    border: var(--primary-txt-color) solid 1.5px;
     padding: 0.9rem 2rem;
     letter-spacing: 2px;
     text-decoration: none;
@@ -1105,8 +1099,8 @@ Page ADMIN : Liste des Themes
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
   margin-left: 9vw;
@@ -1118,7 +1112,7 @@ Page ADMIN : Liste des Themes
 }
 
 i.fa.fa-pencil-square {
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
@@ -1129,7 +1123,7 @@ Page ADMIN : Liste des Réalisations
 
 .listeRealisations, .createRealisation {
   margin-left: 9vw;
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
 }
 
 .listeRealisations img,
@@ -1153,7 +1147,7 @@ Page ADMIN : Liste des Réalisations
   letter-spacing: 0.2em;
   margin-right: 1rem;
   margin-bottom: 2rem;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
@@ -1163,15 +1157,15 @@ Page ADMIN : Liste des Réalisations
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-    color: #d59c3c;
+    color: var(--primary-txt-color);
 }
 
 .newRealisation {
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
   text-decoration: none;
@@ -1183,7 +1177,7 @@ Page ADMIN : Liste des contacts
 
 .listeContacts {
   margin-left: 9vw;
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
 }
 
 .listeContacts h2 {
@@ -1193,13 +1187,13 @@ Page ADMIN : Liste des contacts
   letter-spacing: 0.2em;
   margin-right: 1rem;
   margin-bottom: 2rem;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
 
 .contactRecu {
-  border: #d59c3c solid 1.5px;
+  border: var(--primary-txt-color) solid 1.5px;
   margin: 2rem;
   padding: 2rem;
 }
@@ -1210,7 +1204,7 @@ Page ADMIN : Liste des contacts
 Page ADMIN : Liste des Visuels
 **************************************************************/
 .listeVisuels {
-  background-color: #050819;
+  background-color: var(--primary-bg-color);
   margin-left: 9vw;
 }
 
@@ -1223,7 +1217,7 @@ Page ADMIN : Liste des Visuels
   margin-left: 9vw;
   margin-right: 1rem;
   margin-bottom: 2rem;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
@@ -1237,7 +1231,7 @@ Page ADMIN : Liste des Visuels
   margin-right: 9vw;
   margin-top: 2rem;
   max-width: 60%;
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   text-align: left;
   line-height: 1.3;
 }
@@ -1255,7 +1249,7 @@ Page ADMIN : Liste des Visuels
 .nameVisuel,
 .listeRealisations img
  {
-  color: #d59c3c;
+  color: var(--primary-txt-color);
   font-size: clamp(15px, 2vw, 20px);
   margin: 1rem;
 }
@@ -1264,8 +1258,8 @@ Page ADMIN : Liste des Visuels
   font-weight: 500;
   font-size: clamp(15px, 2vw, 20px);
   text-transform: uppercase;
-  color: #d59c3c;
-  border: #d59c3c solid 1.5px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
   padding: 0.9rem 2rem;
   letter-spacing: 2px;
   text-decoration: none;
@@ -1330,6 +1324,7 @@ Page ADMIN : Liste des Visuels
   }
 
   #logoCenter {
+    display: block;
     width: clamp(56px, 5vw, 98px);
     height: auto;
     margin: 1.6rem 2rem;
@@ -1339,14 +1334,28 @@ Page ADMIN : Liste des Visuels
     display: none;
   }
 
+  .navbar__links .navbar__link {
+    transform: none;
+    margin: auto;
+  }
+
+  .burger {
+    display: none;
+  }
+
   .navbar__links,
   .navbar__admins {
-    width: 90%;
+    width: auto;
     margin: auto;
     padding: 0%;
-    display: flex;
+    /*display: flex;*/
     justify-content: space-between;
-    align-items: center;
+    /*align-items: center;*/
+    transform: none;
+    flex-direction: row;
+    height: auto;
+    position: unset;
+    overflow: initial;
   }
   .navbar__link {
     padding: 0;
@@ -1367,9 +1376,16 @@ Page ADMIN : Liste des Visuels
     text-transform: uppercase;
     font-size: clamp(11px, 2vw, 20px);
     letter-spacing: 2px;
-    color: var(--Dore, #d59c3c);
+    color: var(--Dore, var(--primary-txt-color));
     margin: auto 1vw;
   }
+
+  .navbar__link > a:hover {
+    padding-left: 1rem;
+    letter-spacing: 2px;
+  }
+
+
 
   .navbar__link > a::after,
   .navbar__admins > a::after {
@@ -1377,7 +1393,7 @@ Page ADMIN : Liste des Visuels
     content: "";
     width: 0;
     height: 1px;
-    background: var(--navbar-color);
+    background: var(--primary-txt-color);
     transition: width 0.4s;
   }
 
