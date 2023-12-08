@@ -192,15 +192,6 @@ ul {
   color: var(--primary-txt-color);
 }
 
-/*
-.navbar__links {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-}
-*/
-
 .navbar__link {
   padding: 0 10px;
   transform: translateX(101%);
@@ -853,10 +844,6 @@ Realisation
 }
 
 
-/**************************************************************************
-  Small device 
-***************************************************************************/
-/*@media screen and (max-width: 779.98px) {*/
   #logoLeft {
     width: 56px;
     height: auto;
@@ -866,14 +853,6 @@ Realisation
   #logoCenter {
     display: none;
   }
-
-/*
-
-  header nav.no-border {
-    border-bottom: none;
-  }
-*/
-
 
   .navbar__links {
     overflow: hidden;
@@ -891,18 +870,22 @@ Realisation
     transition: all 0.5s ease-in-out;
   }
 
+  .navbar__admins a {
+    display: block;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    font-size: var(--font-size-h7);
+    letter-spacing: 2px;
+    color: var(--primary-txt-color);
+    margin: auto 1vw;
+  }
+
   .show-nav .navbar__links {
     width: 100vw;
     transform: translateX(0);
   }
-
-  /*
-  .navbar__link {
-    transform: translateX(101%);
-    transition: all 0.5s ease-in-out;
-    margin: 1.2rem auto;
-  }
-*/
 
   .show-nav .navbar__link {
     transform: translateX(0);
@@ -1002,9 +985,6 @@ Realisation
   .show-nav .five {
     transition: all 1.4s ease-out;
   }
-
-  /*
-}*/
 
 /*************************************************************
 page Mentions légales
@@ -1277,6 +1257,8 @@ Page ADMIN : Liste des Visuels
 .rankingRealisation,
 .rankingVisuel,
 .nameVisuel,
+.typeVisuel,
+.commentaireVisuel,
 .listeRealisations img
  {
   color: var(--primary-txt-color);
@@ -1378,9 +1360,9 @@ Page ADMIN : Liste des Visuels
     width: auto;
     margin: auto;
     padding: 0%;
-    /*display: flex;*/
+    display: flex;
     justify-content: space-between;
-    /*align-items: center;*/
+    align-items: center;
     transform: none;
     flex-direction: row;
     height: auto;
@@ -1406,7 +1388,7 @@ Page ADMIN : Liste des Visuels
     text-transform: uppercase;
     font-size: var(--font-size-h7);
     letter-spacing: 2px;
-    color: var(--Dore, var(--primary-txt-color));
+    color: var(--primary-txt-color);
     margin: auto 1vw;
   }
 
