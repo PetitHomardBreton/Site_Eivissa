@@ -65,7 +65,7 @@
         <% visuelsCaroussel.forEach(function(visuel) { %>
             <div class="caroussel__item">
                 <a href="/portfolio/<%= visuel.idRealisation %>">
-                <img class="caroussel__item__img" src="/img/<%= visuel.visuelWidth767 || visuel.visuelWidth1920 %>" alt="<%= visuel.nomRealisation %>">
+                <img class="caroussel__item__img" src="/img/<%= visuel.visuelWidth767 || visuel.visuelWidth1920 %>" alt="illustration du projet <%= visuel.nomRealisation %> renvoit vers les visuels de cette réalisation : <%= visuel.nomRealisation %>">
                 </a>
             </div>
         <% }) %>

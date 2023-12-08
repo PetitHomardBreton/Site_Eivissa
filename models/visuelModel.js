@@ -80,6 +80,7 @@ export const getAllVisuelsForCaroussel= (callback) => {
         SELECT 
           v.idRealisation,
           r.rankingRealisation,
+          r.nomRealisation,
           v.visuelWidth767,
           v.visuelWidth1920, -- Ajout de cette ligne pour récupérer également visuelWidth1920
           v.rankingVisuel
