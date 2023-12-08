@@ -10,8 +10,17 @@ GENERAL
   --secondary-txt-color: #f0f0f0;
 
   --font-size-h1: clamp(20px, 5vw, 60px);
-  --font-size-h2: clamp(17px, 3vw, 35px);
-  --font-size-h3: clamp(15px, 3vw, 35px);
+  --font-size-h2: clamp(19px, 3vw, 35px);
+  --font-size-h3: clamp(17px, 3vw, 35px);
+  --font-size-h4: clamp(15px, 3vw, 35px);
+  --font-size-h5: clamp(15px, 2vw, 20px);
+  --font-size-h6: clamp(12px, 2vw, 20px);
+  --font-size-h7: clamp(11px, 1.6vw, 20px);
+  --font-size-h8: clamp(11px, 1.5vw, 17px);
+  --font-size-h9: clamp(11px, 1vw, 17px);
+  --font-size-h10: clamp(10px, 1vw, 17px);
+
+
 }
 
 html {
@@ -52,7 +61,7 @@ h2 {
 }
 
 h3{
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h3);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -85,7 +94,7 @@ h3{
   padding: 0;
 }
 .admin__title {
-  font-size: clamp(12px, 2vw, 35px);
+  font-size: var(--font-size-h4);
   margin: 1rem auto;
   text-align: center;
   font-weight: 200;
@@ -97,7 +106,7 @@ h3{
 p,
 label /*,a*/{
   display: block;
-  font-size: clamp(12px, 2vw, 20px);
+  font-size: var(--font-size-h6)
   font-weight: 300;
   letter-spacing: 0.2em;
   color: var(--primary-txt-color);
@@ -114,7 +123,7 @@ label /*,a*/{
 
 input,
 textarea {
-  font-size: clamp(12px, 2vw, 20px);
+  font-size: var(--font-size-h6);
   background-color: transparent;
   border: 1px solid var(--primary-txt-color);
   color: var(--primary-txt-color);
@@ -125,7 +134,7 @@ button {
   border: var(--primary-txt-color) solid 1px;
   padding: 1rem 2rem;
   background-color: transparent;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h6);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -270,7 +279,7 @@ footer .reseauxSociaux img {
 }
 
 .footer__mentionsLegales{
-  font-size: clamp(10px, 1vw, 17px);
+  font-size: var(--font-size-h10);
   font-weight: 500;
   color: var(--primary-txt-color);
   text-decoration: none;
@@ -279,8 +288,7 @@ footer .reseauxSociaux img {
 
 .mentionsLegales__text--center{
   text-align: center;
-  font-size: clamp(10px, 1vw, 17px);
-  font-style: normal;
+  font-size: var(--font-size-h10); 
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
@@ -288,7 +296,7 @@ footer .reseauxSociaux img {
   margin-bottom: 5rem;
 }
 .mentionsLegales__text {
-font-size: clamp(10px, 1vw, 17px);
+font-size: var(--font-size-h10);
 font-style: normal;
 font-weight: 400;
 line-height: clamp(15px, 3vw, 31px);
@@ -327,7 +335,7 @@ color: var(--primary-txt-color);
 
 .homeIntro__link {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -359,7 +367,7 @@ color: var(--primary-txt-color);
 }
 
 .homeAPropos__titleH2 {
-  font-size: clamp(19px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -375,7 +383,7 @@ color: var(--primary-txt-color);
 }
 
 .homeAPropos__titleH3 {
-  font-size: clamp(11px, 1vw, 17px);
+  font-size: var(--font-size-h9);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -391,7 +399,7 @@ color: var(--primary-txt-color);
 
 
 .homeAPropos__text {
-  font-size: clamp(10px, 1vw, 17px);
+  font-size: var(--font-size-h10);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
@@ -404,7 +412,7 @@ color: var(--primary-txt-color);
 
 .homeAPropos__link {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -438,7 +446,7 @@ color: var(--primary-txt-color);
 }
 
 .home__domainesExpertises p{
-  font-size: clamp(11px, 1.5vw, 17px);
+  font-size: var(--font-size-h8);
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
@@ -465,7 +473,7 @@ max-width: 578px;
 }
 
 .home__domainesExpertises h3{
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h3);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -479,7 +487,7 @@ max-width: 578px;
 
 .home__domainesExpertises a {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -534,7 +542,7 @@ max-width: 578px;
 
 .formContact__text,
 .formContact form {
-  font-size: clamp(10px, 1vw, 17px);
+  font-size: var(--font-size-h10);
   font-style: normal;
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
@@ -548,7 +556,7 @@ max-width: 578px;
 
 .contactSubmitted a {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -643,7 +651,7 @@ Portfolio
 }
 
 .portfolioRealisations h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h3);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: clamp(5px, 0.01vw, 10px);
@@ -651,7 +659,7 @@ Portfolio
 }
 
 .portfolioRealisations p{
-  font-size: clamp(11px, 1.5vw, 17px);
+  font-size: var(--font-size-h8);
   font-weight: 400;
   line-height: clamp(15px, 3vw, 31px);
   /* 182.353% */
@@ -660,7 +668,7 @@ Portfolio
 }
 
 .portfolioRealisations a{
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -684,7 +692,7 @@ Portfolio
 .portfolioMenu li {
   cursor: pointer;
   color: var(--Dore, var(--primary-txt-color));
-  font-size: clamp(11px, 1.6vw, 20px);
+  font-size: var(--font-size-h7);
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -707,11 +715,33 @@ Portfolio
 /**************************************************************************
 Realisation
 ***************************************************************************/
-.visuelsOfRealisation__title,
+/*.visuelsOfRealisation__title,
 .visuelsOfRealisation__subTitle,
 .visuelsOfRealisation__text {
   display: none;
   visibility: hidden;
+}*/
+
+.visuelsOfRealisation__subTitle {
+  font-size: var(--font-size-h4);
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.visuelsOfRealisation__text {
+  font-size: var(--font-size-h3);
+  margin: 0 auto 2rem auto;
+  text-align: center;
+}
+
+.visuelsList__text {
+  font-size: var(--font-size-h8);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: var(--primary-txt-color);
+  margin: 0 auto 2rem auto;
+  text-align: center;
 }
 
 .visuelsOfRealisation ul{
@@ -757,7 +787,7 @@ Realisation
 }
 
 .visuelsCaroussel__title{
-  font-size: clamp(19px, 3vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -987,7 +1017,7 @@ page Mentions légales
   text-align: center;
 }
 .mentionsLegales__h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h3);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1036,7 +1066,7 @@ Page ADMIN : Liste des Themes
 .realisationForm h2,
 .listeVisuelsByRealisation h2,
 .createVisuelByRealisation h2{
-  font-size: clamp(19px, 5vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1071,7 +1101,7 @@ Page ADMIN : Liste des Themes
 .rankingTheme,
 .nameTheme {
   color: var(--primary-txt-color);
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   margin: 1rem;
 }
 .redirections {
@@ -1082,7 +1112,7 @@ Page ADMIN : Liste des Themes
 
    .createVisuelByRealisation a{
     font-weight: 500;
-    font-size: clamp(15px, 2vw, 20px);
+    font-size: var(--font-size-h5);
     text-transform: uppercase;
     color: var(--primary-txt-color);
     border: var(--primary-txt-color) solid 1.5px;
@@ -1097,7 +1127,7 @@ Page ADMIN : Liste des Themes
 .newTheme,
 .newVisuel{
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -1113,7 +1143,7 @@ Page ADMIN : Liste des Themes
 
 i.fa.fa-pencil-square {
   color: var(--primary-txt-color);
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   margin: 1rem;
 }
 
@@ -1141,7 +1171,7 @@ Page ADMIN : Liste des Réalisations
 
 
 .listeRealisations h2{
-  font-size: clamp(19px, 5vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1153,7 +1183,7 @@ Page ADMIN : Liste des Réalisations
 }
 
 .listeRealisations p {
-  font-size: clamp(11px, 2vw, 17px);
+  font-size: var(--font-size-h8);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1162,7 +1192,7 @@ Page ADMIN : Liste des Réalisations
 
 .newRealisation {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -1181,7 +1211,7 @@ Page ADMIN : Liste des contacts
 }
 
 .listeContacts h2 {
-  font-size: clamp(19px, 5vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1210,7 +1240,7 @@ Page ADMIN : Liste des Visuels
 
 
 .listeVisuels h2 {
-  font-size: clamp(19px, 5vw, 35px);
+  font-size: var(--font-size-h2);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1223,7 +1253,7 @@ Page ADMIN : Liste des Visuels
 }
 
 .listeVisuels h3 {
-  font-size: clamp(11px, 2vw, 17px);
+  font-size: var(--font-size-h8);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -1250,13 +1280,13 @@ Page ADMIN : Liste des Visuels
 .listeRealisations img
  {
   color: var(--primary-txt-color);
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   margin: 1rem;
 }
 .newVisuel,
 .versVisuelsRealisation {
   font-weight: 500;
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: var(--font-size-h5);
   text-transform: uppercase;
   color: var(--primary-txt-color);
   border: var(--primary-txt-color) solid 1.5px;
@@ -1374,7 +1404,7 @@ Page ADMIN : Liste des Visuels
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
-    font-size: clamp(11px, 2vw, 20px);
+    font-size: var(--font-size-h7);
     letter-spacing: 2px;
     color: var(--Dore, var(--primary-txt-color));
     margin: auto 1vw;
