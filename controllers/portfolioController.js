@@ -1,5 +1,5 @@
 import { getAllThemes } from '../models/themeModel.js';
-import { getAllRealisations } from '../models/realisationModel.js';
+import { getAllRealisations, getShowreel } from '../models/realisationModel.js';
 import {getRealisationsByTheme} from '../models/themesrealisationsModel.js';
 
 export default (req, res) => {
@@ -32,11 +32,19 @@ export default (req, res) => {
                 res.status(500).send('Erreur lors de la requête des réalisations');
                 return;
             }
+            getShowreel((errorShowreel, showreel) => {
+                if (errorShowreel) {
+                    console.error(errorShowreel);
+                    res.status(500).send('Erreur lors de la requête du showreel');
+                    return;
+                }
 
-            res.render('portfolio', {
+                res.render('portfolio', {
                 pageTitle: 'Portfolio', /* Titre de la page */
                 themes, /* Liste des thèmes */
-                realisations /* Liste des réalisations */
+                realisations, /* Liste des réalisations */
+                showreel /* Showreel */
+                });
             });
         });
     });

@@ -22,18 +22,30 @@ import logout from './controllers/logout.js';
 import ThemeController from "./controllers/readAllThemesController.js";
 import {addTheme, addThemeSubmit} from "./controllers/createTheme.js";
 import {addVisuel, addVisuelSubmit} from "./controllers/createVisuel.js";
+
 import {addVisuelByRealisation, addVisuelByRealisationSubmit} from "./controllers/createVisuelByrealisation.js";
+
 import { addRealisation, addRealisationSubmit } from "./controllers/createRealisation.js";  
+
 import {updateTheme, updateThemeSubmit} from "./controllers/updateThemeController.js";
+
 import {updateRealisation, updateRealisationSubmit} from "./controllers/updateRealisationController.js";
+
 import deleteTheme from "./controllers/deleteThemeController.js";
+
 import deleteRealisation from "./controllers/deleteRealisationController.js";
+
 import deleteVisuelByRealisation  from "./controllers/deleteVisuelByRealisationController.js";
+
 import deleteContact from "./controllers/deleteContactController.js";
 import readAllContacts from "./controllers/readAllContactsController.js";
+
 import getAllRealisations from "./controllers/readAllRealisationsController.js";
+
 import getAllVisuelsByRealisationId from "./controllers/readAllVisuelsByRealisationController.js";
+
 import getVisuelsOfRealisation from "./controllers/visuelsOfRealisationController.js";
+
 import escapeData from './sanitizeInput.js';
 
 
@@ -70,6 +82,7 @@ import errorController from "./controllers/errorController.js";
 router.get("/", HomeController);
 router.get("/portfolio", portfolio);
 router.get("/portfolio/:idRealisation", getVisuelsOfRealisation);
+
 router.get("/contactSubmitted", contactSubmittedController);
 //router.get("/", showContactForm);
 router.get("/mentionsLegales", mentionsLegalesController);
@@ -97,6 +110,8 @@ router.get('/themes/:id/update', checkAuthentication, updateTheme);
 /* affichage des réalisations */
 router.get('/realisations', checkAuthentication, getAllRealisations);
 /* affichage des visuels par réalisation */
+
+
 router.get('/realisations/:idRealisation/visuels', checkAuthentication, getAllVisuelsByRealisationId);
 /* ajout d'un visuel à une réalisation */
 router.get('/realisations/:realisationId/visuels/add', checkAuthentication, addVisuelByRealisation);
@@ -106,7 +121,6 @@ router.get('/realisations/:realisationId/visuels/delete', checkAuthentication, d
 router.get('/realisations/add', checkAuthentication, addRealisation);
 /* modification d'une réalisation */
 router.get('/realisations/:id/update', checkAuthentication, updateRealisation);
-
 
 /*********************************************
  * Routes Admin post

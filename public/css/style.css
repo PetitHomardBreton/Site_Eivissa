@@ -592,6 +592,46 @@ footer .reseauxSociaux img {
 Portfolio
 ***************************************************************************/
 
+.portfolioShowreelList {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  margin: auto;
+}
+
+/* Pour centrer l'image */
+.showreel img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+}
+
+/* Pour centrer le texte du titre (h2) */
+.showreel h2 {
+  text-align: center;
+}
+
+/* Pour centrer le texte du paragraphe (p) */
+.showreel p {
+  text-align: center;
+}
+
+/* Pour centrer le lien (En savoir +) */
+.showreel a {
+  display: block;
+  text-align: center;
+  padding: 0.9rem 2rem;
+  margin: 0 auto;
+  max-width: fit-content;
+
+}
+
+
+
 .portfolioRealisationList {
   margin: 1rem;
   display: flex;
@@ -600,18 +640,31 @@ Portfolio
   padding: 0;
 }
 
+.portfolioShowreelList li {
+  margin: 1rem;
+  padding: 1rem;
+}
+
 .portfolioRealisationList li {
   margin: 1rem;
   max-width: 500px;
   padding: 1rem;
 }
 
-#realisation__a__img {
+#realisation__a__img,
+#showreel__a__img {
   width: 100%;
   height: auto;
   margin: auto;
   padding: 0;
   border: none;
+}
+
+.portfolioShowreels img {
+  width: auto;
+  height: 100%;
+  margin: auto;
+  padding: 0;
 }
 
 .portfolioRealisations img {
@@ -621,13 +674,24 @@ Portfolio
   padding: 0;
 }
 
-.portfolioRealisations h2 {
+
+
+.portfolioRealisations h2,
+.portfolioShowreels h2 {
   font-size: var(--font-size-h3);
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: clamp(5px, 0.01vw, 10px);
   color: var(--primary-txt-color);
 }
+
+.portfolioShowreels p {
+  font-size: var(--font-size-h8);
+  font-weight: 400;
+  line-height: clamp(15px, 3vw, 31px);
+  letter-spacing: clamp(2px, 0.3vw, 3.4px);
+  color: var(--primary-txt-color);
+  margin: 0 auto 1.25rem auto;}
 
 .portfolioRealisations p {
   font-size: var(--font-size-h8);
@@ -637,7 +701,8 @@ Portfolio
   color: var(--primary-txt-color);
   margin: 0 auto 2.5rem auto;}
 
-.portfolioRealisations a {
+.portfolioRealisations a,
+.portfolioShowreels a {
   font-size: var(--font-size-h5);
   font-weight: 500;
   text-transform: uppercase;
@@ -1210,6 +1275,7 @@ i.fa.fa-pencil-square {
   padding: 0;
 }
 
+
 .nomRealisation,
 .rankingRealisation,
 .rankingVisuel,
@@ -1222,6 +1288,7 @@ i.fa.fa-pencil-square {
   margin-top: 1rem;
   margin-bottom: 0;
 }
+
 
 .newVisuel,
 .versVisuelsRealisation {
@@ -1433,3 +1500,5 @@ i.fa.fa-pencil-square {
     margin: auto;
   }
 }
+
+

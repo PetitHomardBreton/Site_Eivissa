@@ -30,6 +30,8 @@ toggleMenu();
 if (window.location.pathname === '/portfolio') {
   // Sélectionnez tous les éléments de liste
   const themeItems = document.querySelectorAll('.portfolioMenu li');
+  // Sélectionnez la div avec la class 'portfolioShowreels'
+  const showreelsDiv = document.querySelector('.portfolioShowreels');
 
   // Vérifiez si themeItems contient au moins un élément
   if (themeItems && themeItems.length > 0) {
@@ -49,10 +51,23 @@ if (window.location.pathname === '/portfolio') {
               // Définissez les styles pour l'élément cliqué
               themeItem.style.backgroundColor = '#d59c3c';
               themeItem.style.color = '#050819';
+
+              // Récupérez le nom du thème de l'élément cliqué
+              const themeName = themeItem.textContent.trim();
+
+              // Condition pour gérer l'affichage de la div 'portfolioShowreels'
+              if (themeName !== 'Showreel' && themeName !== 'Tous les projets') {
+                  // Si le thème cliqué n'est ni 'Showreel' ni 'Tous les projets', cachez la div
+                  showreelsDiv.style.display = 'none';
+              } else {
+                  // Sinon, affichez la div
+                  showreelsDiv.style.display = 'block';
+              }
           });
       });
   }
 }
+
 
 /***************************************************/
 /*Animation fleche remontée vers le haut de la page*/
@@ -135,3 +150,4 @@ function prevSlide(event) {
 function redirectToLogin() {
   window.location.href = "/login";
 }
+

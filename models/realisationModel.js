@@ -25,7 +25,11 @@ export const createRealisation = (realisationData, callback) => {
 /***READs***/
 
 export const getAllRealisations = (callback) => {
-    query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels WHERE idRealisation = v.idRealisation ) ) vw ON r.id = vw.idRealisation ORDER BY r.rankingRealisation ASC ', [], callback);
+    query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels WHERE idRealisation = v.idRealisation ) ) vw ON r.id = vw.idRealisation  WHERE r.rankingRealisation > 0 ORDER BY r.rankingRealisation ASC ', [], callback);
+};
+
+export const getShowreel = (callback) => {
+    query('SELECT r.*, IFNULL(vw.visuelWidth767, vw.visuelWidth1920) AS visuelRealisation FROM realisations r LEFT JOIN ( SELECT v.idRealisation, v.visuelWidth767, v.visuelWidth1920 FROM visuels v WHERE v.rankingVisuel = ( SELECT MIN(rankingVisuel) FROM visuels WHERE idRealisation = v.idRealisation ) ) vw ON r.id = vw.idRealisation  WHERE r.rankingRealisation = 0 ', [], callback);
 };
 
 export const getRealisationById = (id, callback) => {

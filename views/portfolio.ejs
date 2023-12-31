@@ -11,8 +11,31 @@
         <% }); %>
     </ul>
     
+    <!-- Version pour le showreel -->
+    <% if (showreel && showreel.length > 0) { %>
+    <div class="portfolioShowreels">
+        <ul class="portfolioShowreelList">
+            <% for(let i=0; i<showreel.length; i++) { %>
+            <li>
+                <article class="showreel"> <!-- Utilisez "showreel" au lieu de "showreels" -->
+                    <a id="showreel__a__img" href="/portfolio/<%= showreel[i].id %>"> <!-- Utilisez "showreel" au lieu de "realisations" -->
+                        <img src="/img/<%= showreel[i].visuelRealisation %>" alt="illustration du projet <%= showreel[i].nomRealisation %>">
+                    </a>
+                    <h2 class="nomRealisation">
+                        <%= showreel[i].nomRealisation.toUpperCase() %>
+                    </h2>
+                    <p class="descriptionRealisation">
+                        <%= showreel[i].descriptionRealisation %>
+                    </p>
+                    <a href="/portfolio/<%= showreel[i].id %>">En savoir +</a>
+                </article>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <% } %>
 
-    
+
         <div class="portfolioRealisations">
             <ul class="portfolioRealisationList">
                 <% for(let i=0; i<realisations.length; i++) { %>
