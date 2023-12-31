@@ -221,7 +221,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0;
+  padding-top: 1px;
   border-top: var(--primary-txt-color) solid 1.5px;
   margin-top: 1px;
 
@@ -410,6 +410,7 @@ footer .reseauxSociaux img {
 .home__domainesExpertises h2 {
   margin-left: 9vw;
   margin-right: 9vw;
+  margin-top: 3vw;
 }
 
 .home__domainesExpertises .textAlignRight {
@@ -489,6 +490,7 @@ footer .reseauxSociaux img {
 
 .formContact,
 .contactSubmitted {
+  margin-top: 2vw;
   height: auto;
   max-width: 1920px;
   display: flex;
@@ -518,6 +520,7 @@ footer .reseauxSociaux img {
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
   color: var(--primary-txt-color);
   margin-top: 1rem;
+  margin-bottom: 2vw;
   text-align: left;
   margin-left: 9vw;
   margin-right: 9vw;
@@ -603,6 +606,14 @@ Portfolio
   padding: 1rem;
 }
 
+#realisation__a__img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  padding: 0;
+  border: none;
+}
+
 .portfolioRealisations img {
   width: 100%;
   height: auto;
@@ -624,7 +635,7 @@ Portfolio
   line-height: clamp(15px, 3vw, 31px);
   letter-spacing: clamp(2px, 0.3vw, 3.4px);
   color: var(--primary-txt-color);
-}
+  margin: 0 auto 2.5rem auto;}
 
 .portfolioRealisations a {
   font-size: var(--font-size-h5);
@@ -667,26 +678,20 @@ Portfolio
 Realisation
 ***************************************************************************/
 
+.visuelsOfRealisation__title {
+display : none;
+}
+
 .visuelsOfRealisation__subTitle {
-  font-size: var(--font-size-h4);
-  margin: 0 auto 2rem auto;
-  text-align: center;
+display: none;
 }
 
 .visuelsOfRealisation__text {
-  font-size: var(--font-size-h3);
-  margin: 0 auto 2rem auto;
-  text-align: center;
+display: none;
 }
 
 .visuelsList__text {
-  font-size: var(--font-size-h8);
-  font-weight: 400;
-  line-height: clamp(15px, 3vw, 31px);
-  letter-spacing: clamp(2px, 0.3vw, 3.4px);
-  color: var(--primary-txt-color);
-  margin: 0 auto 2rem auto;
-  text-align: center;
+  display: none;
 }
 
 .visuelsOfRealisation ul {
@@ -1214,7 +1219,8 @@ i.fa.fa-pencil-square {
 .listeRealisations img {
   color: var(--primary-txt-color);
   font-size: var(--font-size-h5);
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .newVisuel,

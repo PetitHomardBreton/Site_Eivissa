@@ -36,7 +36,9 @@
                     <picture>
                         <source media="(max-width: 767px)" srcset="/img/<%= visuels[i].visuelWidth767 %>">
                         <source media="(min-width: 768px)" srcset="/img/<%= visuels[i].visuelWidth1920 %>">
-                        <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="image nommée <%= visuels[i].nameVisuel %> , illustration du projet <%= visuels[i].nomRealisation %>. description : <%= visuels[i].commentaireVisuel %>">
+                        <img src="/img/<%= visuels[i].visuelWidth767 %>" alt="image nommée <%= visuels[i].nameVisuel %> , 
+                        illustration du projet <%= visuels[i].nomRealisation %>. description : 
+                        <%= visuels[i].commentaireVisuel %>">
                     </picture>
                 <% } %>
 
@@ -65,7 +67,9 @@
         <% visuelsCaroussel.forEach(function(visuel) { %>
             <div class="caroussel__item">
                 <a href="/portfolio/<%= visuel.idRealisation %>">
-                <img class="caroussel__item__img" src="/img/<%= visuel.visuelWidth767 || visuel.visuelWidth1920 %>" alt="illustration du projet <%= visuel.nomRealisation %> renvoit vers les visuels de cette réalisation : <%= visuel.nomRealisation %>">
+                <img class="caroussel__item__img" src="/img/<%= visuel.visuelWidth767 || visuel.visuelWidth1920 %>" 
+                alt="illustration du projet <%= visuel.nomRealisation %> renvoit vers les visuels de cette réalisation : 
+                <%= visuel.nomRealisation %>">
                 </a>
             </div>
         <% }) %>

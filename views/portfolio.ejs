@@ -18,7 +18,9 @@
                 <% for(let i=0; i<realisations.length; i++) { %>
                 <li>
                     <article class = realisation>
-                    <img src="/img/<%= realisations[i].visuelRealisation %>" alt="illustration du projet <%= realisations[i].nomRealisation %>">
+                    <a id="realisation__a__img" href="/portfolio/<%= realisations[i].id %>">
+                        <img src="/img/<%= realisations[i].visuelRealisation %>" alt="illustration du projet <%= realisations[i].nomRealisation %>">
+                    </a>
                     <h2 class="nomRealisation">
                         <%= realisations[i].nomRealisation.toUpperCase() %>
                     </h2>

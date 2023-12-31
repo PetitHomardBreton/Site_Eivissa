@@ -71,7 +71,7 @@ router.get("/", HomeController);
 router.get("/portfolio", portfolio);
 router.get("/portfolio/:idRealisation", getVisuelsOfRealisation);
 router.get("/contactSubmitted", contactSubmittedController);
-router.get("/", showContactForm);
+//router.get("/", showContactForm);
 router.get("/mentionsLegales", mentionsLegalesController);
 
 /*********************************************
