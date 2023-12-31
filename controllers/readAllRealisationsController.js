@@ -1,7 +1,7 @@
-import { getAllRealisations } from "../models/realisationModel.js";
+import { getAllRealisationsAdmin } from "../models/realisationModel.js";
 
 export default (req, res) => {
-    getAllRealisations((error, results) => {
+    getAllRealisationsAdmin((error, results) => {
         if (error) {
             console.error(error);
             res.status(500).send('Erreur lors de la requete');

@@ -223,7 +223,7 @@ footer {
   align-items: center;
   padding-top: 1px;
   border-top: var(--primary-txt-color) solid 1.5px;
-  margin-top: 1px;
+  margin-top: 10px;
 
 }
 
@@ -633,7 +633,7 @@ Portfolio
 
 
 .portfolioRealisationList {
-  margin: 1rem;
+  margin: 1rem 1rem 3rem 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -658,7 +658,12 @@ Portfolio
   margin: auto;
   padding: 0;
   border: none;
+
 }
+
+#showreel__a__img  img{
+max-height: 500px;
+} 
 
 .portfolioShowreels img {
   width: auto;
@@ -1322,7 +1327,8 @@ i.fa.fa-pencil-square {
   }
 
   .homeAPropos {
-    background-image: url("../img/Photo_Profil-1920x1242.png");
+    background-image: url("../img/Backgound_A_Propos.png");
+    min-height: clamp(747px, 56.25vw, 1080px);
   }
 
   .homeAPropos__titleH2 {
