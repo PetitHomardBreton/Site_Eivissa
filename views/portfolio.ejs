@@ -18,7 +18,7 @@
             <% for(let i=0; i<showreel.length; i++) { %>
             <li>
                 <article class="showreel"> <!-- Utilisez "showreel" au lieu de "showreels" -->
-                    <a id="showreel__a__img" href="/portfolio/<%= showreel[i].id %>"> <!-- Utilisez "showreel" au lieu de "realisations" -->
+                    <a class="showreel__a__img" href="/portfolio/<%= showreel[i].id %>"> <!-- Utilisez "showreel" au lieu de "realisations" -->
                         <img src="/img/<%= showreel[i].visuelRealisation %>" alt="illustration du projet <%= showreel[i].nomRealisation %>">
                     </a>
                     <h2 class="nomRealisation">
@@ -27,7 +27,7 @@
                     <p class="descriptionRealisation">
                         <%= showreel[i].descriptionRealisation %>
                     </p>
-                    <a href="/portfolio/<%= showreel[i].id %>">En savoir +</a>
+                    <a class="realisation__a__enSavoir" href="/portfolio/<%= showreel[i].id %>">En savoir +</a>
                 </article>
             </li>
             <% } %>
@@ -41,7 +41,7 @@
                 <% for(let i=0; i<realisations.length; i++) { %>
                 <li>
                     <article class = realisation>
-                    <a id="realisation__a__img" href="/portfolio/<%= realisations[i].id %>">
+                    <a class="realisation__a__img" href="/portfolio/<%= realisations[i].id %>">
                         <img src="/img/<%= realisations[i].visuelRealisation %>" alt="illustration du projet <%= realisations[i].nomRealisation %>">
                     </a>
                     <h2 class="nomRealisation">
@@ -50,7 +50,7 @@
                     <p class="descriptionRealisation">
                         <%= realisations[i].descriptionRealisation %>
                     </p>
-                    <a href="/portfolio/<%= realisations[i].id %>">En savoir +</a>
+                    <a class="realisation__a__enSavoir" href="/portfolio/<%= realisations[i].id %>">En savoir +</a>
                 </article>
                 </li>
                 <% } %>

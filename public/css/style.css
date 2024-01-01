@@ -649,8 +649,19 @@ Portfolio
   padding: 1rem;
 }
 
-#realisation__a__img,
-#showreel__a__img {
+.realisation__a__enSavoir {
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-txt-color);
+  border: var(--primary-txt-color) solid 1.5px;
+  padding: 0.9rem 2rem;
+  text-decoration: none;
+}
+
+.realisation__a__img,
+.showreel__a__img {
   width: 100%;
   height: auto;
   margin: auto;
@@ -659,7 +670,7 @@ Portfolio
 
 }
 
-#showreel__a__img  img{
+.showreel__a__img  img{
 max-height: 500px;
 } 
 
@@ -704,17 +715,7 @@ max-height: 500px;
   color: var(--primary-txt-color);
   margin: 0 auto 2.5rem auto;}
 
-.portfolioRealisations a,
-.portfolioShowreels a {
-  font-size: var(--font-size-h5);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--primary-txt-color);
-  border: var(--primary-txt-color) solid 1.5px;
-  padding: 0.9rem 2rem;
-  text-decoration: none;
-}
+
 
 .portfolioMenu {
   display: flex;
