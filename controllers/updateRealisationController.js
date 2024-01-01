@@ -8,7 +8,6 @@ export function updateRealisation(req, res) { // Exportation de la fonction upda
 
     // Récupérer les informations de la réalisation
     getRealisationById(id, (error, realisationResult) => { // Appel de la fonction getRealisationById
-        console.log('realisationResult: ', realisationResult); // Afficher les informations de la réalisation dans la console
         if (error) { // Si erreur
             console.error(error); // Afficher l’erreur
             res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
@@ -16,7 +15,6 @@ export function updateRealisation(req, res) { // Exportation de la fonction upda
         }
 
         getThemesForRealisation(id, (error, themesForRealisation) => { // Appel de la fonction getThemesForRealisation
-            console.log('themesForRealisation: ', themesForRealisation); // Afficher les thèmes associés à la réalisation dans la console
             if (error) { // Si erreur
                 console.error(error); // Afficher l’erreur
                 res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
@@ -24,7 +22,6 @@ export function updateRealisation(req, res) { // Exportation de la fonction upda
             }
 
             getAllThemes((error, allThemes) => { // Appel de la fonction getAllThemes
-                console.log(allThemes); // Afficher tous les thèmes
                 if (error) { // Si erreur
                     console.error(error); // Afficher l’erreur
                     res.status(500).send('Erreur lors de la requête'); // Afficher le message d’erreur
@@ -54,11 +51,6 @@ export function updateRealisationSubmit(req, res) { // Exportation de la fonctio
     // Convertir la chaîne de caractères en un tableau d'identifiants de thèmes
     const themeArray = typeof themes === 'string' ? themes.split(',') : themes;
 
-    console.log('themeArray: ', themeArray); // Afficher le tableau dans la console
-    console.log('themes: ', themes); // Afficher les thèmes dans la console
-    console.log('typeof themes: ', typeof themes); // Afficher le type des thèmes dans la console
-    console.log('Array.isArray(themes): ', Array.isArray(themes)); // Afficher si les thèmes sont un tableau dans la console
-
     // Mettre à jour la réalisation
 
     updateRealisationModel([rankingRealisation, nomRealisation, descriptionRealisation, commentaireRealisation, id], (error, result) => { // Appel de la fonction updateRealisationModel
@@ -78,7 +70,6 @@ export function updateRealisationSubmit(req, res) { // Exportation de la fonctio
 
             // Parcourez le tableau des identifiants de thèmes et créez les liens
             themeArray.forEach(themeId => { // Parcourir le tableau des identifiants de thèmes
-                console.log('themeId: ', themeId); // Afficher l’identifiant du thème dans la console
                 createThemeRealisationLink(themeId, id, (error) => {    // Appel de la fonction createThemeRealisationLink
                     if (error) { // Si erreur
                         console.error(error); // Afficher l’erreur

@@ -53,7 +53,6 @@ export function addContactSubmit(req, res) {
                 if (mailError) {
                     console.error('Erreur lors de l\'envoi de l\'email:', mailError);
                 } else {
-                    console.log('Email envoyé: ' + info.response);
                 }
             });
 

@@ -37,8 +37,7 @@ export function addRealisationSubmit(req, res) {
             return;
         }
 
-        console.log("Generated ID:", generatedId);
-
+       
         // Traitement des ID des thèmes
         // Diviser la chaîne d'ID de thèmes en un tableau
         const themeIds = req.body.themes.split(',').map(themeId => themeId.trim());
@@ -46,7 +45,6 @@ export function addRealisationSubmit(req, res) {
         // Utilisez un compteur pour suivre le nombre de liaisons insérées
         let count = 0;
         themeIds.forEach(themeId => {
-            console.log("ID du thème :", themeId);
             createThemeRealisationLink(themeId, generatedId, (error) => {
                 if (error) {
                     console.error(`Erreur lors de la création de la liaison thème-réalisation : ${error}`);

@@ -22,7 +22,6 @@ export default (req, res) => {
             if (visuels && visuels.length > 0) {
 
                 visuels.forEach(visuel => {
-                    console.log(`Visuel ID: ${visuel.id}, Width767: ${visuel.visuelWidth767}, Width1920: ${visuel.visuelWidth1920}`);
                 });
 
                 const idVisuels = visuels[0].id;

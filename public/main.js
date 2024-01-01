@@ -100,7 +100,6 @@ const items = document.querySelectorAll('.caroussel__item');
 let currentIndex = 0;
 const firstItem = document.querySelector('.caroussel__item');
 let itemWidth = firstItem.getBoundingClientRect().width;
-console.log('Largeur du premier élément du carrousel:', itemWidth);
 
 // Fonction pour aller à un slide spécifique
 
@@ -108,7 +107,6 @@ function goToSlide(index) {
     const totalWidth = itemWidth * index;
     track.style.transform = `translateX(-${totalWidth}px)`;
     currentIndex = index;
-    console.log('currentIndex : ' + currentIndex);
 }
 
 window.addEventListener('resize', () => {

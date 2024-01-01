@@ -223,8 +223,6 @@ footer {
   align-items: center;
   padding-top: 1px;
   border-top: var(--primary-txt-color) solid 1.5px;
-  margin-top: 10px;
-
 }
 
 .footer--With-Margin {
@@ -1352,6 +1350,7 @@ i.fa.fa-pencil-square {
 
   #scrollTop {
     right: 70px;
+    z-index: 5;
   }
 
   .contact {

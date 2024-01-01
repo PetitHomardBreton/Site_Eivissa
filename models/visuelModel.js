@@ -41,7 +41,6 @@ export const getVisuelById = (id, callback) => {
 };
 
 export const getAllVisuelsByRealisationId = (id, callback) => {
-    console.log('id visuel : ', id);
     query(
         `
         SELECT 
@@ -57,7 +56,6 @@ export const getAllVisuelsByRealisationId = (id, callback) => {
 };
 
 export const getVisuelsOfRealisation = (id, callback) => {
-    console.log('id visuel : ', id);
     query(
         `
         SELECT 
